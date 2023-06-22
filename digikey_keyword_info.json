@@ -1,0 +1,23 @@
+{
+    "LimitedTaxonomy": {
+        "Children": [],
+        "ProductCount": 1,
+        "NewProductCount": 0,
+        "ParameterId": -8,
+        "ValueId": "3",
+        "Parameter": "Categories",
+        "Value": "Out of Bounds"
+    },
+    "FilterOptions": [],
+    "Products": [],
+    "ProductsCount": 0,
+    "ExactManufacturerProductsCount": 0,
+    "ExactManufacturerProducts": [],
+    "ExactDigiKeyProduct": null,
+    "SearchLocaleUsed": {
+        "Site": "US",
+        "Language": "en",
+        "Currency": "USD",
+        "ShipToCountry": "Obsolete"
+    }
+}
