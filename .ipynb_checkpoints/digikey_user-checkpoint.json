@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Monica",
+        "redirect_uri": "https://localhost/",
+        "username": "mnguyen@concisys.net",
+        "password": "Mon@5452",
+        "client_id": "50SAX0EBmd2MBfZb2HLCZfpmtMyJN3Ft",
+        "client_secret": "ZiLSD5qdDVuKQKsG"
+    }
+]

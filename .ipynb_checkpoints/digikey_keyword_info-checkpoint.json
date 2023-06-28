@@ -1,0 +1,8 @@
+{
+    "ErrorResponseVersion": "3.0.0.0",
+    "StatusCode": 401,
+    "ErrorMessage": "The Bearer token is invalid",
+    "ErrorDetails": "Ensure the Authorization header has a valid Bearer token",
+    "RequestId": "c93ac6fd-faf4-462b-a3ae-ff93daf3fff2",
+    "ValidationErrors": []
+}
