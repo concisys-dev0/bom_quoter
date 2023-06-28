@@ -66,7 +66,7 @@ def digikey_login(auth_url, username, password):
     browser.get(auth_url)
     time.sleep(randint(2,10))
     browser.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-    browser.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": USER_AGENT)
+    browser.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": USER_AGENT})
     wait = WebDriverWait(browser, 5)
     wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'logo-frame')))
     print("Logging in. Please wait..")
