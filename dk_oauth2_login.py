@@ -28,11 +28,11 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 # Automation setup
 def driver_setup(path=None):
     chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument(f'user-agent={USER_AGENT}')
+    # chrome_options.add_argument(f'user-agent={USER_AGENT}') # <- assign user-agent
     chrome_options.add_argument('--ignore-certificate-errors')
     chrome_options.add_argument('--ignore-ssl-errors')
-    chrome_options.add_argument('--incognito')
-    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--incognito') #incognito
+    chrome_options.add_argument('--headless') # no display
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_argument("--disable-blink-features")
     chrome_options.add_argument("--disable-extensions")
@@ -66,9 +66,7 @@ def digikey_login(auth_url, username, password):
     browser.get(auth_url)
     time.sleep(randint(2,10))
     browser.execute_script("Object.defineProperty(navigator, 'webdriver', {get: () => undefined})")
-    # browser.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
-    #                                                                  'AppleWebKit/537.36 (KHTML, like Gecko) '
-    #                                                                  'Chrome/85.0.4183.102 Safari/537.36'})
+    browser.execute_cdp_cmd('Network.setUserAgentOverride', {"userAgent": USER_AGENT)
     wait = WebDriverWait(browser, 5)
     wait.until(EC.visibility_of_element_located((By.CLASS_NAME, 'logo-frame')))
     print("Logging in. Please wait..")
