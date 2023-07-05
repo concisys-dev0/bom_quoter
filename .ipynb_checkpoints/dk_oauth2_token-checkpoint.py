@@ -13,7 +13,7 @@ import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
-from dk_oauth2_login import digikey_login, write_digikey_user
+from dk_login import digikey_login, write_digikey_user
 
 dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
 dk_token_url = "https://api.digikey.com/v1/oauth2/token"

@@ -1,0 +1,34 @@
+[
+    {
+        "user_id": "testuser_1",
+        "redirect_uri": "https://localhost/",
+        "username": "concisys.test@gmail.com",
+        "password": "Q29uQDU0NTI=",
+        "client_id": "QjdvV3dkNnFob3N3dVROS1I1WE5qVk9KZ2F2V2hxRzM=",
+        "client_secret": "NHZNMHllVktRSU5vZDNnaw=="
+    },
+    {
+        "user_id": "testuser_2",
+        "redirect_uri": "https://localhost/",
+        "username": "concisys.test+1@gmail.com",
+        "password": "Q29uQDU0NTI=",
+        "client_id": "dGEzdWcyMk5vTEt0cEo1dDNMczBWTEswNXZlWEdMd3Q=",
+        "client_secret": "UUFyekZ5djJVbnJtNlltTg=="
+    },
+    {
+        "user_id": "testuser_3",
+        "redirect_uri": "https://localhost/",
+        "username": "concisys.test+2@gmail.com",
+        "password": "Q29uQDU0NTI=",
+        "client_id": "OU95ZURNbUlISlNMcnBjMmhzVks2Vjh2SHJJTVpBc2k=",
+        "client_secret": "ZkdnVDl0bUwyVFJ5Rm03WQ=="
+    },
+    {
+        "user_id": "Monica",
+        "redirect_uri": "https://localhost/",
+        "username": "mnguyen@concisys.net",
+        "password": "TW9uQDU0NTI=",
+        "client_id": "NTBTQVgwRUJtZDJNQmZaYjJITENaZnBtdE15Sk4zRnQ=",
+        "client_secret": "WmlMU0Q1cWREVnVLUUtzRw=="
+    }
+]

@@ -13,26 +13,20 @@ import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
-from dk_login import digikey_login, write_digikey_user
+from digikey_users import digikey_login, write_digikey_user
 
-dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
-dk_token_url = "https://api.digikey.com/v1/oauth2/token"
+AUTH_URL_V1_PROD = "https://api.digikey.com/v1/oauth2/authorize"
+TOKEN_URL_V1_PROD = "https://api.digikey.com/v1/oauth2/token"
 
-# callback_uri = "https://localhost/" #redirect uri
-# test_api_url = "https://api.digikey.com/" #host
-# client_id = 'jhZJWxD67jf2ONa8MAzE6eQAC8UtR1bM'
-# tester1: 'B7oWwd6qhoswuTNKR5XNjVOJgavWhqG3'
-# ldo:'jhZJWxD67jf2ONa8MAzE6eQAC8UtR1bM' 
-# excess: 'v96weKvwrkhbxsufdcrABCd7tMT4wfuj'
-# client_secret = 'P832b8biNWfcNwCz'
-# tester1: '4vM0yeVKQINod3gk'
-# ldo:'P832b8biNWfcNwCz' 
-# excess: 'DBKjJZIlxgaaGBaF'
+AUTH_URL_V1_SB = "https://sandbox-api.digikey.com/v1/oauth2/authorize"
+TOKEN_URL_V1_SB = "https://sandbox-api.digikey.com/v1/oauth2/token"
+USER_STORAGE = 'digikey_user.json'
+TOKEN_STORAGE = 'digikey_token.json'
 
 # Returns the first digikey user in the json file
 def get_digikey_user():
     try:
-        with open('digikey_user.json', 'r') as file:
+        with open(USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of digikey users
             if len(user_list) > 0:
                 user = user_list[0] # take the first

@@ -1,3 +1,4 @@
+from dk_oauth2_token import get_digikey_user
 import requests
 import json
 import sys
@@ -8,46 +9,11 @@ urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
 
-from dk_oauth2_token import get_digikey_user
-# client_id = 'jhZJWxD67jf2ONa8MAzE6eQAC8UtR1bM'
-# tester1: 'B7oWwd6qhoswuTNKR5XNjVOJgavWhqG3'
-# ldo: 'jhZJWxD67jf2ONa8MAzE6eQAC8UtR1bM' 
-# excess: 'v96weKvwrkhbxsufdcrABCd7tMT4wfuj'
 
-# def write_digikey_part_info(info_file):
-#     access_file = 'digikey_part_info.json'
-#     with open(access_file, 'w') as fil:
-#         json.dump(info_file, fil, indent=4)
-        
-# def write_digikey_sub_json(sub_file):
-#     access_file = 'digikey_sub_info.json'
-#     with open(access_file, 'w') as fil:
-#         json.dump(sub_file, fil, indent=4)
-
-# def write_digikey_categories_json(categories_file):
-#     access_file = 'digikey_categories_info.json'
-#     with open(access_file, 'w') as file:
-#         json.dump(categories_file, file, indent=4)
-        
-# def write_digikey_manufacturers_json(manufacturers_file):
-#     access_file = 'digikey_manufacturers_info.json'
-#     with open(access_file, 'w') as file:
-#         json.dump(manufacturers_file, file, indent=4)
-        
-# def write_digikey_categoriesID_json(categoriesID_file):
-#     access_file = 'digikey_categoriesID_info.json'
-#     with open(access_file, 'w') as file:
-#         json.dump(categoriesID_file, file, indent=4)
-        
 def write_digikey_keyword_json(keyword_file):
     access_file = 'digikey_keyword_info.json'
     with open(access_file, 'w') as fil:
         json.dump(keyword_file, fil, indent=4)
-        
-# def write_digikey_product_details_json(product_file):
-#     access_file = 'digikey_product_details_info.json'
-#     with open(access_file, 'w') as fil:
-#         json.dump(product_file, fil, indent=4)
         
 def get_digikey_part_info(part_id):
     with open('digikey_token.json', 'r') as file:
@@ -65,10 +31,7 @@ def get_digikey_part_info(part_id):
         'X-DIGIKEY-Locale-ShipToCountry' : 'US'
     }
     url = 'https://api.digikey.com/Search/v3/Products/' + part_id
-    #+ quote(part_id, safe='')
-    #Config().log_write("Query " + part_id + " with token " + Config().access_token_string)
     response = requests.get(url, headers=headers)
-    #Config().log_write("Response Code " + str(response.status_code))
     if response.status_code != 200:
         r = json.loads(response.text)
         if 'Details' in r:
@@ -85,7 +48,6 @@ def get_digikey_part_info(part_id):
             print(s)
 
     info_file = response.json()
-    # part_info = write_digikey_part_info(info_file)
     return info_file
 
 def get_digikey_part_sub_info(part_id):
@@ -122,7 +84,6 @@ def get_digikey_part_sub_info(part_id):
             print(s)
         
     sub_file = response.json()
-    # sub_info = write_digikey_sub_json(sub_file)
     return sub_file
 
 def get_digikey_reel_pricing(digikey_part, Qty):
@@ -197,7 +158,6 @@ def get_digikey_categories_search():
             print(s)
         
     categories_file = response.json()
-    # categories_list = write_digikey_categories_json(categories_file)
     return categories_file
         
 def get_digikey_manufacturers_search():
@@ -233,7 +193,6 @@ def get_digikey_manufacturers_search():
             print(s)
         
     manufacturers_file = response.json()
-    # manufacturers_list = write_digikey_manufacturers_json(manufacturers_file)
     return manufacturers_file
         
 def get_digikey_categoriesID_search(categoriesID):
@@ -269,7 +228,6 @@ def get_digikey_categoriesID_search(categoriesID):
             print(s)
         
     categoriesID_file = response.json()
-    # categoriesID_list = write_digikey_categoriesID_json(categoriesID_file)
     return categoriesID_file
 
 def get_digikey_keyword_search(key_word):
@@ -336,21 +294,6 @@ def get_digikey_product_details_search(product_details): #SortByDigiKeyPartNumbe
     }
     url = 'https://api.digikey.com/Search/v3/Products/ManufacturerProductDetails'
     response = requests.post(url, json=data, headers=headers)
-    # if response.status_code != 200:
-    #     r = json.loads(response.text)
-    #     if 'Details' in r:
-    #         print(response.status_code)
-    #         s = r['Details']
-    #     elif 'moreInformation' in r:
-    #         print(response.status_code)
-    #         s = r['moreInformation']
-    #     elif 'message' in r:
-    #         print(response.status_code)
-    #         s = r['message']
-    #     else:
-    #         print(response.status_code)
-    #         s = r['ErrorMessage']
-    #     raise Exception(s)
     if response.status_code != 200:
         r = json.loads(response.text)
         if 'Details' in r:
@@ -367,44 +310,7 @@ def get_digikey_product_details_search(product_details): #SortByDigiKeyPartNumbe
             print(s)
         
     product_file = response.json()
-    # product_info = write_digikey_product_details_json(product_file)
-    # print(response.status_code)
     return product_file
-
-# def display_info(info_file):
-#     print("Manufacturer Part Number: " + info_file["ManufacturerPartNumber"])
-#     print("Digi-Key Part Number:" + info_file['DigiKeyPartNumber'])
-#     print("Manufacturer: " + info_file["Manufacturer"]["Value"])
-#     print("Type: " + info_file["Category"]["Value"])
-#     print("Description: " + info_file["ProductDescription"])
-
-# def display_sub_info(sub_file):
-#     for sub_info in sub_file['SuggestedProducts']:
-#         print("Manufacturer Part Number: " + sub_info['ManufacturerPartNumber'])
-#         print("Digi-Key Part Number:" + sub_info['DigiKeyPartNumber'])
-#         print("Manufacturer: " + sub_info['Manufacturer']['Value'])
-#         print("Description: " + sub_info["ProductDescription"])
-#         print("")
-
-# def display_categories_info(categories_file):
-#     for categories_info in categories_file['Categories']:
-#         print("CategoryId: " + str(categories_info['CategoryId']))
-#         print("Name: " + categories_info['Name'])
-#         print("")
-
-# def display_manufacturers_info(manufacturers_file):
-#     for manufacturers_info in manufacturers_file['Manufacturers']:
-#         print("Id: " + str(manufacturers_info['Id']))
-#         print("Name: " + manufacturers_info['Name'])
-#         print("")
-        
-# def display_categoriesID_info(categoriesID_file):
-#     print("Name: " + categoriesID_file['Name'])
-#     for categoriesID_info in categoriesID_file['Children']:
-#         print("Category Id: " + str(categoriesID_info['CategoryId']))
-#         print("Name: " + categoriesID_info['Name'])
-#         print("Product count: " + str(categoriesID_info['ProductCount']))
-#         print("")
         
 """TEST CASE"""
 # mfg = "MCP1501T-20E/CHY" #str(input("Please Enter Manufacture Part No.: ")); "ERJ-3EKF3901V" "571-0122-100-F"

@@ -2,7 +2,6 @@ from dk_search_info import get_digikey_keyword_search
 from dk_oauth2_token import*
 
 import sys
-
 import urllib3
 urllib3.disable_warnings()
 import logging
