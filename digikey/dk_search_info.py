@@ -10,12 +10,16 @@ import logging
 logging.captureWarnings(True)
 
 
-def write_digikey_keyword_json(keyword_file):
+def write_digikey_keyword_json(keyword_file): 
+    """ saves keyword_info json"""
     access_file = 'digikey_keyword_info.json'
     with open(access_file, 'w') as fil:
         json.dump(keyword_file, fil, indent=4)
         
-def get_digikey_part_info(part_id):
+def get_digikey_part_info(part_id): # searches for part; param: part_id -> manufacturer part number
+    """ Searches for part
+    param: part_id -> mfg part number
+    """
     with open('digikey_token.json', 'r') as file:
         token = json.load(file)
     if token['access_token'] is None:

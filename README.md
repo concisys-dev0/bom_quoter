@@ -13,7 +13,8 @@ To use this tool, follow these steps:
 1. Clone this repository to your local machine.
 2. Ensure that Python is installed on your system.
 3. Install the required dependencies by running `conda env create -n my-env-name -f environment.yml` if using Anaconda to create it in another environment.
-4. Run the `mergeComparison.py` script to initiate the BOM quoting process.
+4. If using PIP `pip install .` into your virtual env.
+5. Run the `mergeComparison.py` script to initiate the BOM quoting process.
 
 ## License
 

@@ -1,21 +1,32 @@
+# import sys
+# from pathlib import Path
+
+# file = Path(__file__).resolve()
+# parent, root = file.parent, file.parents[1]
+# sys.path.append(str(root))
+
+# # Additionally remove the current file's directory from sys.path
+# try:
+#     sys.path.remove(str(parent))
+# except ValueError: # already removed
+#     pass
 import setuptools
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='src',
+    name='bom_quoter',
     version='1.0.0',
     author="Lan Do, Monica Huu Nguyen, Concisys Inc.",
     author_email="mnguyen@concisys.net",
     license="MIT",
     url="https://github.com/concisys-dev0/bom_quoter",
-    description="Concisys BOM Quoter",
+    description="A prototype of a bom quoter built on Python",
     long_description=long_description,
-    packages=setuptools.find_packages(exclude=['tests','notebooks']),
+    packages=setuptools.find_packages(),
     include_package_data=True,
     install_requires=[
-        'python>=3.10.11',
         'requests>=2.31.0',
         'requests-oauthlib>=1.3.1',
         'schedule>=1.2.0',
@@ -26,5 +37,4 @@ setuptools.setup(
         'pandas>=1.5.3',
         'urllib3>=2.0.3',
         'webdriver-manager>=3.8.6',
-    ],
-     )
+    ])
