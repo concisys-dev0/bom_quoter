@@ -5,20 +5,20 @@
                 "Children": [
                     {
                         "Children": [],
-                        "ProductCount": 4,
+                        "ProductCount": 1,
                         "NewProductCount": 0,
                         "ParameterId": -8,
-                        "ValueId": "315",
+                        "ValueId": "739",
                         "Parameter": "Categories",
-                        "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets"
+                        "Value": "Power Management (PMIC) - Voltage Regulators - DC DC Switching Regulators"
                     }
                 ],
-                "ProductCount": 4,
+                "ProductCount": 1,
                 "NewProductCount": 0,
                 "ParameterId": -8,
-                "ValueId": "20",
+                "ValueId": "32",
                 "Parameter": "Categories",
-                "Value": "Connectors, Interconnects"
+                "Value": "Integrated Circuits (ICs)"
             }
         ],
         "ProductCount": 1,
@@ -32,302 +32,8 @@
         {
             "Values": [
                 {
-                    "ValueId": "0",
-                    "Value": "Active"
-                },
-                {
-                    "ValueId": "2",
-                    "Value": "Discontinued at Digi-Key"
-                }
-            ],
-            "ParameterId": 1989,
-            "Parameter": "Part Status"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "392960",
-                    "Value": "Receptacle"
-                },
-                {
-                    "ValueId": "393018",
-                    "Value": "Receptacle, Bottom Entry"
-                }
-            ],
-            "ParameterId": 28,
-            "Parameter": "Connector Type"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "346565",
-                    "Value": "Female Socket"
-                }
-            ],
-            "ParameterId": 512,
-            "Parameter": "Contact Type"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "321611",
-                    "Value": "Board to Board"
-                }
-            ],
-            "ParameterId": 91,
-            "Parameter": "Style"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "203167",
-                    "Value": "4"
-                }
-            ],
-            "ParameterId": 88,
-            "Parameter": "Number of Positions"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "312745",
-                    "Value": "All"
-                }
-            ],
-            "ParameterId": 564,
-            "Parameter": "Number of Positions Loaded"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "8489",
-                    "Value": "0.079\" (2.00mm)"
-                }
-            ],
-            "ParameterId": 1790,
-            "Parameter": "Pitch - Mating"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "2",
-                    "Value": "2"
-                }
-            ],
-            "ParameterId": 2172,
-            "Parameter": "Number of Rows"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "8489",
-                    "Value": "0.079\" (2.00mm)"
-                }
-            ],
-            "ParameterId": 2024,
-            "Parameter": "Row Spacing - Mating"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "409393",
-                    "Value": "Surface Mount"
-                }
-            ],
-            "ParameterId": 69,
-            "Parameter": "Mounting Type"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "405002",
-                    "Value": "Solder"
-                }
-            ],
-            "ParameterId": 589,
-            "Parameter": "Termination"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "390971",
-                    "Value": "Push-Pull"
-                }
-            ],
-            "ParameterId": 518,
-            "Parameter": "Fastening Type"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "350796",
-                    "Value": "Gold"
-                }
-            ],
-            "ParameterId": 1791,
-            "Parameter": "Contact Finish - Mating"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "64614",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                }
-            ],
-            "ParameterId": 1792,
-            "Parameter": "Contact Finish Thickness - Mating"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "319929",
-                    "Value": "Black"
-                }
-            ],
-            "ParameterId": 1693,
-            "Parameter": "Insulation Color"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "8806",
-                    "Value": "0.083\" (2.10mm)"
-                }
-            ],
-            "ParameterId": 2018,
-            "Parameter": "Insulation Height"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "1",
-                    "Value": "-"
-                }
-            ],
-            "ParameterId": 2012,
-            "Parameter": "Contact Length - Post"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "242918",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                }
-            ],
-            "ParameterId": 252,
-            "Parameter": "Operating Temperature"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "417627",
-                    "Value": "UL94 V-0"
-                }
-            ],
-            "ParameterId": 903,
-            "Parameter": "Material Flammability Rating"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "350796",
-                    "Value": "Gold"
-                }
-            ],
-            "ParameterId": 1795,
-            "Parameter": "Contact Finish - Post"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "1",
-                    "Value": "-"
-                }
-            ],
-            "ParameterId": 1263,
-            "Parameter": "Mated Stacking Heights"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "1",
-                    "Value": "-"
-                }
-            ],
-            "ParameterId": 697,
-            "Parameter": "Ingress Protection"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "1",
-                    "Value": "-"
-                }
-            ],
-            "ParameterId": 5,
-            "Parameter": "Features"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "205357",
-                    "Value": "4.1A per Contact"
-                }
-            ],
-            "ParameterId": 66,
-            "Parameter": "Current Rating (Amps)"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "1",
-                    "Value": "-"
-                }
-            ],
-            "ParameterId": 63,
-            "Parameter": "Voltage Rating"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "3",
-                    "Value": "Bulk"
-                },
-                {
-                    "ValueId": "2",
-                    "Value": "Cut Tape (CT)"
-                },
-                {
-                    "ValueId": "243",
-                    "Value": "Digi-Reel\u00ae"
-                },
-                {
-                    "ValueId": "1",
-                    "Value": "Tape & Reel (TR)"
-                },
-                {
-                    "ValueId": "6",
-                    "Value": "Tube"
-                }
-            ],
-            "ParameterId": 7,
-            "Parameter": "Packaging"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "3923",
-                    "Value": "CLT"
-                }
-            ],
-            "ParameterId": -5,
-            "Parameter": "Series"
-        },
-        {
-            "Values": [
-                {
-                    "ValueId": "612",
-                    "Value": "Samtec Inc."
+                    "ValueId": "1102",
+                    "Value": ""
                 }
             ],
             "ParameterId": -1,
@@ -338,335 +44,19 @@
         {
             "StandardPricing": [
                 {
-                    "BreakQuantity": 1750,
-                    "UnitPrice": 1.06909,
-                    "TotalPrice": 1870.9075
-                },
-                {
-                    "BreakQuantity": 3500,
-                    "UnitPrice": 1.03222,
-                    "TotalPrice": 3612.77
-                },
-                {
-                    "BreakQuantity": 5250,
-                    "UnitPrice": 0.98061,
-                    "TotalPrice": 5148.2025
-                },
-                {
-                    "BreakQuantity": 8750,
-                    "UnitPrice": 0.95849,
-                    "TotalPrice": 8386.7875
-                }
-            ],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "1",
-                    "Parameter": "Packaging",
-                    "Value": "Tape & Reel (TR)"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "393018",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle, Bottom Entry"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
-                },
-                {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-BE-TR/6692467",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
-            "AlternatePackaging": [
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "2",
-                        "Parameter": "Packaging",
-                        "Value": "Cut Tape (CT)"
-                    },
-                    "QuantityAvailable": 476,
-                    "DigiKeyPartNumber": "SAM13369CT-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.99,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 5250,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025129027_CT",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                },
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "243",
-                        "Parameter": "Packaging",
-                        "Value": "Digi-Reel\u00ae"
-                    },
-                    "QuantityAvailable": 476,
-                    "DigiKeyPartNumber": "SAM13369DKR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.99,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 5250,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025129027_DKR",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                }
-            ],
-            "DetailedDescription": "4 Position Receptacle, Bottom Entry Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-            "MinimumOrderQuantity": 1750,
-            "NonStock": false,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "1",
-                "Parameter": "Packaging",
-                "Value": "Tape & Reel (TR)"
-            },
-            "QuantityAvailable": 0,
-            "DigiKeyPartNumber": "SAM13369TR-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 1.06909,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 5250,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025129027",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [
-                {
                     "BreakQuantity": 1,
-                    "UnitPrice": 1.99,
-                    "TotalPrice": 1.99
+                    "UnitPrice": 18.58,
+                    "TotalPrice": 18.58
                 },
                 {
-                    "BreakQuantity": 10,
-                    "UnitPrice": 1.733,
-                    "TotalPrice": 17.33
+                    "BreakQuantity": 25,
+                    "UnitPrice": 13.47,
+                    "TotalPrice": 336.75
                 },
                 {
                     "BreakQuantity": 100,
-                    "UnitPrice": 1.5483,
-                    "TotalPrice": 154.83
-                },
-                {
-                    "BreakQuantity": 500,
-                    "UnitPrice": 1.29028,
-                    "TotalPrice": 645.14
+                    "UnitPrice": 13.1875,
+                    "TotalPrice": 1318.75
                 }
             ],
             "RoHSStatus": "ROHS3 Compliant",
@@ -674,33 +64,21 @@
             "Parameters": [
                 {
                     "ParameterId": 7,
-                    "ValueId": "2",
+                    "ValueId": "17",
                     "Parameter": "Packaging",
-                    "Value": "Cut Tape (CT)"
+                    "Value": "Tray"
                 },
                 {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
+                    "ParameterId": 16,
+                    "ValueId": "85049",
+                    "Parameter": "Package / Case",
+                    "Value": "123-BLGA Module"
                 },
                 {
-                    "ParameterId": 28,
-                    "ValueId": "393018",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle, Bottom Entry"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
+                    "ParameterId": 41,
+                    "ValueId": "310373",
+                    "Parameter": "Output Type",
+                    "Value": "Adjustable (Fixed)"
                 },
                 {
                     "ParameterId": 69,
@@ -709,2017 +87,189 @@
                     "Value": "Surface Mount"
                 },
                 {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
+                    "ParameterId": 87,
+                    "ValueId": "39665",
+                    "Parameter": "Number of Outputs",
+                    "Value": "1"
                 },
                 {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
+                    "ParameterId": 110,
+                    "ValueId": "408308",
+                    "Parameter": "Function",
+                    "Value": "Step-Down"
                 },
                 {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-BE-TR/6692467",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
-            "AlternatePackaging": [
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                    "MinimumOrderQuantity": 1750,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "1",
-                        "Parameter": "Packaging",
-                        "Value": "Tape & Reel (TR)"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13369TR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.06909,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 5250,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025129027",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                },
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "243",
-                        "Parameter": "Packaging",
-                        "Value": "Digi-Reel\u00ae"
-                    },
-                    "QuantityAvailable": 476,
-                    "DigiKeyPartNumber": "SAM13369DKR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.99,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 5250,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025129027_DKR",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                }
-            ],
-            "DetailedDescription": "4 Position Receptacle, Bottom Entry Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-            "MinimumOrderQuantity": 1,
-            "NonStock": false,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "2",
-                "Parameter": "Packaging",
-                "Value": "Cut Tape (CT)"
-            },
-            "QuantityAvailable": 476,
-            "DigiKeyPartNumber": "SAM13369CT-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 1.99,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 5250,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025129027_CT",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [
-                {
-                    "BreakQuantity": 1,
-                    "UnitPrice": 1.99,
-                    "TotalPrice": 1.99
-                },
-                {
-                    "BreakQuantity": 10,
-                    "UnitPrice": 1.733,
-                    "TotalPrice": 17.33
-                },
-                {
-                    "BreakQuantity": 100,
-                    "UnitPrice": 1.5483,
-                    "TotalPrice": 154.83
-                },
-                {
-                    "BreakQuantity": 500,
-                    "UnitPrice": 1.29028,
-                    "TotalPrice": 645.14
-                }
-            ],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "243",
-                    "Parameter": "Packaging",
-                    "Value": "Digi-Reel\u00ae"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "393018",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle, Bottom Entry"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
+                    "ParameterId": 129,
+                    "ValueId": "293724",
+                    "Parameter": "Current - Output",
+                    "Value": "8A"
                 },
                 {
                     "ParameterId": 252,
-                    "ValueId": "242918",
+                    "ValueId": "212481",
                     "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
+                    "Value": "-40\u00b0C ~ 125\u00b0C (TJ)"
                 },
                 {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
+                    "ParameterId": 255,
+                    "ValueId": "389019",
+                    "Parameter": "Output Configuration",
+                    "Value": "Positive"
                 },
                 {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
+                    "ParameterId": 384,
+                    "ValueId": "52943",
+                    "Parameter": "Frequency - Switching",
+                    "Value": "1.4MHz"
                 },
                 {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
+                    "ParameterId": 573,
+                    "ValueId": "197370",
+                    "Parameter": "Voltage - Input (Max)",
+                    "Value": "36V"
                 },
                 {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
+                    "ParameterId": 1098,
+                    "ValueId": "323617",
+                    "Parameter": "Topology",
+                    "Value": "Buck"
                 },
                 {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
+                    "ParameterId": 1291,
+                    "ValueId": "85057",
+                    "Parameter": "Supplier Device Package",
+                    "Value": "123-LGA (14x10)"
                 },
                 {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
+                    "ParameterId": 1320,
+                    "ValueId": "423329",
+                    "Parameter": "Synchronous Rectifier",
+                    "Value": "Yes"
                 },
                 {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
+                    "ParameterId": 1429,
+                    "ValueId": "92529",
+                    "Parameter": "Voltage - Output (Max)",
+                    "Value": "13V"
                 },
                 {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
+                    "ParameterId": 1471,
+                    "ValueId": "295157",
+                    "Parameter": "Voltage - Input (Min)",
+                    "Value": "8V"
                 },
                 {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
+                    "ParameterId": 1779,
+                    "ValueId": "444433",
+                    "Parameter": "Voltage - Output (Min/Fixed)",
+                    "Value": "6.5V (12V)"
                 }
             ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-BE-TR/6692467",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
+            "ProductUrl": "https://www.digikey.com/en/products/detail/vicor-corporation/PI3303-00-LGIZ/3466960",
+            "PrimaryDatasheet": "https://www.vicorpower.com/documents/datasheets/ds_pi33xx.pdf",
+            "PrimaryPhoto": "https://media.digikey.com/Photos/Vicor%20Corporation/MFG_PI33xxLGAseries.jpg",
             "PrimaryVideo": "",
             "Series": {
                 "ParameterId": -5,
-                "ValueId": "3923",
+                "ValueId": "818",
                 "Parameter": "Series",
-                "Value": "CLT"
+                "Value": "-"
             },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
-            "AlternatePackaging": [
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                    "MinimumOrderQuantity": 1750,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "1",
-                        "Parameter": "Packaging",
-                        "Value": "Tape & Reel (TR)"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13369TR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.06909,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 5250,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025129027",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                },
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "2",
-                        "Parameter": "Packaging",
-                        "Value": "Cut Tape (CT)"
-                    },
-                    "QuantityAvailable": 476,
-                    "DigiKeyPartNumber": "SAM13369CT-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.99,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 5250,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025129027_CT",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                }
-            ],
-            "DetailedDescription": "4 Position Receptacle, Bottom Entry Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets - Headers, Receptacles, Female Sockets - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-            "MinimumOrderQuantity": 1,
-            "NonStock": false,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "243",
-                "Parameter": "Packaging",
-                "Value": "Digi-Reel\u00ae"
-            },
-            "QuantityAvailable": 476,
-            "DigiKeyPartNumber": "SAM13369DKR-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 1.99,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 5250,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025129027_DKR",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [
-                {
-                    "BreakQuantity": 1,
-                    "UnitPrice": 2.7,
-                    "TotalPrice": 2.7
-                },
-                {
-                    "BreakQuantity": 10,
-                    "UnitPrice": 2.35,
-                    "TotalPrice": 23.5
-                },
-                {
-                    "BreakQuantity": 100,
-                    "UnitPrice": 2.0998,
-                    "TotalPrice": 209.98
-                },
-                {
-                    "BreakQuantity": 500,
-                    "UnitPrice": 1.74982,
-                    "TotalPrice": 874.91
-                },
-                {
-                    "BreakQuantity": 1000,
-                    "UnitPrice": 1.49985,
-                    "TotalPrice": 1499.85
-                },
-                {
-                    "BreakQuantity": 5000,
-                    "UnitPrice": 1.32987,
-                    "TotalPrice": 6649.35
-                }
-            ],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "3",
-                    "Parameter": "Packaging",
-                    "Value": "Bulk"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "393018",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle, Bottom Entry"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
-                },
-                {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-BE/6692349",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
+            "ManufacturerLeadWeeks": "26 week(s)",
+            "ManufacturerPageUrl": "https://www.digikey.com",
+            "ProductStatus": "Unknown",
             "AlternatePackaging": [],
-            "DetailedDescription": "4 Position Receptacle, Bottom Entry Connector 0.079\" (2.00mm) Surface Mount Gold",
+            "DetailedDescription": "Buck Switching Regulator IC Positive Adjustable (Fixed) 6.5V (12V) 1 Output 8A 123-BLGA Module",
             "ReachStatus": "Reach unaffected",
             "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
+            "HTSUSCode": "8542.39.0001",
             "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
+            "MoistureSensitivityLevel": "3  (168 Hours)",
             "Family": {
                 "ParameterId": -2,
-                "ValueId": "315",
+                "ValueId": "739",
                 "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets"
+                "Value": "Power Management (PMIC) - Voltage Regulators - DC DC Switching Regulators"
             },
             "Category": {
                 "ParameterId": -3,
-                "ValueId": "20",
+                "ValueId": "32",
                 "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
+                "Value": "Integrated Circuits (ICs)"
             },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-BE",
+            "ManufacturerPartNumber": "PI3303-00-LGIZ",
             "MinimumOrderQuantity": 1,
             "NonStock": false,
             "Packaging": {
                 "ParameterId": 7,
-                "ValueId": "3",
+                "ValueId": "17",
                 "Parameter": "Packaging",
-                "Value": "Bulk"
+                "Value": "Tray"
             },
-            "QuantityAvailable": 127,
-            "DigiKeyPartNumber": "SAM11007-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 2.7,
+            "QuantityAvailable": 6365,
+            "DigiKeyPartNumber": "1102-1501-ND",
+            "ProductDescription": "DC DC CONVERTER 12V",
+            "UnitPrice": 18.58,
             "Manufacturer": {
                 "ParameterId": -1,
-                "ValueId": "612",
+                "ValueId": "1102",
                 "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 2923,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025118315",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [
-                {
-                    "BreakQuantity": 1750,
-                    "UnitPrice": 0.98122,
-                    "TotalPrice": 1717.135
-                },
-                {
-                    "BreakQuantity": 3500,
-                    "UnitPrice": 0.94738,
-                    "TotalPrice": 3315.83
-                },
-                {
-                    "BreakQuantity": 5250,
-                    "UnitPrice": 0.90001,
-                    "TotalPrice": 4725.0525
-                },
-                {
-                    "BreakQuantity": 8750,
-                    "UnitPrice": 0.87971,
-                    "TotalPrice": 7697.4625
-                }
-            ],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "1",
-                    "Parameter": "Packaging",
-                    "Value": "Tape & Reel (TR)"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "392960",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
-                },
-                {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-TR/6692370",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
-            "AlternatePackaging": [
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "2",
-                        "Parameter": "Packaging",
-                        "Value": "Cut Tape (CT)"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13365CT-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.83,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 0,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025024228_CT",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                },
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "243",
-                        "Parameter": "Packaging",
-                        "Value": "Digi-Reel\u00ae"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13365DKR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.83,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 0,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025024228_DKR",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                }
-            ],
-            "DetailedDescription": "4 Position Receptacle Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-            "MinimumOrderQuantity": 1750,
-            "NonStock": false,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "1",
-                "Parameter": "Packaging",
-                "Value": "Tape & Reel (TR)"
-            },
-            "QuantityAvailable": 0,
-            "DigiKeyPartNumber": "SAM13365TR-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 0.98122,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
+                "Value": "Vicor Corporation"
             },
             "ManufacturerPublicQuantity": 0,
             "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
+            "MaxQuantityForDistribution": 0,
             "BackOrderNotAllowed": false,
             "DKPlusRestriction": false,
             "Marketplace": false,
             "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025024228",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [
-                {
-                    "BreakQuantity": 1,
-                    "UnitPrice": 1.83,
-                    "TotalPrice": 1.83
-                },
-                {
-                    "BreakQuantity": 10,
-                    "UnitPrice": 1.59,
-                    "TotalPrice": 15.9
-                },
-                {
-                    "BreakQuantity": 100,
-                    "UnitPrice": 1.4211,
-                    "TotalPrice": 142.11
-                },
-                {
-                    "BreakQuantity": 500,
-                    "UnitPrice": 1.18422,
-                    "TotalPrice": 592.11
-                }
-            ],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "2",
-                    "Parameter": "Packaging",
-                    "Value": "Cut Tape (CT)"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "392960",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
-                },
-                {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-TR/6692370",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
-            "AlternatePackaging": [
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                    "MinimumOrderQuantity": 1750,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "1",
-                        "Parameter": "Packaging",
-                        "Value": "Tape & Reel (TR)"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13365TR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 0.98122,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 0,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025024228",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                },
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "243",
-                        "Parameter": "Packaging",
-                        "Value": "Digi-Reel\u00ae"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13365DKR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.83,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 0,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025024228_DKR",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                }
-            ],
-            "DetailedDescription": "4 Position Receptacle Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-            "MinimumOrderQuantity": 1,
-            "NonStock": false,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "2",
-                "Parameter": "Packaging",
-                "Value": "Cut Tape (CT)"
-            },
-            "QuantityAvailable": 0,
-            "DigiKeyPartNumber": "SAM13365CT-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 1.83,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 0,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025024228_CT",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [
-                {
-                    "BreakQuantity": 1,
-                    "UnitPrice": 1.83,
-                    "TotalPrice": 1.83
-                },
-                {
-                    "BreakQuantity": 10,
-                    "UnitPrice": 1.59,
-                    "TotalPrice": 15.9
-                },
-                {
-                    "BreakQuantity": 100,
-                    "UnitPrice": 1.4211,
-                    "TotalPrice": 142.11
-                },
-                {
-                    "BreakQuantity": 500,
-                    "UnitPrice": 1.18422,
-                    "TotalPrice": 592.11
-                }
-            ],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "243",
-                    "Parameter": "Packaging",
-                    "Value": "Digi-Reel\u00ae"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "392960",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
-                },
-                {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "0",
-                    "Parameter": "Part Status",
-                    "Value": "Active"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D-TR/6692370",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "6 week(s)",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Active",
-            "AlternatePackaging": [
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                    "MinimumOrderQuantity": 1750,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "1",
-                        "Parameter": "Packaging",
-                        "Value": "Tape & Reel (TR)"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13365TR-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 0.98122,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 0,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025024228",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                },
-                {
-                    "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                    "MinimumOrderQuantity": 1,
-                    "NonStock": false,
-                    "Packaging": {
-                        "ParameterId": 7,
-                        "ValueId": "2",
-                        "Parameter": "Packaging",
-                        "Value": "Cut Tape (CT)"
-                    },
-                    "QuantityAvailable": 0,
-                    "DigiKeyPartNumber": "SAM13365CT-ND",
-                    "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-                    "UnitPrice": 1.83,
-                    "Manufacturer": {
-                        "ParameterId": -1,
-                        "ValueId": "612",
-                        "Parameter": "Manufacturer",
-                        "Value": "Samtec Inc."
-                    },
-                    "ManufacturerPublicQuantity": 0,
-                    "QuantityOnOrder": 0,
-                    "MaxQuantityForDistribution": 999999999,
-                    "BackOrderNotAllowed": false,
-                    "DKPlusRestriction": false,
-                    "Marketplace": false,
-                    "SupplierDirectShip": false,
-                    "PimProductName": "Article_12792102025024228_CT",
-                    "Supplier": "Samtec Inc.",
-                    "SupplierId": 612,
-                    "IsNcnr": false
-                }
-            ],
-            "DetailedDescription": "4 Position Receptacle Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets - Headers, Receptacles, Female Sockets - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-            "MinimumOrderQuantity": 1,
-            "NonStock": false,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "243",
-                "Parameter": "Packaging",
-                "Value": "Digi-Reel\u00ae"
-            },
-            "QuantityAvailable": 0,
-            "DigiKeyPartNumber": "SAM13365DKR-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 1.83,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 0,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025024228_DKR",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
-            "IsNcnr": false
-        },
-        {
-            "StandardPricing": [],
-            "RoHSStatus": "ROHS3 Compliant",
-            "LeadStatus": "Lead Status unavailable",
-            "Parameters": [
-                {
-                    "ParameterId": 7,
-                    "ValueId": "6",
-                    "Parameter": "Packaging",
-                    "Value": "Tube"
-                },
-                {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 28,
-                    "ValueId": "392960",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
-                },
-                {
-                    "ParameterId": 69,
-                    "ValueId": "409393",
-                    "Parameter": "Mounting Type",
-                    "Value": "Surface Mount"
-                },
-                {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
-                },
-                {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
-                },
-                {
-                    "ParameterId": 252,
-                    "ValueId": "242918",
-                    "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
-                },
-                {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
-                },
-                {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
-                },
-                {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
-                },
-                {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
-                },
-                {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
-                },
-                {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
-                },
-                {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "2",
-                    "Parameter": "Part Status",
-                    "Value": "Discontinued at Digi-Key"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
-                }
-            ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D/1109147",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
-            "PrimaryVideo": "",
-            "Series": {
-                "ParameterId": -5,
-                "ValueId": "3923",
-                "Parameter": "Series",
-                "Value": "CLT"
-            },
-            "ManufacturerLeadWeeks": "No lead time information available",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Discontinued at Digi-Key",
-            "AlternatePackaging": [],
-            "DetailedDescription": "4 Position Receptacle Connector 0.079\" (2.00mm) Surface Mount Gold",
-            "ReachStatus": "Reach unaffected",
-            "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
-            "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
-            "Family": {
-                "ParameterId": -2,
-                "ValueId": "315",
-                "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets"
-            },
-            "Category": {
-                "ParameterId": -3,
-                "ValueId": "20",
-                "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
-            },
-            "ManufacturerPartNumber": "CLT-102-02-G-D",
-            "MinimumOrderQuantity": 0,
-            "NonStock": true,
-            "Packaging": {
-                "ParameterId": 7,
-                "ValueId": "6",
-                "Parameter": "Packaging",
-                "Value": "Tube"
-            },
-            "QuantityAvailable": 0,
-            "DigiKeyPartNumber": "SAM1165-02-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 0.0,
-            "Manufacturer": {
-                "ParameterId": -1,
-                "ValueId": "612",
-                "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
-            },
-            "ManufacturerPublicQuantity": 2923,
-            "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
-            "BackOrderNotAllowed": false,
-            "DKPlusRestriction": false,
-            "Marketplace": false,
-            "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025201835",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
+            "PimProductName": "Article_7918790446794025",
+            "Supplier": "Vicor Corporation",
+            "SupplierId": 1102,
             "IsNcnr": false
         }
     ],
-    "ProductsCount": 4,
+    "ProductsCount": 1,
     "ExactManufacturerProductsCount": 1,
     "ExactManufacturerProducts": [
         {
-            "StandardPricing": [],
+            "StandardPricing": [
+                {
+                    "BreakQuantity": 1,
+                    "UnitPrice": 18.58,
+                    "TotalPrice": 18.58
+                },
+                {
+                    "BreakQuantity": 25,
+                    "UnitPrice": 13.47,
+                    "TotalPrice": 336.75
+                },
+                {
+                    "BreakQuantity": 100,
+                    "UnitPrice": 13.1875,
+                    "TotalPrice": 1318.75
+                }
+            ],
             "RoHSStatus": "ROHS3 Compliant",
             "LeadStatus": "Lead Status unavailable",
             "Parameters": [
                 {
                     "ParameterId": 7,
-                    "ValueId": "6",
+                    "ValueId": "17",
                     "Parameter": "Packaging",
-                    "Value": "Tube"
+                    "Value": "Tray"
                 },
                 {
-                    "ParameterId": 5,
-                    "ValueId": "1",
-                    "Parameter": "Features",
-                    "Value": "-"
+                    "ParameterId": 16,
+                    "ValueId": "85049",
+                    "Parameter": "Package / Case",
+                    "Value": "123-BLGA Module"
                 },
                 {
-                    "ParameterId": 28,
-                    "ValueId": "392960",
-                    "Parameter": "Connector Type",
-                    "Value": "Receptacle"
-                },
-                {
-                    "ParameterId": 63,
-                    "ValueId": "1",
-                    "Parameter": "Voltage Rating",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 66,
-                    "ValueId": "205357",
-                    "Parameter": "Current Rating (Amps)",
-                    "Value": "4.1A per Contact"
+                    "ParameterId": 41,
+                    "ValueId": "310373",
+                    "Parameter": "Output Type",
+                    "Value": "Adjustable (Fixed)"
                 },
                 {
                     "ParameterId": 69,
@@ -2728,187 +278,145 @@
                     "Value": "Surface Mount"
                 },
                 {
-                    "ParameterId": 88,
-                    "ValueId": "203167",
-                    "Parameter": "Number of Positions",
-                    "Value": "4"
+                    "ParameterId": 87,
+                    "ValueId": "39665",
+                    "Parameter": "Number of Outputs",
+                    "Value": "1"
                 },
                 {
-                    "ParameterId": 91,
-                    "ValueId": "321611",
-                    "Parameter": "Style",
-                    "Value": "Board to Board"
+                    "ParameterId": 110,
+                    "ValueId": "408308",
+                    "Parameter": "Function",
+                    "Value": "Step-Down"
+                },
+                {
+                    "ParameterId": 129,
+                    "ValueId": "293724",
+                    "Parameter": "Current - Output",
+                    "Value": "8A"
                 },
                 {
                     "ParameterId": 252,
-                    "ValueId": "242918",
+                    "ValueId": "212481",
                     "Parameter": "Operating Temperature",
-                    "Value": "-55\u00b0C ~ 125\u00b0C"
+                    "Value": "-40\u00b0C ~ 125\u00b0C (TJ)"
                 },
                 {
-                    "ParameterId": 512,
-                    "ValueId": "346565",
-                    "Parameter": "Contact Type",
-                    "Value": "Female Socket"
+                    "ParameterId": 255,
+                    "ValueId": "389019",
+                    "Parameter": "Output Configuration",
+                    "Value": "Positive"
                 },
                 {
-                    "ParameterId": 518,
-                    "ValueId": "390971",
-                    "Parameter": "Fastening Type",
-                    "Value": "Push-Pull"
+                    "ParameterId": 384,
+                    "ValueId": "52943",
+                    "Parameter": "Frequency - Switching",
+                    "Value": "1.4MHz"
                 },
                 {
-                    "ParameterId": 564,
-                    "ValueId": "312745",
-                    "Parameter": "Number of Positions Loaded",
-                    "Value": "All"
+                    "ParameterId": 573,
+                    "ValueId": "197370",
+                    "Parameter": "Voltage - Input (Max)",
+                    "Value": "36V"
                 },
                 {
-                    "ParameterId": 589,
-                    "ValueId": "405002",
-                    "Parameter": "Termination",
-                    "Value": "Solder"
+                    "ParameterId": 1098,
+                    "ValueId": "323617",
+                    "Parameter": "Topology",
+                    "Value": "Buck"
                 },
                 {
-                    "ParameterId": 697,
-                    "ValueId": "1",
-                    "Parameter": "Ingress Protection",
-                    "Value": "-"
+                    "ParameterId": 1291,
+                    "ValueId": "85057",
+                    "Parameter": "Supplier Device Package",
+                    "Value": "123-LGA (14x10)"
                 },
                 {
-                    "ParameterId": 903,
-                    "ValueId": "417627",
-                    "Parameter": "Material Flammability Rating",
-                    "Value": "UL94 V-0"
+                    "ParameterId": 1320,
+                    "ValueId": "423329",
+                    "Parameter": "Synchronous Rectifier",
+                    "Value": "Yes"
                 },
                 {
-                    "ParameterId": 1263,
-                    "ValueId": "1",
-                    "Parameter": "Mated Stacking Heights",
-                    "Value": "-"
+                    "ParameterId": 1429,
+                    "ValueId": "92529",
+                    "Parameter": "Voltage - Output (Max)",
+                    "Value": "13V"
                 },
                 {
-                    "ParameterId": 1693,
-                    "ValueId": "319929",
-                    "Parameter": "Insulation Color",
-                    "Value": "Black"
+                    "ParameterId": 1471,
+                    "ValueId": "295157",
+                    "Parameter": "Voltage - Input (Min)",
+                    "Value": "8V"
                 },
                 {
-                    "ParameterId": 1790,
-                    "ValueId": "8489",
-                    "Parameter": "Pitch - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 1791,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Mating",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1792,
-                    "ValueId": "64614",
-                    "Parameter": "Contact Finish Thickness - Mating",
-                    "Value": "10.0\u00b5in (0.25\u00b5m)"
-                },
-                {
-                    "ParameterId": 1795,
-                    "ValueId": "350796",
-                    "Parameter": "Contact Finish - Post",
-                    "Value": "Gold"
-                },
-                {
-                    "ParameterId": 1989,
-                    "ValueId": "2",
-                    "Parameter": "Part Status",
-                    "Value": "Discontinued at Digi-Key"
-                },
-                {
-                    "ParameterId": 2012,
-                    "ValueId": "1",
-                    "Parameter": "Contact Length - Post",
-                    "Value": "-"
-                },
-                {
-                    "ParameterId": 2018,
-                    "ValueId": "8806",
-                    "Parameter": "Insulation Height",
-                    "Value": "0.083\" (2.10mm)"
-                },
-                {
-                    "ParameterId": 2024,
-                    "ValueId": "8489",
-                    "Parameter": "Row Spacing - Mating",
-                    "Value": "0.079\" (2.00mm)"
-                },
-                {
-                    "ParameterId": 2172,
-                    "ValueId": "2",
-                    "Parameter": "Number of Rows",
-                    "Value": "2"
+                    "ParameterId": 1779,
+                    "ValueId": "444433",
+                    "Parameter": "Voltage - Output (Min/Fixed)",
+                    "Value": "6.5V (12V)"
                 }
             ],
-            "ProductUrl": "https://www.digikey.com/en/products/detail/samtec-inc/CLT-102-02-G-D/1109147",
-            "PrimaryDatasheet": "https://suddendocs.samtec.com/catalog_english/clt.pdf",
-            "PrimaryPhoto": "https://media.digikey.com/Renders/Samtec%20Renders/CLT-102-02-(G,H)-D-(A).jpg",
+            "ProductUrl": "https://www.digikey.com/en/products/detail/vicor-corporation/PI3303-00-LGIZ/3466960",
+            "PrimaryDatasheet": "https://www.vicorpower.com/documents/datasheets/ds_pi33xx.pdf",
+            "PrimaryPhoto": "https://media.digikey.com/Photos/Vicor%20Corporation/MFG_PI33xxLGAseries.jpg",
             "PrimaryVideo": "",
             "Series": {
                 "ParameterId": -5,
-                "ValueId": "3923",
+                "ValueId": "818",
                 "Parameter": "Series",
-                "Value": "CLT"
+                "Value": "-"
             },
-            "ManufacturerLeadWeeks": "No lead time information available",
-            "ManufacturerPageUrl": "https://www.digikey.com/en/supplier-centers/samtec",
-            "ProductStatus": "Discontinued at Digi-Key",
+            "ManufacturerLeadWeeks": "26 week(s)",
+            "ManufacturerPageUrl": "https://www.digikey.com",
+            "ProductStatus": "Unknown",
             "AlternatePackaging": [],
-            "DetailedDescription": "4 Position Receptacle Connector 0.079\" (2.00mm) Surface Mount Gold",
+            "DetailedDescription": "Buck Switching Regulator IC Positive Adjustable (Fixed) 6.5V (12V) 1 Output 8A 123-BLGA Module",
             "ReachStatus": "Reach unaffected",
             "ExportControlClassNumber": "EAR99",
-            "HTSUSCode": "8536.69.4040",
+            "HTSUSCode": "8542.39.0001",
             "TariffDescription": "",
-            "MoistureSensitivityLevel": "1  (Unlimited)",
+            "MoistureSensitivityLevel": "3  (168 Hours)",
             "Family": {
                 "ParameterId": -2,
-                "ValueId": "315",
+                "ValueId": "739",
                 "Parameter": "Family",
-                "Value": "Rectangular Connectors - Headers, Receptacles, Female Sockets"
+                "Value": "Power Management (PMIC) - Voltage Regulators - DC DC Switching Regulators"
             },
             "Category": {
                 "ParameterId": -3,
-                "ValueId": "20",
+                "ValueId": "32",
                 "Parameter": "Category",
-                "Value": "Connectors, Interconnects"
+                "Value": "Integrated Circuits (ICs)"
             },
-            "ManufacturerPartNumber": "CLT-102-02-G-D",
-            "MinimumOrderQuantity": 0,
-            "NonStock": true,
+            "ManufacturerPartNumber": "PI3303-00-LGIZ",
+            "MinimumOrderQuantity": 1,
+            "NonStock": false,
             "Packaging": {
                 "ParameterId": 7,
-                "ValueId": "6",
+                "ValueId": "17",
                 "Parameter": "Packaging",
-                "Value": "Tube"
+                "Value": "Tray"
             },
-            "QuantityAvailable": 0,
-            "DigiKeyPartNumber": "SAM1165-02-ND",
-            "ProductDescription": "CONN RCPT 4POS 0.079 GOLD SMD",
-            "UnitPrice": 0.0,
+            "QuantityAvailable": 6365,
+            "DigiKeyPartNumber": "1102-1501-ND",
+            "ProductDescription": "DC DC CONVERTER 12V",
+            "UnitPrice": 18.58,
             "Manufacturer": {
                 "ParameterId": -1,
-                "ValueId": "612",
+                "ValueId": "1102",
                 "Parameter": "Manufacturer",
-                "Value": "Samtec Inc."
+                "Value": "Vicor Corporation"
             },
-            "ManufacturerPublicQuantity": 2923,
+            "ManufacturerPublicQuantity": 0,
             "QuantityOnOrder": 0,
-            "MaxQuantityForDistribution": 999999999,
+            "MaxQuantityForDistribution": 0,
             "BackOrderNotAllowed": false,
             "DKPlusRestriction": false,
             "Marketplace": false,
             "SupplierDirectShip": false,
-            "PimProductName": "Article_12792102025201835",
-            "Supplier": "Samtec Inc.",
-            "SupplierId": 612,
+            "PimProductName": "Article_7918790446794025",
+            "Supplier": "Vicor Corporation",
+            "SupplierId": 1102,
             "IsNcnr": false
         }
     ],
@@ -2917,6 +425,6 @@
         "Site": "US",
         "Language": "en",
         "Currency": "USD",
-        "ShipToCountry": "Obsolete"
+        "ShipToCountry": ""
     }
 }

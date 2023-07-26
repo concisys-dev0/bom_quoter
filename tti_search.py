@@ -9,18 +9,20 @@ urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
 
-apiKey = "7328553502494f9c83c51c3188acf585" #Subscription key
+"""API operations related to search product information"""
+apiKey = "7328553502494f9c83c51c3188acf585" # Subscription key
 
-def write_tti_keyword_json(keyword_file):
-    access_file = 'tti_keyword_info.json'
-    with open(access_file, 'w') as file:
-        json.dump(keyword_file, file, indent=4)
+# def write_tti_keyword_json(keyword_file):
+#     access_file = 'tti_keyword_info.json'
+#     with open(access_file, 'w') as file:
+#         json.dump(keyword_file, file, indent=4)
         
 # def write_tti_manufacturer_list_json(manufacturer_file):
 #     access_file = 'tti_manufacturer_info.json'
 #     with open(access_file, 'w') as file:
 #         json.dump(manufacturer_file, file, indent=4)
-        
+
+# Search for parts by keyword including part number, manufacturer, or category to see a list of parts matching the term
 def tti_SearchByKeyword(keyword):
     params = {'searchTerms' : keyword, 
               'customerAccountNumber' : 'CAC057', 
@@ -32,8 +34,9 @@ def tti_SearchByKeyword(keyword):
               }
     url = "https://api.tti.com/service/api/v1/search/keyword?searchTerms="
     response = requests.get(url, params=params, headers=headers)
-    if response.status_code != 200:
+    if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
+        # print error message
         if 'Details' in r:
             print(response.status_code)
             s = r['Details']
@@ -49,18 +52,19 @@ def tti_SearchByKeyword(keyword):
         # raise Exception(s)
         
     keyword_file = response.json()
-    keyword_info = write_tti_keyword_json(keyword_file)
-    # print(response.status_code)
+    # keyword_info = write_tti_keyword_json(keyword_file) # save response info
     return keyword_file
 
+# Retrieve a list of manufacturer names and manufacturer codes
 def tti_manufacturer_list():
     headers = {'accept' : 'application/json', 
                'apiKey' : apiKey
               }
     url = "https://api.tti.com/service/api/v1/search/manufacturers"
     response = requests.get(url, headers=headers)
-    if response.status_code != 200:
+    if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
+        # print error message
         if 'Details' in r:
             print(response.status_code)
             s = r['Details']
@@ -76,8 +80,7 @@ def tti_manufacturer_list():
         # raise Exception(s)
         
     manufacturer_file = response.json()
-    # manufacturer_info = write_tti_manufacturer_list_json(manufacturer_file)
-    # print(response.status_code)
+    # manufacturer_info = write_tti_manufacturer_list_json(manufacturer_file) # save response info
     return manufacturer_file
 
 """TEST CASE"""

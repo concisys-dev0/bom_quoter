@@ -1,447 +1,82 @@
 {
     "Errors": [],
     "SearchResults": {
-        "NumberOfResult": 4,
+        "NumberOfResult": 1,
         "Parts": [
             {
-                "Availability": "26 In Stock",
-                "DataSheetUrl": "https://www.mouser.com/datasheet/2/527/clt-2854224.pdf",
-                "Description": "Board to Board & Mezzanine Connectors Low Profile Dual-Wipe Socket, 2.00 mm Pitch",
+                "Availability": "2511 In Stock",
+                "DataSheetUrl": "https://www.mouser.com/datasheet/2/685/ds_pi33xx-3044990.pdf",
+                "Description": "Switching Voltage Regulators 36Vin to 12Vout/8A REG",
                 "FactoryStock": "0",
-                "ImagePath": "https://www.mouser.com/images/samtec/images/clt-102-01-f-d_SPL.jpg",
-                "Category": "Board to Board & Mezzanine Connectors",
-                "LeadTime": "15 Days",
+                "ImagePath": "https://www.mouser.com/images/vicor/images/pi3301-00-lgiz_SPL.jpg",
+                "Category": "Switching Voltage Regulators",
+                "LeadTime": "205 Days",
                 "LifecycleStatus": null,
-                "Manufacturer": "Samtec",
-                "ManufacturerPartNumber": "CLT-102-02-G-D",
+                "Manufacturer": "Vicor",
+                "ManufacturerPartNumber": "PI3303-00-LGIZ",
                 "Min": "1",
                 "Mult": "1",
-                "MouserPartNumber": "200-CLT10202GD",
+                "MouserPartNumber": "492-PI3303-00-LGIZ",
                 "ProductAttributes": [
                     {
+                        "AttributeName": "Packaging",
+                        "AttributeValue": "Tray"
+                    },
+                    {
                         "AttributeName": "Standard Pack Qty",
-                        "AttributeValue": "83"
+                        "AttributeValue": "136"
                     }
                 ],
                 "PriceBreaks": [
                     {
                         "Quantity": 1,
-                        "Price": "$2.43",
+                        "Price": "$18.58",
                         "Currency": "USD"
                     },
                     {
-                        "Quantity": 10,
-                        "Price": "$2.21",
+                        "Quantity": 25,
+                        "Price": "$13.47",
                         "Currency": "USD"
                     },
                     {
-                        "Quantity": 83,
-                        "Price": "$1.88",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 581,
-                        "Price": "$1.57",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 1079,
-                        "Price": "$1.34",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 2573,
-                        "Price": "$1.24",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 5063,
-                        "Price": "$1.19",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 10043,
-                        "Price": "$1.16",
+                        "Quantity": 100,
+                        "Price": "$12.66",
                         "Currency": "USD"
                     }
                 ],
                 "AlternatePackagings": null,
-                "ProductDetailUrl": "https://www.mouser.com/ProductDetail/Samtec/CLT-102-02-G-D?qs=Sk19l0%2FxcWkQXT%2FAUgfVIg%3D%3D",
+                "ProductDetailUrl": "https://www.mouser.com/ProductDetail/Vicor/PI3303-00-LGIZ?qs=PhR8RmCirEZs%2F2rSFWSUQA%3D%3D",
                 "Reeling": false,
                 "ROHSStatus": "RoHS Compliant",
                 "SuggestedReplacement": "",
                 "MultiSimBlue": 0,
-                "AvailabilityInStock": "26",
+                "AvailabilityInStock": "2511",
                 "AvailabilityOnOrder": [],
                 "InfoMessages": [],
                 "ProductCompliance": [
                     {
                         "ComplianceName": "USHTS",
-                        "ComplianceValue": "8536694040"
+                        "ComplianceValue": "8542390001"
                     },
                     {
                         "ComplianceName": "CNHTS",
-                        "ComplianceValue": "8538900000"
+                        "ComplianceValue": "8542399000"
                     },
                     {
                         "ComplianceName": "CAHTS",
-                        "ComplianceValue": "8536690020"
-                    },
-                    {
-                        "ComplianceName": "JPHTS",
-                        "ComplianceValue": "853669000"
+                        "ComplianceValue": "8542310000"
                     },
                     {
                         "ComplianceName": "KRHTS",
-                        "ComplianceValue": "8536691000"
+                        "ComplianceValue": "8542311000"
                     },
                     {
                         "ComplianceName": "TARIC",
-                        "ComplianceValue": "8536693000"
+                        "ComplianceValue": "8542319000"
                     },
                     {
                         "ComplianceName": "MXHTS",
-                        "ComplianceValue": "8536699999"
-                    },
-                    {
-                        "ComplianceName": "BRHTS",
-                        "ComplianceValue": "85366990"
-                    },
-                    {
-                        "ComplianceName": "ECCN",
-                        "ComplianceValue": "EAR99"
-                    }
-                ]
-            },
-            {
-                "Availability": "1488 In Stock",
-                "DataSheetUrl": "https://www.mouser.com/datasheet/2/527/clt-2854224.pdf",
-                "Description": "Board to Board & Mezzanine Connectors Low Profile Dual-Wipe Socket, 2.00 mm Pitch",
-                "FactoryStock": "0",
-                "ImagePath": "https://www.mouser.com/images/samtec/images/clt-102-01-f-d_SPL.jpg",
-                "Category": "Board to Board & Mezzanine Connectors",
-                "LeadTime": "90 Days",
-                "LifecycleStatus": null,
-                "Manufacturer": "Samtec",
-                "ManufacturerPartNumber": "CLT-102-02-G-D-BE-TR",
-                "Min": "1",
-                "Mult": "1",
-                "MouserPartNumber": "200-CLT10202GDBETR",
-                "ProductAttributes": [
-                    {
-                        "AttributeName": "Packaging",
-                        "AttributeValue": "Reel"
-                    },
-                    {
-                        "AttributeName": "Packaging",
-                        "AttributeValue": "Cut Tape"
-                    },
-                    {
-                        "AttributeName": "Standard Pack Qty",
-                        "AttributeValue": "1750"
-                    }
-                ],
-                "PriceBreaks": [
-                    {
-                        "Quantity": 1,
-                        "Price": "$1.99",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 10,
-                        "Price": "$1.74",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 100,
-                        "Price": "$1.55",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 500,
-                        "Price": "$1.41",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 1000,
-                        "Price": "$1.32",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 1750,
-                        "Price": "$1.06",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 3500,
-                        "Price": "$0.98",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 8750,
-                        "Price": "$0.958",
-                        "Currency": "USD"
-                    }
-                ],
-                "AlternatePackagings": null,
-                "ProductDetailUrl": "https://www.mouser.com/ProductDetail/Samtec/CLT-102-02-G-D-BE-TR?qs=0lQeLiL1qyZ3CtslW9vCjw%3D%3D",
-                "Reeling": true,
-                "ROHSStatus": "RoHS Compliant",
-                "SuggestedReplacement": "",
-                "MultiSimBlue": 0,
-                "AvailabilityInStock": "1488",
-                "AvailabilityOnOrder": [],
-                "InfoMessages": [],
-                "ProductCompliance": [
-                    {
-                        "ComplianceName": "USHTS",
-                        "ComplianceValue": "8536694040"
-                    },
-                    {
-                        "ComplianceName": "CNHTS",
-                        "ComplianceValue": "8538900000"
-                    },
-                    {
-                        "ComplianceName": "CAHTS",
-                        "ComplianceValue": "8536690020"
-                    },
-                    {
-                        "ComplianceName": "JPHTS",
-                        "ComplianceValue": "853669000"
-                    },
-                    {
-                        "ComplianceName": "KRHTS",
-                        "ComplianceValue": "8536691000"
-                    },
-                    {
-                        "ComplianceName": "TARIC",
-                        "ComplianceValue": "8536693000"
-                    },
-                    {
-                        "ComplianceName": "MXHTS",
-                        "ComplianceValue": "8536699999"
-                    },
-                    {
-                        "ComplianceName": "BRHTS",
-                        "ComplianceValue": "85366990"
-                    },
-                    {
-                        "ComplianceName": "ECCN",
-                        "ComplianceValue": "EAR99"
-                    }
-                ]
-            },
-            {
-                "Availability": "1741 In Stock",
-                "DataSheetUrl": "https://www.mouser.com/datasheet/2/527/clt-2854224.pdf",
-                "Description": "Board to Board & Mezzanine Connectors Low Profile Dual-Wipe Socket, 2.00 mm Pitch",
-                "FactoryStock": "0",
-                "ImagePath": "https://www.mouser.com/images/samtec/images/clt-102-01-f-d_SPL.jpg",
-                "Category": "Board to Board & Mezzanine Connectors",
-                "LeadTime": "15 Days",
-                "LifecycleStatus": null,
-                "Manufacturer": "Samtec",
-                "ManufacturerPartNumber": "CLT-102-02-G-D-TR",
-                "Min": "1",
-                "Mult": "1",
-                "MouserPartNumber": "200-CLT10202GDTR",
-                "ProductAttributes": [
-                    {
-                        "AttributeName": "Packaging",
-                        "AttributeValue": "Reel"
-                    },
-                    {
-                        "AttributeName": "Packaging",
-                        "AttributeValue": "Cut Tape"
-                    },
-                    {
-                        "AttributeName": "Standard Pack Qty",
-                        "AttributeValue": "1750"
-                    }
-                ],
-                "PriceBreaks": [
-                    {
-                        "Quantity": 1,
-                        "Price": "$2.10",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 100,
-                        "Price": "$1.52",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 500,
-                        "Price": "$1.29",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 1000,
-                        "Price": "$1.08",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 1750,
-                        "Price": "$0.998",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 3500,
-                        "Price": "$0.957",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 8750,
-                        "Price": "$0.935",
-                        "Currency": "USD"
-                    }
-                ],
-                "AlternatePackagings": null,
-                "ProductDetailUrl": "https://www.mouser.com/ProductDetail/Samtec/CLT-102-02-G-D-TR?qs=0lQeLiL1qyZkLXVCo3F0YA%3D%3D",
-                "Reeling": true,
-                "ROHSStatus": "RoHS Compliant",
-                "SuggestedReplacement": "",
-                "MultiSimBlue": 0,
-                "AvailabilityInStock": "1741",
-                "AvailabilityOnOrder": [],
-                "InfoMessages": [],
-                "ProductCompliance": [
-                    {
-                        "ComplianceName": "USHTS",
-                        "ComplianceValue": "8536694040"
-                    },
-                    {
-                        "ComplianceName": "CNHTS",
-                        "ComplianceValue": "8538900000"
-                    },
-                    {
-                        "ComplianceName": "CAHTS",
-                        "ComplianceValue": "8536690020"
-                    },
-                    {
-                        "ComplianceName": "JPHTS",
-                        "ComplianceValue": "853669000"
-                    },
-                    {
-                        "ComplianceName": "KRHTS",
-                        "ComplianceValue": "8536691000"
-                    },
-                    {
-                        "ComplianceName": "TARIC",
-                        "ComplianceValue": "8536693000"
-                    },
-                    {
-                        "ComplianceName": "MXHTS",
-                        "ComplianceValue": "8536699999"
-                    },
-                    {
-                        "ComplianceName": "BRHTS",
-                        "ComplianceValue": "85366990"
-                    },
-                    {
-                        "ComplianceName": "ECCN",
-                        "ComplianceValue": "EAR99"
-                    }
-                ]
-            },
-            {
-                "Availability": "121 In Stock",
-                "DataSheetUrl": "https://www.mouser.com/datasheet/2/527/clt-2854224.pdf",
-                "Description": "Board to Board & Mezzanine Connectors Low Profile Dual-Wipe Socket, 2.00 mm Pitch",
-                "FactoryStock": "0",
-                "ImagePath": "https://www.mouser.com/images/samtec/images/clt-102-01-f-d_SPL.jpg",
-                "Category": "Board to Board & Mezzanine Connectors",
-                "LeadTime": "13 Days",
-                "LifecycleStatus": null,
-                "Manufacturer": "Samtec",
-                "ManufacturerPartNumber": "CLT-102-02-G-D-BE",
-                "Min": "1",
-                "Mult": "1",
-                "MouserPartNumber": "200-CLT10202GDBE",
-                "ProductAttributes": [
-                    {
-                        "AttributeName": "Standard Pack Qty",
-                        "AttributeValue": "1"
-                    }
-                ],
-                "PriceBreaks": [
-                    {
-                        "Quantity": 1,
-                        "Price": "$2.67",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 10,
-                        "Price": "$2.42",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 100,
-                        "Price": "$2.07",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 500,
-                        "Price": "$1.73",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 1000,
-                        "Price": "$1.48",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 2500,
-                        "Price": "$1.37",
-                        "Currency": "USD"
-                    },
-                    {
-                        "Quantity": 5000,
-                        "Price": "$1.31",
-                        "Currency": "USD"
-                    }
-                ],
-                "AlternatePackagings": null,
-                "ProductDetailUrl": "https://www.mouser.com/ProductDetail/Samtec/CLT-102-02-G-D-BE?qs=0lQeLiL1qybQgZrY5kL61w%3D%3D",
-                "Reeling": false,
-                "ROHSStatus": "RoHS Compliant",
-                "SuggestedReplacement": "",
-                "MultiSimBlue": 0,
-                "AvailabilityInStock": "121",
-                "AvailabilityOnOrder": [],
-                "InfoMessages": [],
-                "ProductCompliance": [
-                    {
-                        "ComplianceName": "USHTS",
-                        "ComplianceValue": "8536694040"
-                    },
-                    {
-                        "ComplianceName": "CNHTS",
-                        "ComplianceValue": "8538900000"
-                    },
-                    {
-                        "ComplianceName": "CAHTS",
-                        "ComplianceValue": "8536690020"
-                    },
-                    {
-                        "ComplianceName": "JPHTS",
-                        "ComplianceValue": "853669000"
-                    },
-                    {
-                        "ComplianceName": "KRHTS",
-                        "ComplianceValue": "8536691000"
-                    },
-                    {
-                        "ComplianceName": "TARIC",
-                        "ComplianceValue": "8536693000"
-                    },
-                    {
-                        "ComplianceName": "MXHTS",
-                        "ComplianceValue": "8536699999"
-                    },
-                    {
-                        "ComplianceName": "BRHTS",
-                        "ComplianceValue": "85366990"
+                        "ComplianceValue": "8542310302"
                     },
                     {
                         "ComplianceName": "ECCN",

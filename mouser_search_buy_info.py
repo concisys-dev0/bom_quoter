@@ -1,87 +1,83 @@
-from mouser_search_v1 import*
-from mouser_search_v2 import*
+from bom_quoter.mouser_search_v1 import*
+from bom_quoter.mouser_search_v2 import*
+import sys
 
 import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
 
-import sys
+""""Functions to gather information from the API operation response"""
+# TR3D476K025D0100, TPSE476M025R0100, RT8096AHGE, QRM8-026-07.0-L-D-A, 533980871, C0603C120J3GAC7867, MCP1501T-20E/CHY, GRM155R71H473KE14D, 06035C104K4T2A
+# str(input("Please Enter Manufacture Part No.: "))
+# int(input("Please Enter Qty Need: "))
 
 # part_id = "06035C104K4T2A" 
-# str(input("Please Enter Manufacture Part No.: "))
 # qty_buy = 350
-# int(input("Please Enter Qty Need: "))
 # part_json = mouser_SearchByPart(part_id)
 
+# Funtion return URL link to product
 def get_url(part_json):
-    if part_json['SearchResults']['NumberOfResult']!=0:
+    if part_json['SearchResults']['NumberOfResult']!=0: # Supplier carried product
         url = part_json['SearchResults']['Parts'][0]['ProductDetailUrl']
-        # print(" ".join (["Product Url:", str(url)]))
         return url
-    elif part_json['SearchResults']['NumberOfResult'] == "null":
+    elif part_json['SearchResults']['NumberOfResult'] == "null": # No product exists
         return None
 
+# Funtion return lead time of product
 def get_leadtime(part_json):
-    if part_json['SearchResults']['NumberOfResult']!=0:
+    if part_json['SearchResults']['NumberOfResult']!=0: # Supplier carried product
         leadtime = part_json['SearchResults']['Parts'][0]['LeadTime']
-        # print(" ".join (["Lead time:", str(leadtime)]))
         return leadtime
-    elif part_json['SearchResults']['NumberOfResult'] == "null":
+    elif part_json['SearchResults']['NumberOfResult'] == "null": # No product exists
         return None
 
+# Funtion return amount of product in stock
 def get_QOH(part_json):
-    if part_json['SearchResults']['NumberOfResult']!=0:
+    if part_json['SearchResults']['NumberOfResult']!=0: # Supplier carried product
         QOH = part_json['SearchResults']['Parts'][0]['AvailabilityInStock']
         if QOH == "0":
-            if part_json['SearchResults']['Parts'][0]['Availability'] == "None":
+            if part_json['SearchResults']['Parts'][0]['Availability'] == "None": # Not in stock
                 return None
-        # print(" ".join (["Quantity available:", str(QOH)]))
         return QOH
-    elif part_json['SearchResults']['NumberOfResult'] == "null":
+    elif part_json['SearchResults']['NumberOfResult'] == "null": # No product exists
         return None
 
+# Function return procduct pricing
 def mouser_get_price(part_json, qty_buy):
-    if part_json['SearchResults']['NumberOfResult']!=0:
-        match = part_json['SearchResults']['Parts'][0]
+    if part_json['SearchResults']['NumberOfResult']!=0: # Supplier carried product
+        match = part_json['SearchResults']['Parts'][0] #first match product
         minimumOrder = match['PriceBreaks'][0]['Quantity'] # match['Min']
-        # print(minimumOrder)
         # unitPrice = match['UnitPrice']
         counter = 0
         counter_n = 1
-        max_qty = match['PriceBreaks'][-1]
+        max_qty = match['PriceBreaks'][-1] # last element of pricing break
         for counter in match['PriceBreaks']:
-            if len(match['PriceBreaks']) <= 1:
+            if len(match['PriceBreaks']) <= 1: # Only 1 price
                 counter_n = 0
             elif len(match['PriceBreaks']) <= counter_n:
-                counter_n = len(match['PriceBreaks'])
-            value_n = match['PriceBreaks'][counter_n]['Quantity']
-            if qty_buy < minimumOrder:
+                counter_n = len(match['PriceBreaks']) - 1 # index of last price
+            value_n = match['PriceBreaks'][counter_n]['Quantity'] # Value of next quantity to compare with qty_buy
+            if qty_buy < minimumOrder: # price of smallest amount can buy
                 counter = 0
                 unit_price = match['PriceBreaks'][counter]['Price']
                 i_unit_price = float(match['PriceBreaks'][counter]['Price'].replace("$", ""))
                 tt_price = i_unit_price*qty_buy
-                # print(" ".join (["Break Quantity:", str(counter['Quantity']),"; Unit price:", str(unit_price)]))
-                # print(" ".join (["Quantity buy:", str(qty_buy),"; Unit price:", str(unit_price), "; Total price:", str(tt_price)]))
                 return float(qty_buy), float(i_unit_price), float(tt_price)
             elif qty_buy >= counter['Quantity'] and qty_buy < value_n:
                 unit_price = counter['Price']
                 i_unit_price = float(counter['Price'].replace("$", ""))
                 tt_price = i_unit_price*qty_buy
-                # print(" ".join (["Break Quantity:", str(counter['Quantity']),"; Unit price:", str(unit_price)]))
-                # print(" ".join (["Quantity buy:", str(qty_buy),"; Unit price:", str(unit_price), "; Total price:", str(tt_price)]))
                 return float(qty_buy), float(i_unit_price), float(tt_price)
             else:
-                if qty_buy >= max_qty['Quantity']:
+                if qty_buy >= max_qty['Quantity']: # price of max amount can buy
                     unit_price = max_qty['Price']
                     i_unit_price = float(max_qty['Price'].replace("$", ""))
                     tt_price = i_unit_price*qty_buy
-                    # print(" ".join (["Break Quantity:", str(max_qty['Quantity']),"; Unit price:", str(unit_price)]))
-                    # print(" ".join (["Quantity buy:", str(qty_buy),"; Unit price:", str(unit_price), "; Total price:", str(tt_price)]))
                     return float(qty_buy), float(i_unit_price), float(tt_price)
                 counter_n += 1
                 continue
-    elif part_json['SearchResults']['NumberOfResult'] == "null":
+    elif part_json['SearchResults']['NumberOfResult'] == "null": # No product exists
         i_unit_price = None
         tt_price = None
         return qty_buy, i_unit_price, tt_price
@@ -121,5 +117,3 @@ def mouser_get_price(part_json, qty_buy):
 #         print("Please choose another supplier, the part and its substitute are not available")
 #         sys.exit()
 #     sys.exit()
-
-# TR3D476K025D0100, TPSE476M025R0100, RT8096AHGE, QRM8-026-07.0-L-D-A, 533980871, C0603C120J3GAC7867, MCP1501T-20E/CHY, GRM155R71H473KE14D, 06035C104K4T2A

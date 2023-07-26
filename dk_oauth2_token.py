@@ -13,23 +13,13 @@ import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
-from dk_oauth2_login import digikey_login, write_digikey_user
-
+from bom_quoter.dk_oauth2_login import*
+# digikey_login, write_digikey_user
+"""get access token and connect to API"""
 dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
 dk_token_url = "https://api.digikey.com/v1/oauth2/token"
 
-# callback_uri = "https://localhost/" #redirect uri
-# test_api_url = "https://api.digikey.com/" #host
-# client_id = 'jhZJWxD67jf2ONa8MAzE6eQAC8UtR1bM'
-# tester1: 'B7oWwd6qhoswuTNKR5XNjVOJgavWhqG3'
-# ldo:'jhZJWxD67jf2ONa8MAzE6eQAC8UtR1bM' 
-# excess: 'v96weKvwrkhbxsufdcrABCd7tMT4wfuj'
-# client_secret = 'P832b8biNWfcNwCz'
-# tester1: '4vM0yeVKQINod3gk'
-# ldo:'P832b8biNWfcNwCz' 
-# excess: 'DBKjJZIlxgaaGBaF'
-
-# Returns the first digikey user in the json file
+# Returns the first digikey user in the json file, default to be active user of access token
 def get_digikey_user():
     try:
         with open('digikey_user.json', 'r') as file:
@@ -46,7 +36,7 @@ def get_digikey_user():
         raise e
     return user
 
-# retry authentication with other user's stored
+# Retry authentication with other user's stored, append the old active user to the end
 def retry_user(user_data, authorize_url=None, token_url=None):
     with open('digikey_user.json', 'r') as file:
         u_list = json.load(file)
@@ -79,6 +69,9 @@ def retry_user(user_data, authorize_url=None, token_url=None):
             # print(access_token_response.text) # debug
             if access_token_response.status_code == 200:
                 # first valid response is returned
+                u_list.append(user_data) # .index
+                with open('digikey_user.json', 'w') as file:
+                    json.dump(u_list, file) # add unworking user back to end of the list
                 return access_token_response
         except Exception as e:
             print(f"Failed to obtain access token for Digi-Key {n_user['name']} due to error: \n{str(e)}")
@@ -86,7 +79,8 @@ def retry_user(user_data, authorize_url=None, token_url=None):
                 # Return error message when list is finished and no valid access
                 return print(f"Failed to obtain access token for Digi-Key users due to error: " + str(e))
             continue # continue to the next user if i < len(u_list)
-        
+
+# Return the access token url to get the token response that will parse to json
 def authorize_digikey_api(auth_url, client_id, redirect_uri, username, password):
     # set up the OAuth2Session object
     oauth = OAuth2Session(client_id, redirect_uri=redirect_uri)
@@ -96,13 +90,15 @@ def authorize_digikey_api(auth_url, client_id, redirect_uri, username, password)
     # webbrowser.open(authorization_url)
     return access_token_url
 
+# Save all the token response info to digikey_token.json
 def write_digikey_token(token):
     access_file = 'digikey_token.json'
     # with open(access_file, 'r') as read_file:
     #     old_token = json.load(read_file)
     with open(access_file, 'w') as file:
         json.dump(token, file, indent=4)
-        
+
+# Get access token from user info and connect with API
 def token_digikey_api(auth_url=None, token_url=None):
     dkuser = get_digikey_user()
     if auth_url is None:
@@ -118,10 +114,10 @@ def token_digikey_api(auth_url=None, token_url=None):
     # authorization_redirect_url = authorize_digikey_api(authorize_url, client_id, callback_uri)
     # redirect_url = input("Enter the callback URL generates in the browser: ")
     access_token_url = authorize_digikey_api(auth_url, client_id, redirect_uri, username, password)
-    # print(access_token_url) # debug
+    print(access_token_url) # debug
     try:
         authorization_code = access_token_url.split('?code=')[1].split('&')[0]
-        print(authorization_code) #Debug
+        # print(authorization_code) #Debug
     except IndexError:
         raise IndexError("Authentication failed because it was unable to get a valid access code")
     print("Authorization code: " + authorization_code)
@@ -131,7 +127,7 @@ def token_digikey_api(auth_url=None, token_url=None):
             'redirect_uri': redirect_uri,
             'grant_type': 'authorization_code'}
     access_token_response = requests.post(token_url, data=data, verify=False, allow_redirects=False, auth=(client_id, client_secret))
-    #Debug print(access_token_response.headers)
+    print(access_token_response.headers) # Debug 
     print(access_token_response.text)
     #Return failed message and failed status code if response is not 200
     if access_token_response.status_code != 200:
@@ -143,6 +139,7 @@ def token_digikey_api(auth_url=None, token_url=None):
     #Debug print(tokens['access_token']) 
     return tokens['access_token']
 
+# Get new access token from refresh token when current access token expired
 def refresh_token_digikey_api(token_url=None):
     with open('digikey_token.json', 'r') as file:
         old_token = json.load(file)
@@ -166,15 +163,30 @@ def refresh_token_digikey_api(token_url=None):
         refresh = refresh_response.json()
         refresh_token = write_digikey_token(refresh)
         return print("Refresh access token:", refresh['access_token'])
-    
-def refresh_token_timer():
+
+# Run refresh_token_digikey_api every 30 min interval to automate new access token
+def refresh_token_timer(): # Infinite function, need to set up schedule for it to stop and run without error or set the host to be never sleep
     schedule.every(30).minutes.do(refresh_token_digikey_api)
     while True:
         schedule.run_pending()
         time.sleep(1)
+
+# Return access token from new active user
+def get_change_user(err_m):
+    if err_m == "Daily Ratelimit exceeded":
+        ex_user = get_digikey_user()
+        access_token_response = retry_user(ex_user)
+        tokens = access_token_response.json()
+        access_token = write_digikey_token(tokens)
+        return tokens['access_token']
+    else:
+        return None
     
 """TEST CASE"""
 # if __name__ == "__main__":
-#     token = token_digikey_api()
-#     # refresh_token_digikey_api()
-#     re_token = refresh_token_timer()
+#     start_time = time.time()
+#     token_digikey_api() #can't work with headless
+#     refresh_token_digikey_api()
+#     # re_token = refresh_token_timer()
+#     get_change_user(err_m = "Daily Ratelimit exceeded")
+#     print("--- %s seconds ---" % (time.time() - start_time))

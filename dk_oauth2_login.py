@@ -7,10 +7,12 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
 import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
+
 from requests_oauthlib import OAuth2Session
 from requests.auth import HTTPBasicAuth
 import requests
@@ -22,17 +24,20 @@ import time
 import sys
 import os
 from random import randint
+
+"""Automate change user and get access token without user interaction"""
 #global variables
-USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/111.0.0.0 Safari/537.36"
+USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" # work with odd version
+# "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 
 # Automation setup
 def driver_setup(path=None):
     chrome_options = webdriver.ChromeOptions()
-    # chrome_options.add_argument(f'user-agent={USER_AGENT}') # <- assign user-agent
+    chrome_options.add_argument(f'user-agent={USER_AGENT}') # <- assign user-agent
     chrome_options.add_argument('--ignore-certificate-errors')
     chrome_options.add_argument('--ignore-ssl-errors')
-    chrome_options.add_argument('--incognito') #incognito
-    chrome_options.add_argument('--headless') # no display
+    chrome_options.add_argument('--incognito') # incognito
+    # chrome_options.add_argument('--headless') # no display
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_argument("--disable-blink-features")
     chrome_options.add_argument("--disable-extensions")
@@ -78,7 +83,7 @@ def digikey_login(auth_url, username, password):
     pass_field.send_keys(password)
     time.sleep(1)
     submit_button.click()
-    time.sleep(2)
+    time.sleep(3)
     auth_code_url = browser.current_url
     browser.quit()
     return auth_code_url
@@ -98,7 +103,7 @@ def write_digikey_user():
         'username': username,
         'password': password,
         'client_id': client_id,
-        'client_secret': client_secret
+        'client_secret': client_secret,
     }
     user_file = 'digikey_user.json'
     # print(user_auth)
@@ -124,4 +129,3 @@ def write_digikey_user():
                     json.dump(users_data, newjson, indent=4, separators=(',',': '))
     print("New Digikey user added. You are now using the new user credentials.")
     return user_auth
-
