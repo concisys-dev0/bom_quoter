@@ -1,46 +1,40 @@
 from fc_bs4_scraping import*
 from mergeCompare_pricing import*
+from df_styling import*
+
 import pandas as pd
 import numpy as np
 import openpyxl
 import time
 import sys
 
+"""Complete result by filling mounting type, package/case, and terminals as much as possible with search and scraping"""
+# Filling mounting type, package/case, and terminals base from description
 def getInfo(output_df):
-    best_price_df = output_df
-    part_list = []
-    manufacture_list = []
+    best_price_df = output_df # df of results price comparation
+    ext_price_list = []
+    qtyBuy_list = []
     mountType_list = []
     case_list = []
     desc_list = []
-    ulr_list = []
-    supplier_list = []
     n_termination = []
     L = len(best_price_df.axes[0])
-
+    # Get list of info need
     for i in range(L):
-        part_id = str(best_price_df.iloc[i]['Manufacturer Part Number'])
-        part_list.append(part_id)
-        manufacture = str(best_price_df.iloc[i]['Manufacturer'])
-        manufacture_list.append(manufacture)
+        ext_price = best_price_df.iloc[i]['Ext']
+        ext_price_list.append(ext_price)
         mountType = str(best_price_df.iloc[i]['Mounting Type'])
         mountType_list.append(mountType)
         casing = str(best_price_df.iloc[i]['Package/Case'])
         case_list.append(casing)
         desc = str(best_price_df.iloc[i]['Description'])
         desc_list.append(desc)
-        urls = str(best_price_df.iloc[i]['URL'])
-        ulr_list.append(urls)
-        supplier = str(best_price_df.iloc[i]['Supplier'])
-        supplier_list.append(supplier)
-        n_pin = str(best_price_df.iloc[i]['Number of Termination'])
+        qty = int(best_price_df.iloc[i]['Qty Buy'])
+        qtyBuy_list.append(qty)
+        n_pin = str(best_price_df.iloc[i]['Terminations'])
         n_termination.append(n_pin)
-        
-    print(mountType_list)
-    print(case_list)
-    print(n_termination)
-
-    for i in range(L):
+    # MLCC standard is 2 terminals, JEDEC and JEITA are SMT mounting type
+    for i in range(L): # filling info of mounting type, package/case
         if ("Surface Mount" in mountType_list[i]):
             mountType_list[i] = "SMT"
         if ("SURFACE MOUNT" in mountType_list[i]):
@@ -51,7 +45,8 @@ def getInfo(output_df):
             mountType_list[i] = "TH"
         if "Mechanic" in mountType_list[i]:
             mountType_list[i] = "MEC"
-        if (mountType_list[i] != 'None' and case_list[i] != 'None') or (mountType_list[i] != 'nan' and case_list[i] != 'nan'): # or (mountType_list[i] != None and case_list[i] != None)
+        # if mounting type, package/case is filled
+        if (mountType_list[i] != 'None' and case_list[i] != 'None') or (mountType_list[i] != 'nan' and case_list[i] != 'nan') or (mountType_list[i] != None and case_list[i] != None): #
             if ("008004" in case_list[i]) or ("0201" in case_list[i]):
                 if n_termination[i] == None or n_termination[i] == 'None' or n_termination[i] == 'nan':
                     n_termination[i] = 2
@@ -197,7 +192,8 @@ def getInfo(output_df):
                     case_list[i] = None
                 if ('nan' in mountType_list[i]) or 'None' in mountType_list[i]: # 'nan'
                     mountType_list[i] = None
-        if (mountType_list[i] == 'None' and case_list[i] != 'None') or (mountType_list[i] == 'nan' and case_list[i] != 'nan'): # or (mountType_list[i] == None and case_list[i] != None)
+        # if mounting type is empty, package/case is filled
+        if (mountType_list[i] == 'None' and case_list[i] != 'None') or (mountType_list[i] == 'nan' and case_list[i] != 'nan') or (mountType_list[i] == None and case_list[i] != None): #
             if "BGA" in case_list[i]:
                 mountType_list[i] = "SMT"
             if "CGA" in case_list[i]:
@@ -388,12 +384,18 @@ def getInfo(output_df):
                 mountType_list[i] = "SMT"
                 if n_termination[i] == None or n_termination[i] == 'None' or n_termination[i] == 'nan':
                     n_termination[i] = 2
-            else:
-                if ('nan' in case_list[i]) or 'None' in case_list[i]: # 'nan'
-                    case_list[i] = None
-                if ('nan' in mountType_list[i]) or 'None' in mountType_list[i]: # 'nan'
-                    mountType_list[i] = None
-        if (mountType_list[i] == 'None' and case_list[i] == 'None') or (mountType_list[i] == 'nan' and case_list[i] == 'nan'): # or (mountType_list[i] == None and case_list[i] == None)
+            # else:
+            #     if ('nan' in case_list[i]) or 'None' in case_list[i]: # 'nan'
+            #         case_list[i] = None
+            #     if ('nan' in mountType_list[i]) or 'None' in mountType_list[i]: # 'nan'
+            #         mountType_list[i] = None
+        # if mounting type , package/case is empty
+        if (mountType_list[i] == 'None' and case_list[i] == 'None') or (mountType_list[i] == 'nan' and case_list[i] == 'nan') or (mountType_list[i] == None and case_list[i] == None): #
+            if qtyBuy_list[i] == 0: # Don't buy, DNI
+                # n_termination[i] = 0
+                ext_price_list[i] = 0
+            # if "PCB" in desc_list[i]: # PCB setup to avoid None type
+            #     mountType_list[i] = "PCB"
             if ("008004" in desc_list[i]) or ("0201" in desc_list[i]):
                 case_list[i] = "008004"
                 mountType_list[i] = "SMT"
@@ -575,44 +577,45 @@ def getInfo(output_df):
                 mountType_list[i] = "SMT"
             if "Surface Mount" in desc_list[i]:
                 mountType_list[i] = "SMT"
-            else:
-                if 'nan' in mountType_list[i] or ('None' in mountType_list[i]): # 
-                    mountType_list[i] = None
+            # else:
+            #     if 'nan' in mountType_list[i] or ('None' in mountType_list[i]): #  
+            #         mountType_list[i] = None
         # if 'nan' in case_list[i]: # 'nan' in case_list[i] or
         #     [i] = None
         # if'nan' in supplier_list[i]: # 'nan' in supplier_list[i] or 
         #     ulr_list[i] = None
 
+    best_price_df['Ext'] = ext_price_list
     best_price_df['Mounting Type'] = mountType_list
     best_price_df['Package/Case'] = case_list
-    best_price_df['Number of Termination'] = n_termination
+    best_price_df['Terminations'] = n_termination
     return best_price_df
 
+# Filling terminals from the package/case base on JEDEC and JEITA standard
 def getInfo_2(output_df):
     best_price_df = output_df
-    part_list = []
-    manufacture_list = []
+    ext_price_list = []
     mountType_list = []
     case_list = []
-    # desc_list = []
     n_termination = []
+    qtyBuy_list = []
     L = len(best_price_df.axes[0])
 
     for i in range(L):
-        part_id = str(best_price_df.iloc[i]['Manufacturer Part Number'])
-        part_list.append(part_id)
-        manufacture = str(best_price_df.iloc[i]['Manufacturer'])
-        manufacture_list.append(manufacture)
+        ext_price = best_price_df.iloc[i]['Ext']
+        ext_price_list.append(ext_price)
         mountType = str(best_price_df.iloc[i]['Mounting Type'])
         mountType_list.append(mountType)
         casing = str(best_price_df.iloc[i]['Package/Case'])
         case_list.append(casing)
-        # desc = str(best_price_df.iloc[i]['Description'])
-        # desc_list.append(desc)
-        termination = str(best_price_df.iloc[i]['Number of Termination'])
+        termination = str(best_price_df.iloc[i]['Terminations'])
         n_termination.append(termination)
-        
+        qty = int(best_price_df.iloc[i]['Qty Buy'])
+        qtyBuy_list.append(qty)
     for i in range(L):
+        if qtyBuy_list[i] == 0: # Don't buy, DNI
+            # n_termination[i] = 0
+            ext_price_list[i] = 0
         if n_termination[i] == "nan" or n_termination[i] == "None":
             if "-SMD" in case_list[i]:
                 term_n = int(re.findall("\d+", case_list[i])[-1])
@@ -620,57 +623,59 @@ def getInfo_2(output_df):
             if "PIN" in case_list[i]:
                 term_n = int(re.findall("\d+", case_list[i])[-1])
                 n_termination[i] = term_n
-            else:
+            else: # get terminals # in front of package/case
                 n_termination[i] = None
                 if case_list[i] != None:
                     term_n = re.match("\d.*.*-", case_list[i])
                     if term_n != None:
-                        print(term_n.group(0))
                         term_n = int(re.findall("\d+",case_list[i])[0])
                         n_termination[i] = term_n
-                    else:
+                    else: # get terminals from only 1 value given
                         if "," in  case_list[i]:
                             result = [x.strip() for x in  case_list[i].split(',')]
-                            # print(result)
                             for n in range(len(result)):
                                 term_n = re.match(".*-\d.*.*-\d.*", result[n])
                                 if term_n != None:
-                                    print(term_n.group(0))
                                     if len(term_n.group(0)) > 1:
                                         term_n = int(re.findall("\d+", result[n])[1])
                                         n_termination[i] = term_n
-                        else:
+                        else: # get terminals of after 2nd hypen
                             term_n = re.match(".*-\d.*.*-\d.*", case_list[i])
                             if term_n != None:
-                                print(term_n.group(0))
                                 if len(term_n.group(0)) > 1:
                                     term_n = int(re.findall("\d+", case_list[i])[1])
                                     n_termination[i] = term_n
-    
-    print(n_termination)
-    best_price_df['Number of Termination'] = n_termination
+    best_price_df['Terminations'] = n_termination
+    best_price_df['Ext'] = ext_price_list
     return best_price_df
-    
+
+# Filling the info using scraping and return the sheet
 def scrape_saved(path):
-    output_df = get_compare_results(path)
-    df = getInfo(output_df)
+    output_df = compare_options_result(path) # get_compare_results(path)
+    df_ = getInfo(output_df)
+    df = getInfo_2(df_)
     part_list = []
     manufacture_list = []
+    qty_need_list = []
     mountType_list = []
     case_list = []
+    terminals_list = []
     ulr_list = []
     L = len(df.axes[0])
-    print(L)
 
     for i in range(L):
         part_id = str(df.iloc[i]['Manufacturer Part Number'])
         part_list.append(part_id)
         manufacture = str(df.iloc[i]['Manufacturer'])
         manufacture_list.append(manufacture)
+        qty_need = int(df.iloc[i]['Qty Need'])
+        qty_need_list.append(qty_need)
         mountType = str(df.iloc[i]['Mounting Type'])
         mountType_list.append(mountType)
         casing = str(df.iloc[i]['Package/Case'])
         case_list.append(casing)
+        terminal = str(df.iloc[i]['Terminations'])
+        terminals_list.append(terminal)
         urls = str(df.iloc[i]['URL'])
         ulr_list.append(urls)
     
@@ -681,37 +686,129 @@ def scrape_saved(path):
             manufacture_list[i] = None
             mountType_list[i] = None
             case_list[i] = None
+            terminals_list[i] = None
             ulr_list[i] = None
             continue
-        if (case_list[i] == 'None' and mountType_list[i] == 'None') or (case_list[i] == 'nan' and mountType_list[i] == 'nan'):
+        if qty_need_list[i] == 0:
+            mountType_list[i] = None
+            case_list[i] = None
+            terminals_list[i] = None
+            ulr_list[i] = None
+            continue
+        if (case_list[i] == 'None' and mountType_list[i] == 'None') or (case_list[i] == 'nan' and mountType_list[i] == 'nan') or (case_list[i] == None and mountType_list[i] == None):
             pairs = fc_get_part_info(str(part_list[i]), manufacture_list[i])
             mountType_list[i] = pairs[0]
             case_list[i] = pairs[1]
-            ulr_list[i] = pairs[2]
-        elif case_list[i] == 'None' or case_list[i] == 'nan':
+            terminals_list[i] = pairs[2]
+            ulr_list[i] = pairs[3]
+        if case_list[i] == 'None' or case_list[i] == 'nan' or case_list[i] == None:
             pairs = fc_get_part_info(str(part_list[i]), manufacture_list[i])
             case_list[i] = pairs[1]
-            ulr_list[i] = pairs[2]
-        elif mountType_list[i] == 'None' or mountType_list[i] == 'nan':
+            ulr_list[i] = pairs[3]
+        if mountType_list[i] == 'None' or mountType_list[i] == 'nan' or mountType_list[i] == None:
             pairs = fc_get_part_info(str(part_list[i]), manufacture_list[i])
             mountType_list[i] = pairs[0]
-            ulr_list[i] = pairs[2]
-        elif ulr_list[i] == 'None' or ulr_list[i] == 'nan':
+            ulr_list[i] = pairs[3]
+        if terminals_list[i] == 'None' or terminals_list[i] == 'nan' or terminals_list[i] == None:
             pairs = fc_get_part_info(str(part_list[i]), manufacture_list[i])
-            ulr_list[i] = pairs[2]
-
+            terminals_list[i] = pairs[2]
+        if ulr_list[i] == 'None' or ulr_list[i] == 'nan' or ulr_list[i] == None:
+            pairs = fc_get_part_info(str(part_list[i]), manufacture_list[i])
+            ulr_list[i] = pairs[3]
     df['Mounting Type'] = mountType_list
     df['Package/Case'] = case_list
+    df['Terminations'] = terminals_list
     df['URL'] = ulr_list
     df_r = getInfo(df)
     df_r2 = getInfo_2(df_r)
-    with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "replace") as writer:
-        df_r2.to_excel(writer, sheet_name='Best_Prices', index=False)
+    # print(terminals_list) # Debug
     return df_r2
-"""TEST CASE"""
-# path = r"C:\Users\Lan\Documents\API requests\test doc\RFQ BUY BOM 42102 Rev A_qty 10_2023Mar07_083939AM-0800binT-RFQtester.xlsx"
-path = "D:\ExcessParts\BOM\BOM TEST.xlsx"
 
-start_time = time.time()
-df_r = scrape_saved(path)
-print("--- %s seconds ---" % (time.time() - start_time))
+# df results filling mounting type, package/case, terminals without scraping
+def df_result_without_scraping(path):
+    output_df = compare_options_result(path) # get_compare_results(path)
+    df = getInfo(output_df)
+    df_r = getInfo_2(df)
+    return df_r
+
+# RFQ BOM styling
+def save_RFQ_BOM(path, df_r2):
+    # df_r2 = scrape_saved(path)
+    df_r2 = df_r2.style.apply(highlight_noTermimal, axis=None)
+    with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "replace") as writer:
+        df_r2.to_excel(writer, sheet_name = 'Best_Prices', index = False)
+    return df_r2.data
+
+# show the timelapse
+def show_timelapse(start_time, end_time):
+    print("----- Total Timelapse in %s seconds -----" % (end_time - start_time))
+    
+from pathlib import Path
+# main CLI function
+def main():
+    path = input(r"Enter the path to the file: ") # User enters their file path
+    if not Path(path).exists():
+        raise FileNotFoundError("Invalid file path: File not found")
+    results = None # initialize results
+    # Ask the user if they want scraped results and warns them the quotation procress may take longer as a result
+    while True:
+        print("-----------------------------------------------------------------------")
+        scrape_prompt = str(input("Would you like to receive scraped results? y|n: "))
+        time.sleep(1)
+        
+        if scrape_prompt == 'y': 
+            # user answers 'yes' then print the warning
+            print("\nYou answered YES. Please note that this feature is still in beta and may not be available in this version.")
+            print("Choosing this option can extend the process up to 30 minutes or more due to the additional time required for web scraping. Use caution when using the BOM Quoter with web scraping.")
+            print("\nTo continue to receive scraped results enter 'y'. For quicker processing enter 'n'.")
+            
+            while True:
+                # loop over prompt to continue
+                print("-----------------------------------------------------------------------")
+                scrape_confirm = str(input("Would you like to continue with web scraping? y|n: "))
+                if scrape_confirm == 'y':
+                    # FIXME: get results with scraping
+                    # start = time.time() # get start time
+                    # results = scrape_saved(path)
+                    # end = time.time() # get end time
+                    # break
+                    print("\nRetrieving scraped results is current unavailable. Please enter 'n' to continue.")
+                    continue
+                elif scrape_confirm == 'n':
+                    start = time.time()
+                    results = df_result_without_scraping(path) # get results without scraping (APIs only)
+                    end = time.time()
+                    break
+                else:
+                    # if the user inputs an answer besides 'y' or 'n' as instructed, make them do it again
+                    print("\nInvalid answer. Enter 'y' for scraped results or 'n' for faster processing.")
+                    continue # go back to the beginning of the inner loop
+            break # break out of the outer for loop
+        elif scrape_prompt == 'n':
+            print("\nYou answered NO. Continuing without web scraping.")
+            start = time.time() # get start time
+            results = df_result_without_scraping(path)
+            end = time.time() # get end time
+            break # break out of the outer for loop 
+        else:
+            print("Invalid answer. Enter 'y' for scraped results or 'n' for faster processing.")
+            continue
+    if results is None:
+        raise RuntimeError("Was not able to get results. Please try again.")
+    save_RFQ_BOM(path, results)
+    print("\nBOM Quotation completed! Results were stylized and saved in the original file.")
+    show_timelapse(start, end)
+    
+
+if __name__ in "__main__":
+    main()
+
+# """TEST CASE"""
+# path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\05-073194-01-a-test.xlsx"
+# # "D:\ExcessParts\BOM\BOM TEST.xlsx"
+# start_time = time.time()
+# df_r = scrape_saved(path) 
+# # df_result_without_scraping(path) # change df_r equal this to get result without scraping
+# # scrape_saved(path) # change df_r equal this to get result with scraping
+# save_RFQ_BOM(path, df_r)
+# print("----- %s seconds -----" % (time.time() - start_time))

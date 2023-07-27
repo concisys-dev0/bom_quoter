@@ -1,6 +1,6 @@
-from bom_quoter.dk_RFQ_BOM import *
-from bom_quoter.mouser_RFQ_BOM import *
-from bom_quoter.tti_RFQ_BOM import *
+from dk_RFQ_BOM import *
+from mouser_RFQ_BOM import *
+from tti_RFQ_BOM import *
 
 import time
 import sys
@@ -38,8 +38,8 @@ def dk_get_info(path):
         dk_output = pd.read_excel(path, sheet_name = 'DK_Results') # Use when don't need API, already have sheet DK_Results in Excel
     except ValueError:
         dk_output = dk_get_result(path)
-    print("Digikey Done")
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("Digikey Done: 1/3 completed")
+    # print("--- %s seconds ---" % (time.time() - start_time))
     return dk_output, path
 
 # Return TTI API result
@@ -49,8 +49,8 @@ def tti_get_info(path):
         tti_output = pd.read_excel(path, sheet_name = 'TTI_Results') # Use when don't need API, already have sheet TTI_Results in Excel
     except ValueError:
         tti_output = tti_get_result(path)
-    print("TTI Done")
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("TTI Done: 2/3 completed")
+    # print("--- %s seconds ---" % (time.time() - start_time))
     return tti_output, path
 
 # Return Mouser API result
@@ -60,14 +60,20 @@ def mouser_get_info(path):
         mouser_output = pd.read_excel(path, sheet_name = 'Mouser_Results') # Use when don't need API or already have sheet Mouser_Results in Excel
     except ValueError:
         mouser_output = mouser_get_result(path)
-    print("Mouser Done")
-    print("--- %s seconds ---" % (time.time() - start_time))
+    print("Mouser Done: 3/3 completed")
+    # print("--- %s seconds ---" % (time.time() - start_time))
     return mouser_output, path
 
 # Choose Qty order price to compare
 def compare_options_result(path):
-    # Default to compare Qty Buy if input isn't match Qty Order 
-    qty_order = input("Please enter your choosen columns: ")
+    # Default to compare Qty Buy if input does not match Qty Order
+    time.sleep(1)
+    print("\nEnter the qty order 'Buy' value you would like to compare.")
+    print("For example, if you would like to compare Q1 qty orders, then enter 'Q1 Buy'; if comparing Q2 qty orders, then enter 'Q2 Buy'; and so on and so forth.")
+    print("\nIf you do not have a Qty Order to compare, then please enter 'Qty Buy' for the best results.")
+    print("-----------------------------------------------------------------------")
+    qty_order = input("Please enter your choosen column(s): ")
+    print("\nQuoting the BOM. Please wait.") # tells user that bom quoting process is starting
     if qty_order == "Qty Buy":
         compare_column = "Ext"
         result = get_compare_results(path, compare_column)
@@ -109,6 +115,7 @@ def compare_options_result(path):
 def get_compare_results(path, compare_column):
     # Setup Digikey info to compare pricing and lead time
     dk_output = dk_get_info(path)
+    # print(dk_output)
     dk_price_list = []
     dk_notes_list = []
     dk_leadtime_list = []

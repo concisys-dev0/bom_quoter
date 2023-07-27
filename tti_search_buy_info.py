@@ -1,4 +1,4 @@
-from bom_quoter.tti_search import*
+from tti_search import*
 
 import math
 import sys

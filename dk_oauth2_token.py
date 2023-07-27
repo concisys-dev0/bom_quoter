@@ -13,7 +13,7 @@ import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
-from bom_quoter.dk_oauth2_login import*
+from dk_oauth2_login import*
 # digikey_login, write_digikey_user
 """get access token and connect to API"""
 dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
@@ -46,10 +46,8 @@ def retry_user(user_data, authorize_url=None, token_url=None):
     # try the next user in the list
     for i in range(len(u_list)):
         n_user = u_list[i] # the next user in the list
-        # authorize_url = n_user['auth_url']
         if authorize_url is None:
             authorize_url = dk_authorize_url
-        # token_url = n_user['token_url']
         if token_url is None:
             token_url = dk_token_url
         client_id = n_user['client_id']
@@ -78,7 +76,7 @@ def retry_user(user_data, authorize_url=None, token_url=None):
             if i > len(u_list):
                 # Return error message when list is finished and no valid access
                 return print(f"Failed to obtain access token for Digi-Key users due to error: " + str(e))
-            continue # continue to the next user if i < len(u_list)
+            continue # continue to the next user if i <= len(u_list)
 
 # Return the access token url to get the token response that will parse to json
 def authorize_digikey_api(auth_url, client_id, redirect_uri, username, password):
@@ -172,15 +170,25 @@ def refresh_token_timer(): # Infinite function, need to set up schedule for it t
         time.sleep(1)
 
 # Return access token from new active user
-def get_change_user(err_m):
-    if err_m == "Daily Ratelimit exceeded":
-        ex_user = get_digikey_user()
-        access_token_response = retry_user(ex_user)
-        tokens = access_token_response.json()
-        access_token = write_digikey_token(tokens)
-        return tokens['access_token']
-    else:
-        return None
+# L Version:
+# def get_change_user(err_m):
+#     error_messages = ['Daily Ratelimit exceeded', 'The Bearer token is invalid']
+#     if err_m in error_messages:
+#         ex_user = get_digikey_user()
+#         access_token_response = retry_user(ex_user)
+#         tokens = access_token_response.json()
+#         access_token = write_digikey_token(tokens)
+#         return tokens['access_token']
+#     else:
+#         return None
+
+# M Version:
+def get_change_user():
+    ex_user = get_digikey_user()
+    access_token_response = retry_user(ex_user)
+    tokens = access_token_response.json()
+    access_token = write_digikey_token(tokens)
+    return tokens['access_token']
     
 """TEST CASE"""
 # if __name__ == "__main__":

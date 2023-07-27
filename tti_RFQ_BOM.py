@@ -1,6 +1,6 @@
-from bom_quoter.tti_search_buy_info import*
-from bom_quoter.input_BOM import*
-from bom_quoter.df_styling import*
+from tti_search_buy_info import*
+from input_BOM import*
+from df_styling import*
 import time
 
 """Return info gather from TTI API to dataframe and save results to Excel original file as sheet name is TTI_Results"""

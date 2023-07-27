@@ -1,7 +1,7 @@
-from bom_quoter.input_BOM import*
-from bom_quoter.mouser_search_buy_info import*
-from bom_quoter.df_styling import*
-from bom_quoter.mouser_apiKeys import*
+from input_BOM import*
+from mouser_search_buy_info import*
+from df_styling import*
+from mouser_apiKeys import*
 import time
 
 """Return info gather from Mouser API to dataframe and save results to Excel original file as sheet name is Mouser_Results"""

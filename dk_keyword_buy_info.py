@@ -1,5 +1,5 @@
-from bom_quoter.dk_search_info import get_digikey_keyword_search
-from bom_quoter.dk_oauth2_token import*
+from dk_search_info import get_digikey_keyword_search
+from dk_oauth2_token import*
 
 import sys
 

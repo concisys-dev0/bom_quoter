@@ -8,7 +8,7 @@ urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
 
-from bom_quoter.dk_oauth2_token import* 
+from dk_oauth2_token import* 
 """API operations related to product information: part search"""
 
 # def write_digikey_part_info(info_file):

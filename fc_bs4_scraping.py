@@ -49,7 +49,7 @@ def match_manufacturer(manufacturer, match_list):
 # Function return html page source and URL from findchip
 def get_url_sel(keyword):
     # setup driver
-    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
     options = Options()
     options.add_argument(f'user-agent={USER_AGENT}') # <- assign user-agent
     options.add_argument("--headless=new") # Runs Chrome in headless mode.
@@ -65,15 +65,17 @@ def get_url_sel(keyword):
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument("--disable-blink-features")
     
-    service = ChromeService(executable_path = ChromeDriverManager().install())
-    driver = webdriver.Chrome(service = service, options = options) #
+    # service = ChromeService(executable_path = ChromeDriverManager().install())
+    service = ChromeService(executable_path = r"/path/to/chromedriver")
+    driver = webdriver.Chrome(service = service, options = options)
     driver.get('https://www.findchips.com')
     time.sleep(2)
     
-    part_detail_tab = WebDriverWait(driver,2).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Part Details'))).click() # Part Details search tab
+    part_detail_tab = WebDriverWait(driver,3).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Part Details'))).click() # Part Details search tab
     # part_detail_tab.click() # click on Part Details tab
     WebDriverWait(driver, 7)
     part_num_input = driver.find_element(By.CSS_SELECTOR, 'input#part')
+    WebDriverWait(driver, 5)
     part_num_input.send_keys(keyword)
     part_num_input.send_keys(Keys.ENTER)
     

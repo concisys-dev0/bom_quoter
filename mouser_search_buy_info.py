@@ -1,5 +1,5 @@
-from bom_quoter.mouser_search_v1 import*
-from bom_quoter.mouser_search_v2 import*
+from mouser_search_v1 import*
+from mouser_search_v2 import*
 import sys
 
 import urllib3

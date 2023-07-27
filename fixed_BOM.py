@@ -1,6 +1,6 @@
-from bom_quoter.fc_bs4_scraping import*
-from bom_quoter.mergeCompare_pricing import*
-from bom_quoter.df_styling import*
+from fc_bs4_scraping import*
+from mergeCompare_pricing import*
+from df_styling import*
 
 import pandas as pd
 import numpy as np
@@ -12,7 +12,7 @@ import sys
 # Filling mounting type, package/case, and terminals base from description
 def getInfo(output_df):
     best_price_df = output_df # df of results price comparation
-    part_list = []
+    ext_price_list = []
     qtyBuy_list = []
     mountType_list = []
     case_list = []
@@ -21,8 +21,8 @@ def getInfo(output_df):
     L = len(best_price_df.axes[0])
     # Get list of info need
     for i in range(L):
-        part_id = str(best_price_df.iloc[i]['Manufacturer Part Number'])
-        part_list.append(part_id)
+        ext_price = best_price_df.iloc[i]['Ext']
+        ext_price_list.append(ext_price)
         mountType = str(best_price_df.iloc[i]['Mounting Type'])
         mountType_list.append(mountType)
         casing = str(best_price_df.iloc[i]['Package/Case'])
@@ -392,7 +392,8 @@ def getInfo(output_df):
         # if mounting type , package/case is empty
         if (mountType_list[i] == 'None' and case_list[i] == 'None') or (mountType_list[i] == 'nan' and case_list[i] == 'nan') or (mountType_list[i] == None and case_list[i] == None): #
             if qtyBuy_list[i] == 0: # Don't buy, DNI
-                n_termination[i] = 0
+                # n_termination[i] = 0
+                ext_price_list[i] = 0
             # if "PCB" in desc_list[i]: # PCB setup to avoid None type
             #     mountType_list[i] = "PCB"
             if ("008004" in desc_list[i]) or ("0201" in desc_list[i]):
@@ -584,6 +585,7 @@ def getInfo(output_df):
         # if'nan' in supplier_list[i]: # 'nan' in supplier_list[i] or 
         #     ulr_list[i] = None
 
+    best_price_df['Ext'] = ext_price_list
     best_price_df['Mounting Type'] = mountType_list
     best_price_df['Package/Case'] = case_list
     best_price_df['Terminations'] = n_termination
@@ -592,7 +594,7 @@ def getInfo(output_df):
 # Filling terminals from the package/case base on JEDEC and JEITA standard
 def getInfo_2(output_df):
     best_price_df = output_df
-    part_list = []
+    ext_price_list = []
     mountType_list = []
     case_list = []
     n_termination = []
@@ -600,8 +602,8 @@ def getInfo_2(output_df):
     L = len(best_price_df.axes[0])
 
     for i in range(L):
-        part_id = str(best_price_df.iloc[i]['Manufacturer Part Number'])
-        part_list.append(part_id)
+        ext_price = best_price_df.iloc[i]['Ext']
+        ext_price_list.append(ext_price)
         mountType = str(best_price_df.iloc[i]['Mounting Type'])
         mountType_list.append(mountType)
         casing = str(best_price_df.iloc[i]['Package/Case'])
@@ -610,10 +612,10 @@ def getInfo_2(output_df):
         n_termination.append(termination)
         qty = int(best_price_df.iloc[i]['Qty Buy'])
         qtyBuy_list.append(qty)
-        
     for i in range(L):
         if qtyBuy_list[i] == 0: # Don't buy, DNI
-            n_termination[i] = 0
+            # n_termination[i] = 0
+            ext_price_list[i] = 0
         if n_termination[i] == "nan" or n_termination[i] == "None":
             if "-SMD" in case_list[i]:
                 term_n = int(re.findall("\d+", case_list[i])[-1])
@@ -644,6 +646,7 @@ def getInfo_2(output_df):
                                     term_n = int(re.findall("\d+", case_list[i])[1])
                                     n_termination[i] = term_n
     best_price_df['Terminations'] = n_termination
+    best_price_df['Ext'] = ext_price_list
     return best_price_df
 
 # Filling the info using scraping and return the sheet
@@ -727,21 +730,85 @@ def df_result_without_scraping(path):
     df = getInfo(output_df)
     df_r = getInfo_2(df)
     return df_r
-    
-def save_RQF_BOM(path, df_r2):
+
+# RFQ BOM styling
+def save_RFQ_BOM(path, df_r2):
     # df_r2 = scrape_saved(path)
     df_r2 = df_r2.style.apply(highlight_noTermimal, axis=None)
     with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "replace") as writer:
         df_r2.to_excel(writer, sheet_name = 'Best_Prices', index = False)
     return df_r2.data
 
+# show the timelapse
+def show_timelapse(start_time, end_time):
+    print("----- Total Timelapse in %s seconds -----" % (end_time - start_time))
+    
+from pathlib import Path
+# main CLI function
+def main():
+    path = input(r"Enter the path to the file: ") # User enters their file path
+    if not Path(path).exists():
+        raise FileNotFoundError("Invalid file path: File not found")
+    results = None # initialize results
+    # Ask the user if they want scraped results and warns them the quotation procress may take longer as a result
+    while True:
+        print("-----------------------------------------------------------------------")
+        scrape_prompt = str(input("Would you like to receive scraped results? y|n: "))
+        time.sleep(1)
+        
+        if scrape_prompt == 'y': 
+            # user answers 'yes' then print the warning
+            print("\nYou answered YES. Please note that this feature is still in beta and may not be available in this version.")
+            print("Choosing this option can extend the process up to 30 minutes or more due to the additional time required for web scraping. Use caution when using the BOM Quoter with web scraping.")
+            print("\nTo continue to receive scraped results enter 'y'. For quicker processing enter 'n'.")
+            
+            while True:
+                # loop over prompt to continue
+                print("-----------------------------------------------------------------------")
+                scrape_confirm = str(input("Would you like to continue with web scraping? y|n: "))
+                if scrape_confirm == 'y':
+                    # FIXME: get results with scraping
+                    # start = time.time() # get start time
+                    # results = scrape_saved(path)
+                    # end = time.time() # get end time
+                    # break
+                    print("\nRetrieving scraped results is current unavailable. Please enter 'n' to continue.")
+                    continue
+                elif scrape_confirm == 'n':
+                    start = time.time()
+                    results = df_result_without_scraping(path) # get results without scraping (APIs only)
+                    end = time.time()
+                    break
+                else:
+                    # if the user inputs an answer besides 'y' or 'n' as instructed, make them do it again
+                    print("\nInvalid answer. Enter 'y' for scraped results or 'n' for faster processing.")
+                    continue # go back to the beginning of the inner loop
+            break # break out of the outer for loop
+        elif scrape_prompt == 'n':
+            print("\nYou answered NO. Continuing without web scraping.")
+            start = time.time() # get start time
+            results = df_result_without_scraping(path)
+            end = time.time() # get end time
+            break # break out of the outer for loop 
+        else:
+            print("Invalid answer. Enter 'y' for scraped results or 'n' for faster processing.")
+            continue
+    if results is None:
+        raise RuntimeError("Was not able to get results. Please try again.")
+    save_RFQ_BOM(path, results)
+    print("\nBOM Quotation completed! Results were stylized and saved in the original file.")
+    show_timelapse(start, end)
+    
+
 if __name__ in "__main__":
-    """TEST CASE"""
-    path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\RFQ Costed Bom_Wyatt_166177_REV C-RFQtester.xlsx"
-    # "D:\ExcessParts\BOM\BOM TEST.xlsx"
-    start_time = time.time()
-    df_r = df_result_without_scraping(path)
-    # df_result_without_scraping(path) # change df_r equal this to get result without scraping
-    # scrape_saved(path) # change df_r equal this to get result with scraping
-    save_RQF_BOM(path, df_r)
-    print("----- %s seconds -----" % (time.time() - start_time))
+    main()
+
+# """TEST CASE"""
+# path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\05-073194-01-a-test.xlsx"
+# # "D:\ExcessParts\BOM\BOM TEST.xlsx"
+# start_time = time.time()
+# df_r = scrape_saved(path) 
+# # df_result_without_scraping(path) # change df_r equal this to get result without scraping
+# # scrape_saved(path) # change df_r equal this to get result with scraping
+# save_RFQ_BOM(path, df_r)
+# print("----- %s seconds -----" % (time.time() - start_time))

@@ -1,4 +1,4 @@
-from bom_quoter.mouser_apiKeys import*
+from mouser_apiKeys import*
 import os
 import sys
 import re
