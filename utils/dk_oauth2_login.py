@@ -25,6 +25,8 @@ import sys
 import os
 from random import randint
 
+from utils.constants import DK_USER_STORAGE
+
 """Automate change user and get access token without user interaction"""
 #global variables
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" # work with odd version
@@ -105,7 +107,7 @@ def write_digikey_user():
         'client_id': client_id,
         'client_secret': client_secret,
     }
-    user_file = 'digikey_user.json'
+    user_file = DK_USER_STORAGE
     # print(user_auth)
     if not os.path.exists(user_file):
         # if file doesn't exist, we'll make a new one

@@ -1,5 +1,5 @@
-from dk_search_info import get_digikey_keyword_search
-from dk_oauth2_token import*
+from utils.dk_search_info import get_digikey_keyword_search
+from utils.dk_oauth2_token import *
 
 import sys
 

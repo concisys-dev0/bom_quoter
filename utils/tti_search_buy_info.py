@@ -1,4 +1,4 @@
-from tti_search import*
+from utils.tti_search import*
 
 import math
 import sys

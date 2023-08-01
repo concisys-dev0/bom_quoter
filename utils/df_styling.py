@@ -1,9 +1,11 @@
 import pandas as pd
 import numpy as np
-"""Color the text of row that need the PM to modify"""
+
+
 # Change text of row contain item not in stock, not enough, and need to request
 # Used in:dk_RFQ_BOM, mouser_RFQ_BOM, tti_RFQ_BOM, mergeCompare_pricing
 def highlight_row(x):
+    """Color the text of row that need the PM to modify"""
     # Formating change
     c1 = 'color: red; font-weight: bold'
     c2 = 'color: purple; font-weight: bold'

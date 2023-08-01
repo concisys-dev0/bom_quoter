@@ -11,6 +11,8 @@ urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
 
+from utils.constants import MS_USER_STORAGE
+
 """Handle user information and change user’s API key when need"""
 # Add mouser user info to json
 def write_mouser_user():
@@ -26,7 +28,8 @@ def write_mouser_user():
         'apiKey': apiKey,
         'status': "Idle"
     }
-    user_file = 'mouser_user.json'
+    # user_file = 'mouser_user.json'
+    user_file = MS_USER_STORAGE
     print(user_auth)
     if not os.path.exists(user_file):
         # if file doesn't exist, we'll make a new one
@@ -48,13 +51,13 @@ def write_mouser_user():
                 with open(user_file, 'w') as newjson:
                     users_data = [user_auth]
                     json.dump(users_data, newjson, indent=4, separators=(',',': '))
-    print("New Digikey user added. You are now using the new user credentials.")
+    print("New Mouser user added. You are now using the new user credentials.")
     return user_auth
 
 # Function return the status of apiKey by index
 def get_apiKey_status(key_index):
     try:
-        with open('mouser_user.json', 'r') as file:
+        with open(MS_USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of mouser users
             if len(user_list) > 0:
                 if key_index < len(user_list):
@@ -74,7 +77,7 @@ def get_apiKey_status(key_index):
 # Function return the  index of current user have status active
 def get_keyIndex_Active():
     try:
-        with open('mouser_user.json', 'r') as file:
+        with open(MS_USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of mouser users
             if len(user_list) > 0:
                 l = len(user_list)
@@ -88,7 +91,7 @@ def get_keyIndex_Active():
                         # change status of first index as default
                         key_index = 0
                         user_list[0]['status'] = "Active"
-                        with open('mouser_user.json', 'w') as file:
+                        with open(MS_USER_STORAGE, 'w') as file:
                             json.dump(user_list, file)
                         return key_index
             else:
@@ -103,7 +106,7 @@ def get_keyIndex_Active():
 # Function return the current apiKey
 def get_current_apiKey():
     try:
-        with open('mouser_user.json', 'r') as file:
+        with open(MS_USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of mouser users
         keyIndex = get_keyIndex_Active()
         apiKey = user_list[keyIndex]['apiKey']
@@ -119,7 +122,7 @@ def get_current_apiKey():
 def change_apiKey_Active(err_m):
     if err_m == "Maximum calls per day exceeded.":
         expire_keyIndex = get_keyIndex_Active()
-        with open('mouser_user.json', 'r') as file:
+        with open(MS_USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of mouser users
         if len(user_list) == 1: # when it's only user
             print("please add more user")
@@ -132,7 +135,7 @@ def change_apiKey_Active(err_m):
             next_index = 0
         user_list[expire_keyIndex]['status'] = "Idle"
         user_list[next_index]['status'] = "Active"
-        with open('mouser_user.json', 'w') as file:
+        with open(MS_USER_STORAGE, 'w') as file:
             json.dump(user_list, file)
         # current_index = next_index
         apiKey = get_current_apiKey()

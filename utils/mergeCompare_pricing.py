@@ -1,6 +1,6 @@
-from dk_RFQ_BOM import *
-from mouser_RFQ_BOM import *
-from tti_RFQ_BOM import *
+from utils.dk_RFQ_BOM import *
+from utils.mouser_RFQ_BOM import *
+from utils.tti_RFQ_BOM import *
 
 import time
 import sys
@@ -73,7 +73,7 @@ def compare_options_result(path):
     print("\nIf you do not have a Qty Order to compare, then please enter 'Qty Buy' for the best results.")
     print("-----------------------------------------------------------------------")
     qty_order = input("Please enter your choosen column(s): ")
-    print("\nQuoting the BOM. Please wait.") # tells user that bom quoting process is starting
+    print("\nQuoting the BOM. Please wait..") # tells user that bom quoting process is starting
     if qty_order == "Qty Buy":
         compare_column = "Ext"
         result = get_compare_results(path, compare_column)

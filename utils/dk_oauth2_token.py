@@ -13,16 +13,18 @@ import urllib3
 urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
-from dk_oauth2_login import*
-# digikey_login, write_digikey_user
+
+from utils.dk_oauth2_login import *
+from utils.constants import DK_USER_STORAGE, DK_TOKEN_STORAGE
 """get access token and connect to API"""
 dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
 dk_token_url = "https://api.digikey.com/v1/oauth2/token"
 
+
 # Returns the first digikey user in the json file, default to be active user of access token
 def get_digikey_user():
     try:
-        with open('digikey_user.json', 'r') as file:
+        with open(DK_USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of digikey users
             if len(user_list) > 0:
                 user = user_list[0] # take the first
@@ -38,7 +40,7 @@ def get_digikey_user():
 
 # Retry authentication with other user's stored, append the old active user to the end
 def retry_user(user_data, authorize_url=None, token_url=None):
-    with open('digikey_user.json', 'r') as file:
+    with open(DK_USER_STORAGE, 'r') as file:
         u_list = json.load(file)
         u_list.pop(u_list.index(user_data)) # remove unworking user from the list temporarily
     if len(u_list) == 0:
@@ -68,7 +70,7 @@ def retry_user(user_data, authorize_url=None, token_url=None):
             if access_token_response.status_code == 200:
                 # first valid response is returned
                 u_list.append(user_data) # .index
-                with open('digikey_user.json', 'w') as file:
+                with open(DK_USER_STORAGE, 'w') as file:
                     json.dump(u_list, file) # add unworking user back to end of the list
                 return access_token_response
         except Exception as e:
@@ -90,10 +92,8 @@ def authorize_digikey_api(auth_url, client_id, redirect_uri, username, password)
 
 # Save all the token response info to digikey_token.json
 def write_digikey_token(token):
-    access_file = 'digikey_token.json'
-    # with open(access_file, 'r') as read_file:
-    #     old_token = json.load(read_file)
-    with open(access_file, 'w') as file:
+    # access_file = 'digikey_token.json'
+    with open(DK_TOKEN_STORAGE, 'w') as file:
         json.dump(token, file, indent=4)
 
 # Get access token from user info and connect with API
@@ -139,7 +139,7 @@ def token_digikey_api(auth_url=None, token_url=None):
 
 # Get new access token from refresh token when current access token expired
 def refresh_token_digikey_api(token_url=None):
-    with open('digikey_token.json', 'r') as file:
+    with open(DK_TOKEN_STORAGE, 'r') as file:
         old_token = json.load(file)
     user = get_digikey_user()
     headers = {'Content-Type': 'application/x-www-form-urlencoded', 

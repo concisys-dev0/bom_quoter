@@ -1,6 +1,6 @@
-from fc_bs4_scraping import*
-from mergeCompare_pricing import*
-from df_styling import*
+from utils.fc_bs4_scraping import*
+from utils.mergeCompare_pricing import*
+from utils.df_styling import*
 
 import pandas as pd
 import numpy as np
@@ -739,69 +739,6 @@ def save_RFQ_BOM(path, df_r2):
         df_r2.to_excel(writer, sheet_name = 'Best_Prices', index = False)
     return df_r2.data
 
-# show the timelapse
-def show_timelapse(start_time, end_time):
-    print("----- Total Timelapse in %s seconds -----" % (end_time - start_time))
-    
-from pathlib import Path
-# main CLI function
-def main():
-    path = input(r"Enter the path to the file: ") # User enters their file path
-    if not Path(path).exists():
-        raise FileNotFoundError("Invalid file path: File not found")
-    results = None # initialize results
-    # Ask the user if they want scraped results and warns them the quotation procress may take longer as a result
-    while True:
-        print("-----------------------------------------------------------------------")
-        scrape_prompt = str(input("Would you like to receive scraped results? y|n: "))
-        time.sleep(1)
-        
-        if scrape_prompt == 'y': 
-            # user answers 'yes' then print the warning
-            print("\nYou answered YES. Please note that this feature is still in beta and may not be available in this version.")
-            print("Choosing this option can extend the process up to 30 minutes or more due to the additional time required for web scraping. Use caution when using the BOM Quoter with web scraping.")
-            print("\nTo continue to receive scraped results enter 'y'. For quicker processing enter 'n'.")
-            
-            while True:
-                # loop over prompt to continue
-                print("-----------------------------------------------------------------------")
-                scrape_confirm = str(input("Would you like to continue with web scraping? y|n: "))
-                if scrape_confirm == 'y':
-                    # FIXME: get results with scraping
-                    # start = time.time() # get start time
-                    # results = scrape_saved(path)
-                    # end = time.time() # get end time
-                    # break
-                    print("\nRetrieving scraped results is current unavailable. Please enter 'n' to continue.")
-                    continue
-                elif scrape_confirm == 'n':
-                    start = time.time()
-                    results = df_result_without_scraping(path) # get results without scraping (APIs only)
-                    end = time.time()
-                    break
-                else:
-                    # if the user inputs an answer besides 'y' or 'n' as instructed, make them do it again
-                    print("\nInvalid answer. Enter 'y' for scraped results or 'n' for faster processing.")
-                    continue # go back to the beginning of the inner loop
-            break # break out of the outer for loop
-        elif scrape_prompt == 'n':
-            print("\nYou answered NO. Continuing without web scraping.")
-            start = time.time() # get start time
-            results = df_result_without_scraping(path)
-            end = time.time() # get end time
-            break # break out of the outer for loop 
-        else:
-            print("Invalid answer. Enter 'y' for scraped results or 'n' for faster processing.")
-            continue
-    if results is None:
-        raise RuntimeError("Was not able to get results. Please try again.")
-    save_RFQ_BOM(path, results)
-    print("\nBOM Quotation completed! Results were stylized and saved in the original file.")
-    show_timelapse(start, end)
-    
-
-if __name__ in "__main__":
-    main()
 
 # """TEST CASE"""
 # path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\05-073194-01-a-test.xlsx"

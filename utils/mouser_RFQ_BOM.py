@@ -1,10 +1,11 @@
-from tti_search_buy_info import*
-from input_BOM import*
-from df_styling import*
+from utils.input_BOM import *
+from utils.mouser_search_buy_info import *
+from utils.df_styling import *
+from utils.mouser_apiKeys import *
 import time
 
-"""Return info gather from TTI API to dataframe and save results to Excel original file as sheet name is TTI_Results"""
-def tti_get_result(path):
+"""Return info gather from Mouser API to dataframe and save results to Excel original file as sheet name is Mouser_Results"""
+def mouser_get_result(path):
     input_list = setup_BOM_info(path) # Function from input_BOM.py
     # input_list is tuple contains df, part_list, manufacture_list, qty_buy_list, qty_need_list
     df = input_list[0]
@@ -18,100 +19,84 @@ def tti_get_result(path):
     if len(input_list) == 7: # Break 1
         qty_b1_list = input_list[5]
         qty_b1_buy_list = input_list[6]
-        a1_qty_buy = []
         qty_b1_unit_price = []
         qty_b1_ext = []
         qty_b1_excess = []
     elif len(input_list) == 9: # Break 2
         qty_b1_list = input_list[5]
         qty_b1_buy_list = input_list[6]
-        a1_qty_buy = []
         qty_b1_unit_price = []
         qty_b1_ext = []
         qty_b1_excess = []
         qty_b2_list = input_list[7]
         qty_b2_buy_list = input_list[8]
-        a2_qty_buy = []
         qty_b2_unit_price = []
         qty_b2_ext = []
         qty_b2_excess = []
     elif len(input_list) == 11: # Break 3
         qty_b1_list = input_list[5]
         qty_b1_buy_list = input_list[6]
-        a1_qty_buy = []
         qty_b1_unit_price = []
         qty_b1_ext = []
         qty_b1_excess = []
         qty_b2_list = input_list[7]
         qty_b2_buy_list = input_list[8]
-        a2_qty_buy = []
         qty_b2_unit_price = []
         qty_b2_ext = []
         qty_b2_excess = []
         qty_b3_list = input_list[9]
         qty_b3_buy_list = input_list[10]
-        a3_qty_buy = []
         qty_b3_unit_price = []
         qty_b3_ext = []
         qty_b3_excess = []
     elif len(input_list) == 13: # Break 4
         qty_b1_list = input_list[5]
         qty_b1_buy_list = input_list[6]
-        a1_qty_buy = []
         qty_b1_unit_price = []
         qty_b1_ext = []
         qty_b1_excess = []
         qty_b2_list = input_list[7]
         qty_b2_buy_list = input_list[8]
-        a2_qty_buy = []
         qty_b2_unit_price = []
         qty_b2_ext = []
         qty_b2_excess = []
         qty_b3_list = input_list[9]
         qty_b3_buy_list = input_list[10]
-        a3_qty_buy = []
         qty_b3_unit_price = []
         qty_b3_ext = []
         qty_b3_excess = []
         qty_b4_list = input_list[11]
         qty_b4_buy_list = input_list[12]
-        a4_qty_buy = []
         qty_b4_unit_price = []
         qty_b4_ext = []
         qty_b4_excess = []
     elif len(input_list) == 15: # Break 5
         qty_b1_list = input_list[5]
         qty_b1_buy_list = input_list[6]
-        a1_qty_buy = []
         qty_b1_unit_price = []
         qty_b1_ext = []
         qty_b1_excess = []
         qty_b2_list = input_list[7]
         qty_b2_buy_list = input_list[8]
-        a2_qty_buy = []
         qty_b2_unit_price = []
         qty_b2_ext = []
         qty_b2_excess = []
         qty_b3_list = input_list[9]
         qty_b3_buy_list = input_list[10]
-        a3_qty_buy = []
         qty_b3_unit_price = []
         qty_b3_ext = []
         qty_b3_excess = []
         qty_b4_list = input_list[11]
         qty_b4_buy_list = input_list[12]
-        a4_qty_buy = []
         qty_b4_unit_price = []
         qty_b4_ext = []
         qty_b4_excess = []
         qty_b5_list = input_list[13]
         qty_b5_buy_list = input_list[14]
-        a5_qty_buy = []
         qty_b5_unit_price = []
         qty_b5_ext = []
         qty_b5_excess = []
     # List initial
-    a_qty_buy = []
     unit_price = []
     ext = []
     excess = []
@@ -121,16 +106,15 @@ def tti_get_result(path):
     Supplier =[]
     mountingType = []
     packageSize = []
-    link = []
+    a_qty_buy = []
+    link = []    
     for i in range(L):
-        # Unknow number of request per minute rate limit allow
-        if i % 97 == 0 and i != 0: 
+        if i % 29 == 0 and i != 0: # rate limit only allow 30 request per minute
             time.sleep(60)
         """iterate through input list"""
         # Make sure all the list is in the same length L
-        # Any .append(None) keep blank cell in Excel and satisfied require length equal L
+        # Any .append(None) keep blank cell in Excel and satisfied require length equal L 
         if part_list[i] == "nan" or part_list[i] == "None": # Manufacturer part number cell is blank
-            a_qty_buy.append(None)
             unit_price.append(None)
             ext.append(None)
             excess.append(None)
@@ -140,37 +124,33 @@ def tti_get_result(path):
             Supplier.append(None)
             mountingType.append(None)
             packageSize.append(None)
+            a_qty_buy.append(None)
             link.append(None)
             try:
-                a1_qty_buy.append(None)
                 qty_b1_unit_price.append(None)
                 qty_b1_ext.append(None)
                 qty_b1_excess.append(None)
             except NameError:
                 pass
             try:
-                a2_qty_buy.append(None)
                 qty_b2_unit_price.append(None)
                 qty_b2_ext.append(None)
                 qty_b2_excess.append(None)
             except NameError:
                 pass
             try:
-                a3_qty_buy.append(None)
                 qty_b3_unit_price.append(None)
                 qty_b3_ext.append(None)
                 qty_b3_excess.append(None)
             except NameError:
                 pass
             try:
-                a4_qty_buy.append(None)
                 qty_b4_unit_price.append(None)
                 qty_b4_ext.append(None)
                 qty_b4_excess.append(None)
             except NameError:
                 pass
             try:
-                a5_qty_buy.append(None)
                 qty_b5_unit_price.append(None)
                 qty_b5_ext.append(None)
                 qty_b5_excess.append(None)
@@ -178,7 +158,6 @@ def tti_get_result(path):
                 pass
             continue
         if qty_buy_list[i] == 0 or qty_buy_list[i] == "None": # Don't need to buy
-            a_qty_buy.append(None)
             unit_price.append(None)
             ext.append(None)
             excess.append(None)
@@ -188,236 +167,160 @@ def tti_get_result(path):
             Supplier.append(None)
             mountingType.append(None)
             packageSize.append(None)
-            link.append(None)
-            try:
-                a1_qty_buy.append(None)
-                qty_b1_unit_price.append(None)
-                qty_b1_ext.append(None)
-                qty_b1_excess.append(None)
-            except NameError:
-                pass
-            try:
-                a2_qty_buy.append(None)
-                qty_b2_unit_price.append(None)
-                qty_b2_ext.append(None)
-                qty_b2_excess.append(None)
-            except NameError:
-                pass
-            try:
-                a3_qty_buy.append(None)
-                qty_b3_unit_price.append(None)
-                qty_b3_ext.append(None)
-                qty_b3_excess.append(None)
-            except NameError:
-                pass
-            try:
-                a4_qty_buy.append(None)
-                qty_b4_unit_price.append(None)
-                qty_b4_ext.append(None)
-                qty_b4_excess.append(None)
-            except NameError:
-                pass
-            try:
-                a5_qty_buy.append(None)
-                qty_b5_unit_price.append(None)
-                qty_b5_ext.append(None)
-                qty_b5_excess.append(None)
-            except NameError:
-                pass
-            continue
-        # print(part_list[i])    
-        info_json = tti_SearchByKeyword(part_list[i]) # Function from tti_search.py
-        if 'recordCount' in info_json and info_json['recordCount'] == 0: # No product
-            # print("The part is not available please try another supplier. ")
             a_qty_buy.append(None)
-            unit_price.append(None)
-            ext.append(None)
-            excess.append(None)
-            leadtime.append(None)
-            Notes.append(None)
-            qty_available.append(None)
-            Supplier.append(None)
-            mountingType.append(None)
-            packageSize.append(None)
             link.append(None)
             try:
-                a1_qty_buy.append(None)
                 qty_b1_unit_price.append(None)
                 qty_b1_ext.append(None)
                 qty_b1_excess.append(None)
             except NameError:
                 pass
             try:
-                a2_qty_buy.append(None)
                 qty_b2_unit_price.append(None)
                 qty_b2_ext.append(None)
                 qty_b2_excess.append(None)
             except NameError:
                 pass
             try:
-                a3_qty_buy.append(None)
                 qty_b3_unit_price.append(None)
                 qty_b3_ext.append(None)
                 qty_b3_excess.append(None)
             except NameError:
                 pass
             try:
-                a4_qty_buy.append(None)
                 qty_b4_unit_price.append(None)
                 qty_b4_ext.append(None)
                 qty_b4_excess.append(None)
             except NameError:
                 pass
             try:
-                a5_qty_buy.append(None)
                 qty_b5_unit_price.append(None)
                 qty_b5_ext.append(None)
                 qty_b5_excess.append(None)
             except NameError:
                 pass
             continue
-        elif 'code' in info_json: # Error occurs
-            print(info_json['code'] + ": " + info_json['message'])
-            # continue
-            raise info_json['message']
-        # Take return of tti_SearchByKeyword(part_list[i]) as parameter
-        urls = get_url(info_json) # Function from tti_search_buy_info.py
+        # print(part_list[i])
+        part_json = mouser_SearchByPart(part_list[i]) # Function from mouser_search_v1.py
+        if len(part_json['Errors']) != 0: # Error occurs
+            err_m = str(part_json['Errors'][0]['Message'])
+            print(err_m)
+            try: # If daily ratelimit exceeded
+                key = change_apiKey_Active(err_m) # Function from mouser_apiKeys.py; ensure change user status and apiKey
+                if key != None:
+                    print("Change Section API Key to: " + key)
+                    part_json = mouser_SearchByPart(part_list[i])
+                elif key == None: # Other error
+                    return err_m
+            except Exception as e:
+                raise e
+        # Take return of mouser_SearchByPart(part_list[i]) as parameter
+        urls = get_url(part_json) # Function from mouser_search_buy_info.py
         link.append(urls)
         if urls != None: # URL exists
-            Supplier.append("TTI")
+            Supplier.append("Mouser")
             mountingType.append(None)
+            packageSize.append(None)
+            a_qty_buy.append(None)
         else: # No URL
             Supplier.append(None)
             mountingType.append(None)
-            Notes.append(None)
-            
-        case = get_case_mountingType(info_json) # Function from tti_search_buy_info.py
-        packageSize.append(case)
-            
-        lead_time = get_leadtime(info_json) # Function from tti_search_buy_info.py
-        leadtime.append(lead_time)
-        if leadtime == "Contact TTI":
-            Notes.append("Contact TTI")
-        
-        QOH = get_QOH(info_json) # Function from tti_search_buy_info.py
-        qty_available.append(QOH)
-        if QOH == None: # No info on QOH
-            if urls != None:
-                Notes.append("Please check URL")
+            packageSize.append(None)
             a_qty_buy.append(None)
+            Notes.append(None)
+        
+        lead_time = get_leadtime(part_json) # Function from mouser_search_buy_info.py
+        leadtime.append(lead_time)
+        
+        QOH = get_QOH(part_json) # Function from mouser_search_buy_info.py
+        qty_available.append(QOH)
+        if qty_available[i] == None: # No info on QOH
+            if urls != None:
+                Notes.append("Please Check URL")
             unit_price.append(None)
             ext.append(None)
             excess.append(None)
             try:
-                a1_qty_buy.append(None)
                 qty_b1_unit_price.append(None)
                 qty_b1_ext.append(None)
                 qty_b1_excess.append(None)
             except NameError:
                 pass
             try:
-                a2_qty_buy.append(None)
                 qty_b2_unit_price.append(None)
                 qty_b2_ext.append(None)
                 qty_b2_excess.append(None)
             except NameError:
                 pass
             try:
-                a3_qty_buy.append(None)
                 qty_b3_unit_price.append(None)
                 qty_b3_ext.append(None)
                 qty_b3_excess.append(None)
             except NameError:
                 pass
             try:
-                a4_qty_buy.append(None)
                 qty_b4_unit_price.append(None)
                 qty_b4_ext.append(None)
                 qty_b4_excess.append(None)
             except NameError:
                 pass
             try:
-                a5_qty_buy.append(None)
                 qty_b5_unit_price.append(None)
                 qty_b5_ext.append(None)
                 qty_b5_excess.append(None)
             except NameError:
                 pass
             continue
-        elif QOH == 0: # Not in stock
+        elif qty_available[i] == "0": # No in stock
             Notes.append("No Stock")
-        elif int(QOH) < qty_buy_list[i]: # Not enough stock
+        elif int(qty_available[i]) < qty_buy_list[i]: # Not enough stock
             Notes.append("Not Enough Stock")
-        # elif int(QOH) >= qty_buy_list[i]:
+        # elif int(qty_available[i]) >= qty_buy_list[i]:
         #     Notes.append(None)
-        
-        pricing = get_price(info_json, qty_buy_list[i]) # Function from tti_search_buy_info.py; pricing tuple contains qty buy, unit price, ext
-        a_qty_buy.append(pricing[0])
+
+        pricing = mouser_get_price(part_json, qty_buy_list[i]) # Function from mouser_search_buy_info.py; pricing tuple contains qty buy, unit price, ext
         unit_price.append(pricing[1])
         ext.append(pricing[2])
-        if pricing[1] == None:
-            excess.append(None)
-        else:
-            excess.append(pricing[2]-(pricing[1]*qty_need_list[i]))
-        if int(QOH) >= qty_buy_list[i]: # More or Enough stock
+        excess.append(pricing[2]-(pricing[1]*qty_need_list[i]))
+        if int(qty_available[i]) >= qty_buy_list[i]: # More or Enough stock
             if pricing[1] == None and pricing[2] == None: # No pricing
                 Notes.append("Please Check URL")
             else:
                 Notes.append(None)
-        # If the sheet1 qty order 1, 2, 3, 4, 5 is filled; use get_price funtion
+        # If the sheet1 qty order 1, 2, 3, 4, 5 is filled; use mouser_get_price funtion
         try:
-            pricing_b1 = get_price(info_json, qty_b1_buy_list[i])
-            a1_qty_buy.append(pricing_b1[0])
+            pricing_b1 = mouser_get_price(part_json, qty_b1_buy_list[i])
             qty_b1_unit_price.append(pricing_b1[1])
             qty_b1_ext.append(pricing_b1[2])
-            if pricing_b1[1] == None:
-                qty_b1_excess.append(None)
-            else:
-                qty_b1_excess.append(pricing_b1[2]-(pricing_b1[1]*qty_b1_list[i]))
+            qty_b1_excess.append(pricing_b1[2]-(pricing_b1[1]*qty_b1_list[i]))
         except NameError:
             pass
         try:
-            pricing_b2 = get_price(info_json, qty_b2_buy_list[i])
-            a2_qty_buy.append(pricing_b2[0])
+            pricing_b2 = mouser_get_price(part_json, qty_b2_buy_list[i])
             qty_b2_unit_price.append(pricing_b2[1])
             qty_b2_ext.append(pricing_b2[2])
-            if pricing_b2[1] == None:
-                qty_b2_excess.append(None)
-            else:
-                qty_b2_excess.append(pricing_b2[2]-(pricing_b2[1]*qty_b2_list[i]))
+            qty_b2_excess.append(pricing_b2[2]-(pricing_b2[1]*qty_b2_list[i]))
         except NameError:
             pass
         try:
-            pricing_b3 = get_price(info_json, qty_b3_buy_list[i])
-            a3_qty_buy.append(pricing_b3[0])
+            pricing_b3 = mouser_get_price(part_json, qty_b3_buy_list[i])
             qty_b3_unit_price.append(pricing_b3[1])
             qty_b3_ext.append(pricing_b3[2])
-            if pricing_b3[1] == None:
-                qty_b3_excess.append(None)
-            else:
-                qty_b3_excess.append(pricing_b3[2]-(pricing_b3[1]*qty_b3_list[i]))
+            qty_b3_excess.append(pricing_b3[2]-(pricing_b3[1]*qty_b3_list[i]))
         except NameError:
             pass
         try:
-            pricing_b4 = get_price(info_json, qty_b4_buy_list[i])
-            a4_qty_buy.append(pricing_b4[0])
+            pricing_b4 = mouser_get_price(part_json, qty_b4_buy_list[i])
             qty_b4_unit_price.append(pricing_b4[1])
             qty_b4_ext.append(pricing_b4[2])
-            if pricing_b4[1] == None:
-                 qty_b4_excess.append(None)
-            else:
-                qty_b4_excess.append(pricing_b4[2]-(pricing_b4[1]*qty_b4_list[i]))
+            qty_b4_excess.append(pricing_b4[2]-(pricing_b4[1]*qty_b4_list[i]))
         except NameError:
             pass
         try:
-            pricing_b5 = get_price(info_json, qty_b5_buy_list[i])
-            a5_qty_buy.append(pricing_b5[0])
+            pricing_b5 = mouser_get_price(part_json, qty_b5_buy_list[i])
             qty_b5_unit_price.append(pricing_b5[1])
             qty_b5_ext.append(pricing_b5[2])
-            if pricing_b5[1] == None:
-                qty_b5_excess.append(None)
-            else:
-                qty_b5_excess.append(pricing_b5[2]-(pricing_b5[1]*qty_b5_list[i]))
+            qty_b5_excess.append(pricing_b5[2]-(pricing_b5[1]*qty_b5_list[i]))
         except NameError:
             pass
     # Add list to df
@@ -434,7 +337,6 @@ def tti_get_result(path):
     try:
         df['Q1 Need'] = qty_b1_list
         df['Q1 Buy'] = qty_b1_buy_list
-        df['Min Q1 Buy'] = a1_qty_buy
         df['Q1 Unit Price'] = qty_b1_unit_price
         df['Q1 Ext'] = qty_b1_ext
         df['Q1 Excess'] = qty_b1_excess
@@ -443,7 +345,6 @@ def tti_get_result(path):
     try:
         df['Q2 Need'] = qty_b2_list
         df['Q2 Buy'] = qty_b2_buy_list
-        df['Min Q2 Buy'] = a2_qty_buy
         df['Q2 Unit Price'] = qty_b2_unit_price
         df['Q2 Ext'] = qty_b2_ext
         df['Q2 Excess'] = qty_b2_excess
@@ -452,16 +353,14 @@ def tti_get_result(path):
     try:
         df['Q3 Need'] = qty_b3_list
         df['Q3 Buy'] = qty_b3_buy_list
-        df['Min Q3 Buy'] = a3_qty_buy
         df['Q3 Unit Price'] = qty_b3_unit_price
         df['Q3 Ext'] = qty_b3_ext
-        df['Q 3 Excess'] = qty_b3_excess
+        df['Q3 Excess'] = qty_b3_excess
     except NameError:
         pass
     try:
         df['Q4 Need'] = qty_b4_list
         df['Q4 Buy'] = qty_b4_buy_list
-        df['Min Q4 Buy'] = a4_qty_buy
         df['Q4 Unit Price'] = qty_b4_unit_price
         df['Q4 Ext'] = qty_b4_ext
         df['Q4 Excess'] = qty_b4_excess
@@ -470,7 +369,6 @@ def tti_get_result(path):
     try:
         df['Q5 Need'] = qty_b5_list
         df['Q5 Buy'] = qty_b5_buy_list
-        df['Min Q5 Buy'] = a5_qty_buy
         df['Q5 Unit Price'] = qty_b5_unit_price
         df['Q5 Ext'] = qty_b5_ext
         df['Q5 Excess'] = qty_b5_excess
@@ -480,11 +378,11 @@ def tti_get_result(path):
     df = df.style.apply(highlight_row, axis=None) # any df been modified by df.styling can only pass data through df.data
     # Save to Excel sheet
     with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "new") as writer:
-        df.to_excel(writer, sheet_name = 'TTI_Results', index = False)
+        df.to_excel(writer, sheet_name='Mouser_Results', index=False)
     return df.data
 
 """TEST CASE"""
-# path = r"C:\Users\Lan\Documents\TestBOMs\05-072889-01-a-test.xlsx"
+# path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\05-072889-01-a-test.xlsx"
 # start_time = time.time()
-# results = tti_get_result(path)
+# results = mouser_get_result(path)
 # print("--- %s seconds ---" % (time.time() - start_time))

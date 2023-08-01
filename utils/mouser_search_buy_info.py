@@ -1,5 +1,5 @@
-from mouser_search_v1 import*
-from mouser_search_v2 import*
+from utils.mouser_search_v1 import*
+from utils.mouser_search_v2 import*
 import sys
 
 import urllib3

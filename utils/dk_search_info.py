@@ -8,7 +8,9 @@ urllib3.disable_warnings()
 import logging
 logging.captureWarnings(True)
 
-from dk_oauth2_token import* 
+from utils.dk_oauth2_token import *
+from utils.constants import DK_TOKEN_STORAGE, DK_RESULTS_STORAGE
+
 """API operations related to product information: part search"""
 
 # def write_digikey_part_info(info_file):
@@ -48,7 +50,7 @@ from dk_oauth2_token import*
 
 # Retrieve detailed product information including real time pricing and availability.
 def get_digikey_part_info(part_id):
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token['access_token'] is None:
         raise Exception("No Token Loaded")
@@ -89,7 +91,7 @@ def get_digikey_part_info(part_id):
 
 # Retrieve detailed product information and two suggested products. 
 def get_digikey_part_sub_info(part_id):
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token['access_token'] is None:
         raise Exception("No Token Loaded")
@@ -128,7 +130,7 @@ def get_digikey_part_sub_info(part_id):
 
 # Calculate the DigiReel pricing for the given DigiKeyPartNumber and RequestedQuantity
 def get_digikey_reel_pricing(digikey_part, Qty):
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token['access_token'] is None:
         raise Exception("No Token Loaded")
@@ -169,7 +171,7 @@ def get_digikey_reel_pricing(digikey_part, Qty):
 
 # Returns all Product Categories. Category Id can be used in KeywordSearchRequest.Filters.TaxonomyIds to restrict a keyword search to a given category
 def get_digikey_categories_search():
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token is None:
         raise Exception("No Token Loaded")
@@ -207,7 +209,7 @@ def get_digikey_categories_search():
 
 # Returns all Product Manufacturers. ManufacturersId can be used in KeywordSearchRequest.Filters.ManufacturerIds to restrict a keyword search to a given Manufacturer
 def get_digikey_manufacturers_search():
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token is None:
         raise Exception("No Token Loaded")
@@ -245,7 +247,7 @@ def get_digikey_manufacturers_search():
 
 # Returns Category for given Id. Category Id can be used in KeywordSearchRequest.Filters.TaxonomyIds to restrict a keyword search to a given category
 def get_digikey_categoriesID_search(categoriesID):
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token is None:
         raise Exception("No Token Loaded")
@@ -283,7 +285,7 @@ def get_digikey_categoriesID_search(categoriesID):
 
 # KeywordSearch can search for any product in the Digi-Key catalog.
 def get_digikey_keyword_search(key_word):
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token is None:
         raise Exception("No Token Loaded")
@@ -327,7 +329,7 @@ def get_digikey_keyword_search(key_word):
 
 # Create list of ProductDetails from the matches of the requested manufacturer product name.
 def get_digikey_product_details_search(product_details): #SortByDigiKeyPartNumber for now
-    with open('digikey_token.json', 'r') as file: # to get access token
+    with open(DK_TOKEN_STORAGE, 'r') as file: # to get access token
         token = json.load(file)
     if token is None:
         raise Exception("No Token Loaded")
