@@ -33,7 +33,7 @@ def tti_SearchByKeyword(keyword):
                'apiKey' : apiKey
               }
     url = "https://api.tti.com/service/api/v1/search/keyword?searchTerms="
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(url, params=params, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -61,7 +61,7 @@ def tti_manufacturer_list():
                'apiKey' : apiKey
               }
     url = "https://api.tti.com/service/api/v1/search/manufacturers"
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message

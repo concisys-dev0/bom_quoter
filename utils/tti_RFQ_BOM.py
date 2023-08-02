@@ -125,7 +125,7 @@ def tti_get_result(path):
     for i in range(L):
         # Unknow number of request per minute rate limit allow
         if i % 97 == 0 and i != 0: 
-            time.sleep(60)
+            time.sleep(59)
         """iterate through input list"""
         # Make sure all the list is in the same length L
         # Any .append(None) keep blank cell in Excel and satisfied require length equal L

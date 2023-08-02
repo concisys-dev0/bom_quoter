@@ -649,8 +649,9 @@ def getInfo_2(output_df):
     best_price_df['Ext'] = ext_price_list
     return best_price_df
 
-# Filling the info using scraping and return the sheet
+
 def scrape_saved(path):
+    """ Filling the info using scraping and return the sheet """ 
     output_df = compare_options_result(path) # get_compare_results(path)
     df_ = getInfo(output_df)
     df = getInfo_2(df_)
@@ -680,8 +681,9 @@ def scrape_saved(path):
         ulr_list.append(urls)
     
     l = len(ulr_list)
+    print("Running web scraper..")
     for i in range(l):
-        if part_list[i] == 'nan' and manufacture_list[i]== 'nan':
+        if (part_list[i] == 'nan' and manufacture_list[i]== 'nan') or (part_list[i] == 'None' and manufacture_list[i] == 'None') or (part_list[i] == None and manufacture_list[i] == None):
             part_list[i] = None
             manufacture_list[i] = None
             mountType_list[i] = None
@@ -689,7 +691,7 @@ def scrape_saved(path):
             terminals_list[i] = None
             ulr_list[i] = None
             continue
-        if qty_need_list[i] == 0:
+        if qty_need_list[i] == 0 or qty_need_list[i] == 'nan' or qty_need_list[i] == 'None' or qty_need_list[i] == None:
             mountType_list[i] = None
             case_list[i] = None
             terminals_list[i] = None
@@ -724,28 +726,29 @@ def scrape_saved(path):
     # print(terminals_list) # Debug
     return df_r2
 
-# df results filling mounting type, package/case, terminals without scraping
 def df_result_without_scraping(path):
+    """ df results filling mounting type, package/case, terminals without scraping """
     output_df = compare_options_result(path) # get_compare_results(path)
     df = getInfo(output_df)
     df_r = getInfo_2(df)
     return df_r
 
-# RFQ BOM styling
 def save_RFQ_BOM(path, df_r2):
+    """ save RQF BOM """
     # df_r2 = scrape_saved(path)
     df_r2 = df_r2.style.apply(highlight_noTermimal, axis=None)
     with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "replace") as writer:
         df_r2.to_excel(writer, sheet_name = 'Best_Prices', index = False)
     return df_r2.data
 
+# if __name__  == "__main__":
 
-# """TEST CASE"""
-# path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\05-073194-01-a-test.xlsx"
-# # "D:\ExcessParts\BOM\BOM TEST.xlsx"
-# start_time = time.time()
-# df_r = scrape_saved(path) 
-# # df_result_without_scraping(path) # change df_r equal this to get result without scraping
-# # scrape_saved(path) # change df_r equal this to get result with scraping
-# save_RFQ_BOM(path, df_r)
-# print("----- %s seconds -----" % (time.time() - start_time))
+    # """TEST CASE"""
+    # path = r"C:\Users\Lan\Documents\bom_quoter\BOM-sample\05-073194-01-a-test.xlsx"
+    # # "D:\ExcessParts\BOM\BOM TEST.xlsx"
+    # start_time = time.time()
+    # df_r = scrape_saved(path) 
+    # # df_result_without_scraping(path) # change df_r equal this to get result without scraping
+    # # scrape_saved(path) # change df_r equal this to get result with scraping
+    # save_RFQ_BOM(path, df_r)
+    # print("----- %s seconds -----" % (time.time() - start_time))

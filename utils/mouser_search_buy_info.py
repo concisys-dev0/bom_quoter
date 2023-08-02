@@ -8,13 +8,6 @@ import logging
 logging.captureWarnings(True)
 
 """"Functions to gather information from the API operation response"""
-# TR3D476K025D0100, TPSE476M025R0100, RT8096AHGE, QRM8-026-07.0-L-D-A, 533980871, C0603C120J3GAC7867, MCP1501T-20E/CHY, GRM155R71H473KE14D, 06035C104K4T2A
-# str(input("Please Enter Manufacture Part No.: "))
-# int(input("Please Enter Qty Need: "))
-
-# part_id = "06035C104K4T2A" 
-# qty_buy = 350
-# part_json = mouser_SearchByPart(part_id)
 
 # Funtion return URL link to product
 def get_url(part_json):
@@ -117,3 +110,12 @@ def mouser_get_price(part_json, qty_buy):
 #         print("Please choose another supplier, the part and its substitute are not available")
 #         sys.exit()
 #     sys.exit()
+
+# ERROR TEST CASE
+# TR3D476K025D0100, TPSE476M025R0100, RT8096AHGE, QRM8-026-07.0-L-D-A, 533980871, C0603C120J3GAC7867, MCP1501T-20E/CHY, GRM155R71H473KE14D, 06035C104K4T2A
+# str(input("Please Enter Manufacture Part No.: "))
+# int(input("Please Enter Qty Need: "))
+
+# part_id = "06035C104K4T2A" 
+# qty_buy = 350
+# part_json = mouser_SearchByPart(part_id)

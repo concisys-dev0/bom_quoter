@@ -60,7 +60,6 @@ def get_SMT_items(mountType_list, terminals_list):
 # Return number of unknown Terminals of SMT items
 def get_unknown_SMT_items(mountType_list, terminals_list):
     l = len(mountType_list) # length of lists
-    unknown_smt_tlist = []
     unknown_smt_n = 0
     for i in range(l):
         if mountType_list[i] == "SMT":
@@ -83,7 +82,6 @@ def get_TH_items(mountType_list, terminals_list):
 # Return number of unknown Terminals of TH items
 def get_unknown_TH_items(mountType_list, terminals_list):
     l = len(mountType_list) # length of lists
-    unknown_th_tlist = []
     unknown_th_n = 0
     for i in range(l):
         if mountType_list[i] == "TH":
@@ -106,7 +104,6 @@ def get_MEC_items(mountType_list, terminals_list):
 # Return number of unknown Terminals of MEC items
 def get_unknown_MEC_items(mountType_list, terminals_list):
     l = len(mountType_list) # length of lists
-    unknown_mec_tlist = []
     unknown_mec_n = 0
     for i in range(l):
         if mountType_list[i] == "MEC":
@@ -116,34 +113,34 @@ def get_unknown_MEC_items(mountType_list, terminals_list):
 # Gather numbers return from the functions, organize them to the df and save to Excel sheet name Summary
 def save_summary(path):
     df = get_df(path)
-    tt_items = get_lines_item(df)
-    unknown_items = get_unknown_items(df)
+    tt_items = get_lines_item(df) # number of total items
+    unknown_items = get_unknown_items(df) # number of unknown price items
     
-    mt_list = list_mounting_terminal(df)
+    mt_list = list_mounting_terminal(df) # get list of mounting type & terminal
     mountType_list = mt_list[0]
     terminals_list = mt_list[1]
-    # print(mountType_list, terminals_list)
+    
     smt = get_SMT_items(mountType_list, terminals_list)
-    smt_items_n = smt[0]
-    smt_total_terminals = smt[1]
-    unknown_smt_n = get_unknown_SMT_items(mountType_list, terminals_list)
+    smt_items_n = smt[0] # number of total SMT items
+    smt_total_terminals = smt[1] # total SMT terminals
+    unknown_smt_n = get_unknown_SMT_items(mountType_list, terminals_list) # number of SMT items unknown terminals
 
     th = get_TH_items(mountType_list, terminals_list)
-    th_items_n = th[0]
-    th_total_terminals = th[1]
-    unknown_th_n = get_unknown_TH_items(mountType_list, terminals_list)
+    th_items_n = th[0] # number of total TH items
+    th_total_terminals = th[1] # total TH terminals
+    unknown_th_n = get_unknown_TH_items(mountType_list, terminals_list) # number of TH items unknown terminals
 
     mec = get_MEC_items(mountType_list, terminals_list)
-    mec_items_n = mec[0]
-    mec_total_terminals = mec[1]
-    unknown_mec_n = get_unknown_MEC_items(mountType_list, terminals_list)
+    mec_items_n = mec[0] # number of total MEC items
+    mec_total_terminals = mec[1] # total MEC terminals
+    unknown_mec_n = get_unknown_MEC_items(mountType_list, terminals_list) # number of MEC items unkown terminals
     
-    val_list = [tt_items, unknown_items, smt_items_n, smt_total_terminals, unknown_smt_n, th_items_n, th_total_terminals, unknown_th_n, mec_items_n, mec_total_terminals, unknown_mec_n]
-    name_list = ["Total Items", "Unknown Price Items", "SMT Items", "SMT Terminals", "Unknown Terminals SMT Items", "TH Items", "TH Terminals", "Unknown Terminals TH Items", "MEC Items", "MEC Terminals", "Unknown Terminals MEC Items"]
-    df_1 = pd.DataFrame(columns = ['Summary', 'Value'])
+    val_list = [tt_items, unknown_items, smt_items_n, smt_total_terminals, unknown_smt_n, th_items_n, th_total_terminals, unknown_th_n, mec_items_n, mec_total_terminals, unknown_mec_n] # list of numbers need in summary
+    name_list = ["Total Items", "Unknown Price Items", "SMT Items", "SMT Terminals", "Unknown Terminals SMT Items", "TH Items", "TH Terminals", "Unknown Terminals TH Items", "MEC Items", "MEC Terminals", "Unknown Terminals MEC Items"] # list name of the numbers
+    df_1 = pd.DataFrame(columns = ['Summary', 'Value']) # create df
     df_1['Summary'] = name_list
     df_1['Value'] = val_list
-    with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "replace") as writer:
+    with pd.ExcelWriter(path, mode = "a", engine = 'openpyxl', if_sheet_exists = "replace") as writer: # save to Excel
         df_1.to_excel(writer, sheet_name = 'Summary', index = False)
     return df_1
 

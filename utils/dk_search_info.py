@@ -67,7 +67,7 @@ def get_digikey_part_info(part_id):
     url = 'https://api.digikey.com/Search/v3/Products/' + part_id
     # + quote(part_id, safe='')
     # Config().log_write("Query " + part_id + " with token " + Config().access_token_string)
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     # Config().log_write("Response Code " + str(response.status_code))
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
@@ -107,7 +107,7 @@ def get_digikey_part_sub_info(part_id):
         'X-DIGIKEY-Locale-ShipToCountry' : 'US'
     }
     url = 'https://api.digikey.com/Search/v3/Products/' + part_id + '/WithSuggestedProducts'
-    response = requests.get(url, headers=headers) #, verify=False
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -149,7 +149,7 @@ def get_digikey_reel_pricing(digikey_part, Qty):
         'X-DIGIKEY-Locale-ShipToCountry' : 'US'
     }
     url = 'https://api.digikey.com/Search/v3/Products/' + digikey_part + '/DigiReelPricing'
-    response = requests.get(url, params=params, headers=headers)
+    response = requests.get(url, params=params, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -186,7 +186,7 @@ def get_digikey_categories_search():
         'X-DIGIKEY-Locale-ShipToCountry' : 'US'
     }
     url = 'https://api.digikey.com/Search/v3/Categories'
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -224,7 +224,7 @@ def get_digikey_manufacturers_search():
         'X-DIGIKEY-Locale-ShipToCountry' : 'US'
     }
     url = 'https://api.digikey.com/Search/v3/Manufacturers'
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -262,7 +262,7 @@ def get_digikey_categoriesID_search(categoriesID):
         'X-DIGIKEY-Locale-ShipToCountry' : 'US' 
     }
     url = 'https://api.digikey.com/Search/v3/Categories/' + categoriesID
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -306,7 +306,7 @@ def get_digikey_keyword_search(key_word):
     }
     url = 'https://api.digikey.com/Search/v3/Products/Keyword'
 
-    response = requests.post(url, json=data, headers=headers) #data=json.dumps(data)
+    response = requests.post(url, json=data, headers=headers, verify=False) #data=json.dumps(data), timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -349,7 +349,7 @@ def get_digikey_product_details_search(product_details): #SortByDigiKeyPartNumbe
         'X-DIGIKEY-Locale-ShipToCountry' : 'US'
     }
     url = 'https://api.digikey.com/Search/v3/Products/ManufacturerProductDetails'
-    response = requests.post(url, json=data, headers=headers)
+    response = requests.post(url, json=data, headers=headers, verify=False) #, timeout=10
     # if response.status_code != 200:
     #     r = json.loads(response.text)
     #     if 'Details' in r:

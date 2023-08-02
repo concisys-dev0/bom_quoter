@@ -39,7 +39,7 @@ def driver_setup(path=None):
     chrome_options.add_argument('--ignore-certificate-errors')
     chrome_options.add_argument('--ignore-ssl-errors')
     chrome_options.add_argument('--incognito') # incognito
-    # chrome_options.add_argument('--headless') # no display
+    chrome_options.add_argument('--headless') # no display
     chrome_options.add_argument('--disable-blink-features=AutomationControlled')
     chrome_options.add_argument("--disable-blink-features")
     chrome_options.add_argument("--disable-extensions")

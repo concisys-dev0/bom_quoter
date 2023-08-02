@@ -20,6 +20,7 @@ from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
 
 from webdriver_manager.chrome import ChromeDriverManager
+from utils.constants import CHROME_VERSION
 
 """Collecting info about mounting type, package/case, terminals, and URL from findchip throght scraping"""
 # from https://stackoverflow.com/a/32558749/6386471
@@ -49,7 +50,7 @@ def match_manufacturer(manufacturer, match_list):
 # Function return html page source and URL from findchip
 def get_url_sel(keyword):
     # setup driver
-    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
     options = Options()
     options.add_argument(f'user-agent={USER_AGENT}') # <- assign user-agent
     options.add_argument("--headless=new") # Runs Chrome in headless mode.
@@ -65,17 +66,17 @@ def get_url_sel(keyword):
     options.add_argument('--disable-blink-features=AutomationControlled')
     options.add_argument("--disable-blink-features")
     
-    # service = ChromeService(executable_path = ChromeDriverManager().install())
-    service = ChromeService(executable_path = r"/path/to/chromedriver")
+    service = ChromeService(executable_path = ChromeDriverManager(version=CHROME_VERSION).install())
+    # service = ChromeService(executable_path = r"/path/to/chromedriver")
     driver = webdriver.Chrome(service = service, options = options)
     driver.get('https://www.findchips.com')
     time.sleep(2)
     
     part_detail_tab = WebDriverWait(driver,3).until(EC.element_to_be_clickable((By.LINK_TEXT, 'Part Details'))).click() # Part Details search tab
     # part_detail_tab.click() # click on Part Details tab
-    WebDriverWait(driver, 7)
+    # WebDriverWait(driver, 7)
     part_num_input = driver.find_element(By.CSS_SELECTOR, 'input#part')
-    WebDriverWait(driver, 5)
+    WebDriverWait(driver, 10)
     part_num_input.send_keys(keyword)
     part_num_input.send_keys(Keys.ENTER)
     
@@ -106,7 +107,7 @@ def fc_get_part_info(keyword, manufacturer):
     try:
         manufacturer_list = [str(x.text) for x in soup.find(class_="j-select-manufacturer").find_all('option')]
         # print(manufacturer_list)
-        m_manufacturer = match_manufacturer(manufacture, manufacturer_list) # find matchof manufacturer
+        m_manufacturer = match_manufacturer(manufacture, manufacturer_list) # find match of manufacturer
         # print(m_manufacturer)
         manufacture = m_manufacturer.replace('.', '')
         params = quote(keyword + "/" + manufacture.replace(' ', '-'))
@@ -158,12 +159,12 @@ def fc_get_part_info(keyword, manufacturer):
         terminals = td6.text.strip()
     except:
         try:
-            td5 = soup.find(lambda t: t.text.strip() =='Pin Count')
+            td5 = soup.find(lambda t: t.text.strip() =='Pin Count') # another way they listed
             td6 = td5.find_next('td')
             terminals = td6.text.strip()
         except:
             try: # Total Number of Contacts
-                td5 = soup.find(lambda t: t.text.strip() =='Number of Terminals')
+                td5 = soup.find(lambda t: t.text.strip() =='Number of Terminals') # another way they listed
                 td6 = td5.find_next('td')
                 terminals = td6.text.strip()
             except:

@@ -44,7 +44,7 @@ def mouser_keyword_manufacturer(keyword, manufacturer):
         'Content-Type' : 'application/json'
     }
     url = "https://api.mouser.com/api/" + ver2 + "/search/keywordandmanufacturer?apiKey=" + apiKey
-    response = requests.post(url, json=request, headers=headers)
+    response = requests.post(url, json=request, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -81,7 +81,7 @@ def mouser_part_manufacturer(part_id, manufacturer):
         'Content-Type' : 'application/json'
     }
     url = "https://api.mouser.com/api/" + ver2 + "/search/partnumberandmanufacturer?apiKey=" + apiKey
-    response = requests.post(url, json=request, headers=headers)
+    response = requests.post(url, json=request, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -111,7 +111,7 @@ def mouser_manufacturer_list():
         'accept' : 'application/json'
     }
     url = "https://api.mouser.com/api/" + ver2 + "/search/manufacturerlist?apiKey=" + apiKey
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message

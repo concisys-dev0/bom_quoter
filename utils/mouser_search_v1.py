@@ -38,7 +38,7 @@ def mouser_SearchByKeyword(keyword):
         'Content-Type' : 'application/json'
     }
     url = "https://api.mouser.com/api/"+ ver1 + "/search/keyword?apiKey=" + apiKey
-    response = requests.post(url, json=request, headers=headers)
+    response = requests.post(url, json=request, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message
@@ -72,7 +72,7 @@ def mouser_SearchByPart(part_id):
         'Content-Type' : 'application/json'
     }
     url = "https://api.mouser.com/api/"+ ver1 + "/search/partnumber?apiKey=" + apiKey
-    response = requests.post(url, json=request, headers=headers)
+    response = requests.post(url, json=request, headers=headers, verify=False) #, timeout=10
     if response.status_code != 200: # HTTP connection error
         r = json.loads(response.text)
         # print error message

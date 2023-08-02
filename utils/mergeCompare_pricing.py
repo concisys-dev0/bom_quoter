@@ -19,7 +19,7 @@ def get_best_price(dk_ext, mouser_ext, tti_ext, dk_time, mouser_time, tti_time):
         f = "tti"
         return tti_ext, f
     else:
-        if dk_ext== sys.maxsize and mouser_ext == sys.maxsize and tti_ext == sys.maxsize:
+        if dk_ext == sys.maxsize and mouser_ext == sys.maxsize and tti_ext == sys.maxsize:
             if dk_time<mouser_time and dk_time<mouser_time:
                 f = "dk"
                 return dk_ext, f
@@ -148,7 +148,7 @@ def get_compare_results(path, compare_column):
         else:
             dk_time.append(dk_leadtime_list[i])
         # print(dk_time[i])
-        if dk_time[i] == 'None' or dk_time[i] == "nan":
+        if dk_time[i] == 'None' or dk_time[i] == 'nan':
             dk_time[i] = sys.maxsize
         elif dk_time[i] == "No lead time information available":
             dk_time[i] = sys.maxsize - 20

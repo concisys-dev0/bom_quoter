@@ -16,13 +16,13 @@ logging.captureWarnings(True)
 
 from utils.dk_oauth2_login import *
 from utils.constants import DK_USER_STORAGE, DK_TOKEN_STORAGE
+
 """get access token and connect to API"""
 dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
 dk_token_url = "https://api.digikey.com/v1/oauth2/token"
 
-
-# Returns the first digikey user in the json file, default to be active user of access token
 def get_digikey_user():
+    """ Returns the first digikey user in the json file, default to be active user of access token """
     try:
         with open(DK_USER_STORAGE, 'r') as file:
             user_list = json.load(file) # list of digikey users
@@ -38,8 +38,8 @@ def get_digikey_user():
         raise e
     return user
 
-# Retry authentication with other user's stored, append the old active user to the end
 def retry_user(user_data, authorize_url=None, token_url=None):
+    """ Retry authentication with other user's stored, append the old active user to the end """
     with open(DK_USER_STORAGE, 'r') as file:
         u_list = json.load(file)
         u_list.pop(u_list.index(user_data)) # remove unworking user from the list temporarily
@@ -47,9 +47,9 @@ def retry_user(user_data, authorize_url=None, token_url=None):
         write_digikey_user()
     # try the next user in the list
     for i in range(len(u_list)):
-        n_user = u_list[i] # the next user in the list
+        n_user = u_list[i] # the next user in the list                                          
         if authorize_url is None:
-            authorize_url = dk_authorize_url
+            authorize_url = dk_authorize_url                                        
         if token_url is None:
             token_url = dk_token_url
         client_id = n_user['client_id']
@@ -79,9 +79,9 @@ def retry_user(user_data, authorize_url=None, token_url=None):
                 # Return error message when list is finished and no valid access
                 return print(f"Failed to obtain access token for Digi-Key users due to error: " + str(e))
             continue # continue to the next user if i <= len(u_list)
-
-# Return the access token url to get the token response that will parse to json
+ 
 def authorize_digikey_api(auth_url, client_id, redirect_uri, username, password):
+    """ Return the access token url to get the token response that will parse to json """
     # set up the OAuth2Session object
     oauth = OAuth2Session(client_id, redirect_uri=redirect_uri)
     # get the authorization URL
@@ -90,14 +90,13 @@ def authorize_digikey_api(auth_url, client_id, redirect_uri, username, password)
     # webbrowser.open(authorization_url)
     return access_token_url
 
-# Save all the token response info to digikey_token.json
 def write_digikey_token(token):
-    # access_file = 'digikey_token.json'
+    """ Save all the token response info to digikey_token.json """
     with open(DK_TOKEN_STORAGE, 'w') as file:
         json.dump(token, file, indent=4)
 
-# Get access token from user info and connect with API
 def token_digikey_api(auth_url=None, token_url=None):
+    """ Get access token from user info and connect with API """
     dkuser = get_digikey_user()
     if auth_url is None:
         auth_url = dk_authorize_url
@@ -108,7 +107,7 @@ def token_digikey_api(auth_url=None, token_url=None):
     redirect_uri = dkuser['redirect_uri']
     username = dkuser['username']
     password = dkuser['password']
-    # Authorize Automation
+    # Authorize Automation by user - deprecation
     # authorization_redirect_url = authorize_digikey_api(authorize_url, client_id, callback_uri)
     # redirect_url = input("Enter the callback URL generates in the browser: ")
     access_token_url = authorize_digikey_api(auth_url, client_id, redirect_uri, username, password)
@@ -129,16 +128,15 @@ def token_digikey_api(auth_url=None, token_url=None):
     print(access_token_response.text)
     #Return failed message and failed status code if response is not 200
     if access_token_response.status_code != 200:
-        # return "Failed to obtain access token due to error:", access_token_response.status_code
         access_token_response = retry_user(dkuser)
-    #Return the access token and writes the response into a json file is 200
+    # Otherwise, return the access token and writes the response into a json file is 200
     tokens = access_token_response.json()
     access_token = write_digikey_token(tokens)
     #Debug print(tokens['access_token']) 
     return tokens['access_token']
 
-# Get new access token from refresh token when current access token expired
 def refresh_token_digikey_api(token_url=None):
+    """ Get new access token from refresh token when current access token expired """
     with open(DK_TOKEN_STORAGE, 'r') as file:
         old_token = json.load(file)
     user = get_digikey_user()
@@ -162,14 +160,14 @@ def refresh_token_digikey_api(token_url=None):
         refresh_token = write_digikey_token(refresh)
         return print("Refresh access token:", refresh['access_token'])
 
-# Run refresh_token_digikey_api every 30 min interval to automate new access token
+
 def refresh_token_timer(): # Infinite function, need to set up schedule for it to stop and run without error or set the host to be never sleep
+    """ Run refresh_token_digikey_api every 30 min interval to automate new access token """
     schedule.every(30).minutes.do(refresh_token_digikey_api)
     while True:
         schedule.run_pending()
         time.sleep(1)
 
-# Return access token from new active user
 # L Version:
 # def get_change_user(err_m):
 #     error_messages = ['Daily Ratelimit exceeded', 'The Bearer token is invalid']
@@ -184,6 +182,7 @@ def refresh_token_timer(): # Infinite function, need to set up schedule for it t
 
 # M Version:
 def get_change_user():
+    """ Return access token from new active user """
     ex_user = get_digikey_user()
     access_token_response = retry_user(ex_user)
     tokens = access_token_response.json()

@@ -9,3 +9,7 @@ MS_RESULTS_STORAGE = "data/mouser_part_info.json"
 
 # TTI storages
 TTI_RESULTS_STORAGE = "data/tti_keyword_info.json"
+
+""" Webbrowser Versions """
+# Latest version of Chrome
+CHROME_VERSION = "114.0.5735.90"

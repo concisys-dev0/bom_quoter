@@ -36,12 +36,11 @@ def main():
                 scrape_confirm = str(input("Would you like to continue with web scraping? y|n: "))
                 if scrape_confirm == 'y':
                     # FIXME: get results with scraping
-                    # start = time.time() # get start time
-                    # results = utils.fixed_BOM.scrape_saved(path)
-                    # end = time.time() # get end time
-                    # break
-                    print("\nRetrieving scraped results is current unavailable. Please enter 'n' to continue:")
-                    continue
+                    start = time.time() # get start time
+                    results = utils.fixed_BOM.scrape_saved(path)
+                    end = time.time() # get end time
+                    break # break out of loop
+                    # print("\nRetrieving scraped results is current unavailable. Please enter 'n' to continue:")
                 elif scrape_confirm == 'n':
                     start = time.time()
                     try:
@@ -54,7 +53,7 @@ def main():
                     # if the user inputs an answer besides 'y' or 'n' as instructed, make them do it again
                     print("\nInvalid answer. Enter 'y' for scraped results or 'n' for faster processing:")
                     continue # go back to the beginning of the inner loop
-            break # break out of the outer for loop
+            break # break out of the outer loop
         elif scrape_prompt == 'n':
             print("\nYou answered NO. Continuing without web scraping..")
             start = time.time() # get start time
