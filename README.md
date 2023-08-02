@@ -19,8 +19,7 @@ To use this tool, follow these steps:
 
 ## License
 
-This project is licensed under the [MIT License]
-<!-- [INSERT CONCISYS LICENSE HERE]. -->
+This project is licensed under the [MIT License](docs/LICENSE.md)
 
 ## Acknowledgements
 
@@ -31,5 +30,5 @@ Main Contributors:
 Lan Do
 Monica Nguyen
 
-Property of Concisys Inc.
+Copyright 2023-2024 Concisys Inc. all rights reserved
 
