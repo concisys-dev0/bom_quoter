@@ -208,7 +208,7 @@ def dk_get_result(path):
         if 'ErrorMessage' in info_json: # Error occurs
             err_m = str(info_json['ErrorMessage'])
             # print(info_json['ErrorMessage'])
-            print("\nDigikey Token Error: ", info_json['ErrorDetails'])
+            print("\nDigiKeyTokenError: ", info_json['ErrorDetails'])
             if err_m in ["Daily Ratelimit exceeded", "The Bearer token is invalid"] :
                 print("\nRetrying with new credentials. Please refrain from interacting with the program while retry is in progress...")
                 # token = get_change_user(err_m) # L Version: Function from dk_oauth2_token.py; ensure change user and get new access token
@@ -216,7 +216,7 @@ def dk_get_result(path):
                 print("New access token: " + token)
                 info_json = get_digikey_keyword_search(part_list[i])
             elif err_m == "Bearer token  expired":
-                print("\nRefreshing token. Please wait.")
+                print("\nRefreshing token. Please wait..")
                 refresh_token_digikey_api() # Function from dk_oauth2_token.py; get new access token from refresh token
                 info_json = get_digikey_keyword_search(part_list[i]) # Retry to get info
             else:
