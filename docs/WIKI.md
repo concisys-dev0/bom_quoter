@@ -121,16 +121,17 @@ The back-end functionality and API operations in this project are packaged under
 ## Setup
 
 **Developer Set up**
-1. Clone the bom_quoter Github repository or download the ZIP file into your local machine
-2. Install the required dependencies into a virtual environment
+1. Ensure that you have the latest Python installed on your local machine
+2. Clone the bom_quoter Github repository or download the ZIP file into your local machine
+3. Install the required dependencies into a virtual environment. You can find the configuration files under the `config` directory.
     - If using Anaconda: `conda env create -n my-env-name -f environment.yml` or `conda env create -n my-env-name -f /path/to/environment.yml`
     - If using PIP: 
         - Create your virtual environment: `python -m venv my-env-name`
         - Activate your virtual env: `my-env-name\Scripts\activate.bat` (Windows), `source .venv/bin/activate` (OS)
         - Then install dependences: `pip install -r requirements.txt` or `pip install -r path/to/requirements.txt`
-3. Open the bom_quoter directory in your virtual environment (cmd.exe on Windows, terminal on Mac)
-4. Enter the command `pip setup.py install` to setup packages. Otherwise, the BOM Quoter will not work.
-5. To activate the program, `cd` to main directory and enter: `python main.py` in the command line.
+4. Open the bom_quoter directory in your virtual environment (cmd.exe on Windows or Terminal on Mac)
+5. Enter the command `pip setup.py install` to setup packages. Otherwise, the BOM Quoter will not work.
+6. To activate the program, `cd` to main directory and enter: `python bomquoter.py` in the command line.
 
 **User Set up**
 1. Obtain the `concisys-bom-quoter.exe` executable file.

@@ -15,7 +15,7 @@ To use this tool, follow these steps:
 3. Install the required dependencies by running `conda env create -n my-env-name -f environment.yml` if using Anaconda to create it in another environment. 
 4. If you are using Pip, run `pip install -r requirements.txt` in a virtual environment.
 5. Open the command terminal and cd to the main directory. Run `pip setup.py install`.
-6. Then enter the command `python main.py` in the command line
+6. Then enter the command `python bomquoter.py` in the command line
 
 ## License
 
