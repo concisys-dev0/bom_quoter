@@ -69,7 +69,3 @@ def main():
     utils.summary.save_summary(path)
     print("\nBOM Quotation completed! Results were stylized and saved in the original file.")
     show_timelapse(start, end)
-    
-
-if __name__ in "__main__":
-    main()
