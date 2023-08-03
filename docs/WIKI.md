@@ -12,14 +12,14 @@ While the BOM Quoter has many similar functions as the ERP feature, this program
 
 The project folder hierarchy is as follows:
 
--`data`: contains corresponding JSON files to store API credentials and results
--`dist`: contains any scripts that are under development or testing and not yet released
--`templates`: contains blank BOM templates for ease of access; also includes BOM samples folder (samples) for testing and comparison
--`utils`: library containing API and scraping operations
--`environmental.yml`: for Anaconda virtual environment
--`main.py`: Main CLI program
--`requirements.txt`: required libraries to be set up via pip if desired
--`setup.py`: setup script to initiate `utils` library
+- `data`: contains corresponding JSON files to store API credentials and results
+- `dist`: contains any scripts that are under development or testing and not yet released
+- `templates`: contains blank BOM templates for ease of access; also includes BOM samples folder (samples) for testing and comparison
+- `utils`: library containing API and scraping operations
+- `environmental.yml`: for Anaconda virtual environment
+- `main.py`: Main CLI program
+- `requirements.txt`: required libraries to be set up via pip if desired
+- `setup.py`: setup script to initiate `utils` library
 
 ## Python Libraries
 
@@ -35,6 +35,7 @@ The code was written in functional program approach to handle data flow. It util
 ## Vendor APIs
 
 The BOM Quoter allows the user to briefly connect to three RESTful APIs from DigiKey, Mouser Electronics, and TTI and returns data in JSON format.
+
 
 ### DigiKey API
 
@@ -55,6 +56,8 @@ The BOM Quoter allows the user to briefly connect to three RESTful APIs from Dig
 
 **Rate Limits**: DigiKey API is limited to 1000 requests per day per account. Additionally, after every 120 requests, API requires a 60 second cool-down time. Initiated tokens are refreshed every 30 minutes. This program provides up to 2000-3000 requests by default.
 
+
+
 ### Mouser API
 
 | Scripts                 | Description                                                               |
@@ -71,6 +74,8 @@ The BOM Quoter allows the user to briefly connect to three RESTful APIs from Dig
 
 **Rate Limits**: Mouser API is limited to 1000 requests per day per account. Additionally, after every 30 requests, API requires a 60 second cool-down time. This program provides up to 2000 requests by default.
 
+
+
 ### TTI API
 
 | Scripts                 | Description                                                               |
@@ -85,6 +90,8 @@ The BOM Quoter allows the user to briefly connect to three RESTful APIs from Dig
 
 **Rate Limits**: TTI API is limited to 1000 requests per day per account. Additionally, after every 100 requests, API requires a 60 second cool-down time. This program does not currently have request limitations due to Concisys company account credentials.
 
+
+
 ## Main Functionality
 
 The back-end functionality and API operations in this project are packaged under the `utils` package. The listed scripts below correspond to the following categories in the `utils` package.
@@ -93,20 +100,21 @@ The back-end functionality and API operations in this project are packaged under
 |-----------------------------------------------------|----------------------|--------------------------------------------------------------------------------------|
 | `utils.input_BOM.setup_BOM_info`                    | `path`: path to file | Gather the information required for each vendor API and pass the BOM to a dataframe  |
 | `utils.mergeCompare_pricing.compare_options_result` | `path`: path to file | Asking the user for which price of quantity to compare between suppliers.   |
-| `utils.mergeCompare_pricing.get_compare_results`    | `path`: path to file, compare_column: [str] name of column to compare | Returns the lowest price from API results and inserts it into a new dataframe. |
+| `utils.mergeCompare_pricing.get_compare_results`    | `path`: path to file, `compare_column`: [str] name of column to compare | Returns the lowest price from API results and inserts it into a new dataframe. |
 | `utils.fixed_BOM.df_result_without_scraping`        | `path`: path to file | Gets part data from the function above and returns a dataframe of terminals based on industry standards and package codes.|
 | `utils.fixed_BOM.scrape_saved`                      | `path`: path to file | Gets part data from the function above and returns a dataframe of terminals based on industry standards and package codes with web scraping.  |
-| `utils.fixed_BOM.save_RQF_BOM`                      | `path`: path to file, df_r2: dataframe of total results output | Inserts the dataframe results into the file and stylizes the excel sheet for 'Best_Prices' sheet.  |
+| `utils.fixed_BOM.save_RQF_BOM`                      | `path`: path to file, `df_r2`: dataframe of total results output | Inserts the dataframe results into the file and stylizes the excel sheet for 'Best_Prices' sheet.  |
 | `utils.summary.save_summary`                        | `path`: path to file | Returns the count for line items and part attributes (TH, SMT, etc.) and inserts the results in a new sheet called 'Summary.' |
 
 # Installation
+
 ## System Requirements
 
 **Required**
 1. Python 3.10 or higher
 2. [Anaconda](https://docs.anaconda.com/free/anaconda/install/index.html) or pip installed
-3. (Optional) Latest stable chromedriver.exe [Download](https://chromedriver.chromium.org/downloads)
-- Latest Stable: v113, v114
+3. (Optional) Latest stable chromedriver.exe -> [Download](https://chromedriver.chromium.org/downloads)
+    - Latest Stable: v113, v114
 
 ## Setup
 
@@ -120,10 +128,10 @@ The back-end functionality and API operations in this project are packaged under
         - Then install dependences: `pip install -r requirements.txt`
 3. Open the bom_quoter directory in your virtual environment (cmd.exe on Windows, terminal on Mac)
 4. Enter the command `pip setup.py install` to setup packages. Otherwise, the BOM Quoter will not work.
-5. To activate the program, cd to main directory and enter: `python main.py` in the command line.
+5. To activate the program, `cd` to main directory and enter: `python main.py` in the command line.
 
 **User Set up**
-1. Obtain the concisys-bom-quoter.exe executable file.
+1. Obtain the `concisys-bom-quoter.exe` executable file.
 2. Double-click on the file to open the program
 3. Follow the instructions in the User Guide below to setup your BOM file for upload.
 4. Copy the file path to upload the file.
@@ -131,34 +139,35 @@ The back-end functionality and API operations in this project are packaged under
 # User Guide
 
 ## Setting up the BOM
+
 **Required**: 
-- Customer BOM file - BOM file from the customer or your own BOM file to upload
-- BOM_input_template - found in the `templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
+- Customer BOM file: BOM file from the customer or your own BOM file to upload
+- BOM_input_template: found in the `templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
 
 1. In the project directory, open or obtain the BOM_input_template.xlsx file from the templates directory.
-2. Open the BOM input template. There are two sheets that are required for the BOM Quoter processing to be successful: `BOM` and `Sheet1`. Note: do NOT delete or change the name of these sheets in your BOM file upload as it will create syntax errors.
-3. Instead, to avoid errors, create a new copy of the `BOM` sheet and `Sheet1` sheet in your BOM file and copy/paste the columns from the respective sheet in the BOM template to your BOM file.
+2. Open the BOM input template. There are two sheets that are required for the BOM Quoter processing to be successful: 'BOM' and 'Sheet1'. Note: do NOT delete or change the name of these sheets in your BOM file upload as it will create syntax errors.
+3. Instead, to avoid errors, create a new copy of the 'BOM' sheet and 'Sheet1' sheet in your BOM file and copy/paste the columns from the respective sheet in the BOM template to your BOM file.
  
     ![gif of copying part Description from customer BOM and BOM file](docs/images/figure3.gif)
  
-4. All the cells in the following columns of the `BOM` sheet are required to be filled:
+4. All the cells in the following columns of the 'BOM' sheet are required to be filled:
  
-- _Item_ – line item number
-- _Reference Designators_ – found in original BOM, location of the part on PCB when assemble
-- _Description_ – description of part
-- _Manufacturer Part Number_ – manufacturing part number
-- _Quantity_ – quantity of part for a single board
-- If item is DNI/Do Not Install put in 0 if you need to keep it in the BOM
-- _Qty Need_ – the quantity needed to complete quantity order (more than 1 board)
-- _Qty Buy_ – the quantity to buy to complete quantity order
+    - ***Item***: line item number
+    - ***Reference Designators***: found in original BOM, location of the part on PCB when assemble
+    - ***Description*** : description of part
+    - ***Manufacturer Part Number***: manufacturing part number
+    - ***Quantity***: quantity of part for a single board
+        - If item is DNI/Do Not Install put in 0 if you need to keep it in the BOM
+    - ***Qty Need***: the quantity needed to complete quantity order (more than 1 board)
+    - ***Qty Buy***: the quantity to buy to complete quantity order
     
 5. Go to 'Sheet1' that you copied into your BOM file, enter the _Qty Order_ value to the _Qty_ column.
  
-![Screenshot of Sheet1 with Qty Order](docs/images/figure4.png)
+    ![Screenshot of Sheet1 with Qty Order](docs/images/figure4.png)
  
 6. If there is more than one value in the column, add the Q# Need and Q# Buy to ‘BOM’ where # is _Qty Order_ number. See figures 5 and 6.
     
-![Additional qty orders](docs/images/figure5.png) ![Adding addtional qty order to BOM sheet](docs/images/figure6.png)
+    ![Additional qty orders](docs/images/figure5.png) ![Adding addtional qty order to BOM sheet](docs/images/figure6.png)
 
 7. Save your BOM file with the changes from Steps 1-6. Copy the file path; you will paste this into the BOM Quoter when prompted.
  
@@ -194,7 +203,7 @@ For example, if you would like to compare Q1 qty orders, then eneter 'Q1 Buy'; i
 
 If you do not have a Qty Order to compare, then please eneter 'Qty Buy' for the best results
 -----------------------------------------------------------------------
-Please eneter your choosen column(s): Q2 Buy
+Please enter your choosen column(s): Q2 Buy
 
 ```
  
@@ -221,7 +230,7 @@ Refresh access token: ****************
 
 7. BOM Quoter Success
  
-Without web scraping: 
+    Without web scraping: 
     
 ```
 
@@ -234,7 +243,7 @@ BOM Quotation completed! Results were stylized and saved in the original file.
 
 ```
     
-With web scraping:
+    With web scraping:
     
 ```
 
