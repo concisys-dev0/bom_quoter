@@ -12,13 +12,14 @@ While the BOM Quoter has many similar functions as the ERP feature, this program
 
 The project folder hierarchy is as follows:
 
-- `data`: contains corresponding JSON files to store API credentials and results
-- `dist`: contains any scripts that are under development or testing and not yet released
-- `templates`: contains blank BOM templates for ease of access; also includes BOM samples folder (samples) for testing and comparison
+- `assets`: contains Excel files for BOM file configurations
+	- `sample`: sample BOM files to show end results
+	- `templates`: empty BOM template
+- `config`: contains all the configuration files needed to start the program
+- `docs`: BOM Quoter documentation and licensing
+- `temp`: contains corresponding JSON files to temporary store API credentials and results
 - `utils`: library containing API and scraping operations
-- `environmental.yml`: for Anaconda virtual environment
 - `main.py`: Main CLI program
-- `requirements.txt`: required libraries to be set up via pip if desired
 - `setup.py`: setup script to initiate `utils` library
 
 ## Python Libraries
