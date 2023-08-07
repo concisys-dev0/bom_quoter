@@ -158,15 +158,15 @@ BOM Quotation completed! Results were stylized and saved in the original file.
 
 ```
 
-## License
+# License
 
 This project is licensed under the [MIT License](docs/LICENSE.md)
 
-## Acknowledgements
+# Acknowledgements
 
 This project is built upon the Digikey, Mouser, and TTI APIs, as well as the current Concisys ERP, which served as a foundation for the "Concisys BOM Quoter."
 
-## Contributing
+# Contributing
 Main Contributors:
 Lan Do
 Monica Nguyen
