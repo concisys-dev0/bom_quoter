@@ -43,7 +43,7 @@ The "Concisys BOM Quoter" is a tool designed to generate accurate pricing for cu
 
 **Required**: 
 - Customer BOM file: BOM file from the customer or your own BOM file to upload
-- BOM_input_template: found in the `templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
+- BOM_input_template: found in the `assets/templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
 
 1. In the project directory, open or obtain the `BOM_input_template.xlsx` file from the templates directory.
 2. Open the BOM input template. There are two sheets that are required for the BOM Quoter processing to be successful: 'BOM' and 'Sheet1'. Note: do NOT delete or change the name of these sheets in your BOM file upload as it will create syntax errors.
