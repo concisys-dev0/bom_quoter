@@ -17,7 +17,7 @@ logging.captureWarnings(True)
 from utils.dk_oauth2_login import *
 from utils.constants import DK_USER_STORAGE, DK_TOKEN_STORAGE
 
-"""get access token and connect to API"""
+# get access token and connect to API
 dk_authorize_url = "https://api.digikey.com/v1/oauth2/authorize"
 dk_token_url = "https://api.digikey.com/v1/oauth2/token"
 
