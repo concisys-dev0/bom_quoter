@@ -108,7 +108,7 @@ The back-end functionality and API operations in this project are packaged under
 | `utils.fixed_BOM.save_RQF_BOM`                      | `path`: path to file, `df_r2`: dataframe of total results output | Inserts the dataframe results into the file and stylizes the excel sheet for 'Best_Prices' sheet.  |
 | `utils.summary.save_summary`                        | `path`: path to file | Returns the count for line items and part attributes (TH, SMT, etc.) and inserts the results in a new sheet called 'Summary.' |
 
-# Installation
+# User Guide
 
 ## System Requirements
 
@@ -118,9 +118,62 @@ The back-end functionality and API operations in this project are packaged under
 3. (Optional) Latest stable chromedriver.exe -> [Download](https://chromedriver.chromium.org/downloads)
     - Latest Stable: v113, v114
 
-## Setup
+## Installation
+1. Ensure that you have the latest Python installed on your local machine
+2. Clone the bom_quoter Github repository or download the project ZIP file into your local machine
+3. Install the required dependencies into a virtual environment. You can find the configuration files under the `config` directory.
+    - If using Anaconda: `conda env create -n my-env-name -f environment.yml` or `conda env create -n my-env-name -f /path/to/environment.yml`
+    - If using PIP: 
+        - Create your virtual environment: `python -m venv my-env-name`
+        - Activate your virtual env: `my-env-name\Scripts\activate.bat` (Windows), `source .venv/bin/activate` (OS)
+        - Then install dependences: `pip install -r requirements.txt` or `pip install -r path/to/requirements.txt`
+4. Open the bom_quoter directory in your virtual environment (cmd.exe on Windows or Terminal on Mac)
+5. Enter the command `pip setup.py install` to setup packages. Otherwise, the BOM Quoter will not work.
+6. To activate the program, `cd` to main directory and enter: `python bomquoter.py` in the command line.
 
-**Developer Set up**
+<!-- **User Set up**
+1. Obtain the `concisys-bom-quoter.exe` executable file.
+2. Double-click on the file to open the program
+3. Follow the instructions in the User Guide below to setup your BOM file for upload.
+4. Copy the file path to upload the file. -->
+
+# Setup
+
+## Setting up the BOM
+
+**Required**: 
+- Customer BOM file: BOM file from the customer or your own BOM file to upload
+- BOM_input_template: found in the `assets/templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
+
+1. In the project directory, open or obtain the `BOM_input_template.xlsx` file from the templates directory.
+2. Open the BOM input template. There are two sheets that are required for the BOM Quoter processing to be successful: 'BOM' and 'Sheet1'. Note: do NOT delete or change the name of these sheets in your BOM file upload as it will create syntax errors.
+3. Instead, to avoid errors, create a new copy of the 'BOM' sheet and 'Sheet1' sheet in your BOM file and copy/paste the columns from the respective sheet in the BOM template to your BOM file.
+ 
+    ![gif of copying part Description from customer BOM and BOM file](images/figure3.gif)
+ 
+4. All the cells in the following columns of the 'BOM' sheet are required to be filled:
+ 
+    - ***Item***: line item number
+    - ***Reference Designators***: found in original BOM, location of the part on PCB when assemble
+    - ***Description*** : description of part
+    - ***Manufacturer Part Number***: manufacturing part number
+    - ***Quantity***: quantity of part for a single board
+        - If item is DNI/Do Not Install put in 0 if you need to keep it in the BOM
+    - ***Qty Need***: the quantity needed to complete quantity order (more than 1 board)
+    - ***Qty Buy***: the quantity to buy to complete quantity order
+    
+5. Go to 'Sheet1' that you copied into your BOM file, enter the _Qty Order_ value to the _Qty_ column.
+ 
+    ![Screenshot of Sheet1 with Qty Order](images/figure4.png)
+ 
+6. If there is more than one value in the column, add the Q# Need and Q# Buy to ‘BOM’ where # is _Qty Order_ number. See figures 5 and 6.
+    
+    ![Additional qty orders](images/figure5.png) ![Adding addtional qty order to BOM sheet](images/figure6.png)
+
+7. Save your BOM file with the changes from Steps 1-6. Copy the file path; you will paste this into the BOM Quoter when prompted.
+ 
+ You are now ready to upload the BOM file to the BOM Quoter.
+<!-- **Developer Set up**
 1. Ensure that you have the latest Python installed on your local machine
 2. Clone the bom_quoter Github repository or download the ZIP file into your local machine
 3. Install the required dependencies into a virtual environment. You can find the configuration files under the `config` directory.
@@ -144,19 +197,17 @@ The back-end functionality and API operations in this project are packaged under
 ## Setting up the BOM
 
 **Required**: 
-- Customer BOM file: BOM file from the customer or your own BOM file to upload
-- BOM_input_template: found in the `assets/templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
+- _Customer BOM file_: BOM file from the customer or your own BOM file to upload
+- _BOM_input_template_: found in the `assets/templates` folder; the required 'BOM' and 'Sheet1' sheets needs to be copied from this file and placed in your BOM file
 
 1. In the project directory, open or obtain the `BOM_input_template.xlsx` file from the templates directory.
 2. Open the BOM input template. There are two sheets that are required for the BOM Quoter processing to be successful: 'BOM' and 'Sheet1'. Note: do NOT delete or change the name of these sheets in your BOM file upload as it will create syntax errors.
 3. Instead, to avoid errors, create a new copy of the 'BOM' sheet and 'Sheet1' sheet in your BOM file and copy/paste the columns from the respective sheet in the BOM template to your BOM file.
- 
-<<<<<<< HEAD
+
+![gif of copying Part Description from customer BOM and BOM file](
+        
     ![gif of copying part Description from customer BOM and BOM file](docs/images/figure3.gif)
-=======
-    ![gif of copying part Description from customer BOM and BOM file](./images/figure3.gif)
->>>>>>> 31c12257b6641f70133d2ff8b9e57e1031abc06c
- 
+    
 4. All the cells in the following columns of the 'BOM' sheet are required to be filled:
  
     - ***Item***: line item number
@@ -188,7 +239,7 @@ The back-end functionality and API operations in this project are packaged under
  
  You are now ready to upload the BOM file to the BOM Quoter.
  
-## Uploading the BOM
+## Uploading the BOM -->
 1. Run the _concisys-bom-quoter_ program
 2. After running the program, you will be prompted to enter the BOM file path. Paste the file path you copied previously and press enter to continue
  
