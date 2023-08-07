@@ -31,11 +31,11 @@ The "Concisys BOM Quoter" is a tool designed to generate accurate pricing for cu
 5. Enter the command `pip setup.py install` to setup packages. Otherwise, the BOM Quoter will not work.
 6. To activate the program, `cd` to main directory and enter: `python bomquoter.py` in the command line.
 
-**User Set up**
+<!-- **User Set up**
 1. Obtain the `concisys-bom-quoter.exe` executable file.
 2. Double-click on the file to open the program
 3. Follow the instructions in the User Guide below to setup your BOM file for upload.
-4. Copy the file path to upload the file.
+4. Copy the file path to upload the file. -->
 
 # User Guide
 
