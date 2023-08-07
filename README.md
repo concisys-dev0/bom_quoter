@@ -18,7 +18,7 @@ The "Concisys BOM Quoter" is a tool designed to generate accurate pricing for cu
 
 ## Installation
 
-**Developer Set up**
+<!-- **Developer Set up** -->
 1. Ensure that you have the latest Python installed on your local machine
 2. Clone the bom_quoter Github repository or download the project ZIP file into your local machine
 3. Install the required dependencies into a virtual environment. You can find the configuration files under the `config` directory.
