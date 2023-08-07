@@ -151,7 +151,7 @@ The back-end functionality and API operations in this project are packaged under
 2. Open the BOM input template. There are two sheets that are required for the BOM Quoter processing to be successful: 'BOM' and 'Sheet1'. Note: do NOT delete or change the name of these sheets in your BOM file upload as it will create syntax errors.
 3. Instead, to avoid errors, create a new copy of the 'BOM' sheet and 'Sheet1' sheet in your BOM file and copy/paste the columns from the respective sheet in the BOM template to your BOM file.
  
-    ![gif of copying part Description from customer BOM and BOM file](docs/images/figure3.gif)
+    ![gif of copying part Description from customer BOM and BOM file](./images/figure3.gif)
  
 4. All the cells in the following columns of the 'BOM' sheet are required to be filled:
  
@@ -166,11 +166,11 @@ The back-end functionality and API operations in this project are packaged under
     
 5. Go to 'Sheet1' that you copied into your BOM file, enter the _Qty Order_ value to the _Qty_ column.
  
-    ![Screenshot of Sheet1 with Qty Order](docs/images/figure4.png)
+    ![Screenshot of Sheet1 with Qty Order](./images/figure4.png)
  
 6. If there is more than one value in the column, add the Q# Need and Q# Buy to ‘BOM’ where # is _Qty Order_ number. See figures 5 and 6.
     
-    ![Additional qty orders](docs/images/figure5.png) ![Adding addtional qty order to BOM sheet](docs/images/figure6.png)
+    ![Additional qty orders](./images/figure5.png) ![Adding addtional qty order to BOM sheet](./images/figure6.png)
 
 7. Save your BOM file with the changes from Steps 1-6. Copy the file path; you will paste this into the BOM Quoter when prompted.
  
